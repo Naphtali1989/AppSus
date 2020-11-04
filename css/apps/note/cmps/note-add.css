@@ -1,0 +1,19 @@
+.note-add-container {
+    display: flex;
+    justify-content: center;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+}
+
+.input-container input {
+    min-width: 420px;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}

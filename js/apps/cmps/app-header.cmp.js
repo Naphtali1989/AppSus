@@ -7,7 +7,7 @@ export default {
                      </button> -->
                     <header class="app-header" v-if="isShowNav">
                         <div class="brand">
-                            <img src="assets/main-app/img/logo.png"/> AppSus
+                            <img src="../../../assets/app/img/logo.png"> AppSus
                         </div>
                         <nav class="main-nav clean-list">
                             <li>
