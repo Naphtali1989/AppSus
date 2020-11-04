@@ -11,6 +11,7 @@ export default {
     },
     methods: {
         emitSearchTerm() {
+            console.log('search by:', this.searchTerm)
             this.$emit('setSearch', this.searchTerm);
         }
     }

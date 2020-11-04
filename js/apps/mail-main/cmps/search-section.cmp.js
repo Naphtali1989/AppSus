@@ -6,14 +6,14 @@ export default {
     template: `
             <section class="search-section">
                 <search-bar />     
-                <sort-bar />
-                <filter-bar />
+                <sort-bar :term="sortBy"/>
+                <filter-bar :term="filterBy.mailStatus"/>
 
             </section>
             `,
     data() {
         return {
-            sortBy: '',
+            sortBy: 'date',
             filterBy: { searchTerm: '', mailStatus: 'All' }
         }
     },

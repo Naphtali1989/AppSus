@@ -1,15 +1,15 @@
 export default {
-    prop: ['term'],
+    props: ['term'],
     template: `
             <section class="filter-bar">
                 <label>All
-                    <input type="checkbox" @input="emitFilterTerm('all')"/>     
+                    <input type="checkbox" @input="emitFilterTerm('all')" v-model="filterTerm"/>     
                 </label>
                 <label>Read
-                    <input type="checkbox" @input="emitFilterTerm('read')"/>     
+                    <input type="checkbox" @input="emitFilterTerm('read')" v-model="filterTerm"/>     
                 </label>
                 <label>Unread
-                    <input type="checkbox" @input="emitFilterTerm('unread')"/>     
+                    <input type="checkbox" @input="emitFilterTerm('unread')" v-model="filterTerm"/>     
                 </label>
                    
             </section>
@@ -20,8 +20,10 @@ export default {
         }
     },
     methods: {
-        emitFilterTerm(filterTerm) {
-            this.$emit('setFilter', filterTerm);
+        emitFilterTerm(term) {
+            this.filterTerm = term
+            console.log('filterTerm is:', this.filterTerm)
+            this.$emit('setFilter', term);
         }
     }
 
