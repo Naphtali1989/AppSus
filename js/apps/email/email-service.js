@@ -9,6 +9,6 @@ function getEmailsToDisplay() {
     return Promise.resolve(gMails);
 }
 
-export const mailService = {
+export const emailService = {
     getEmailsToDisplay,
 }
