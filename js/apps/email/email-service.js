@@ -4,8 +4,8 @@ const DELETED_EMAIL_STORAGE_KEY = 'deletedEmailDB';
 var gDeletedEmails = [];
 
 var gEmails = [
-    { subject: 'Wassap?', body: 'Pick up!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u101' },
-    { subject: 'really??', body: 'Shut up!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u102' },
+    { subject: 'Wassap?', body: 'Pick up!!!!!!!!!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u101' },
+    { subject: 'really??', body: 'Shut up!!!!!!!!!!!!!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u102' },
     { subject: 'Idan?', body: 'What do you get git?!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u103' },
     { subject: 'Naphtali?', body: 'You are so lazy!!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u104' },
 ]
@@ -14,6 +14,7 @@ var gEmails = [
 export const emailService = {
     getEmailsToDisplay,
     deleteEmail,
+    getEmailById,
 }
 
 function getEmailsToDisplay() {

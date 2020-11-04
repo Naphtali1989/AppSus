@@ -10,6 +10,7 @@ export default {
                 </button>
                 <div class="email-preview-subject">{{email.subject}}</div>
                 <div class="email-preview-body">{{email.body}}</div>
+                <div class="email-preview-time">{{emailTime}}</div>
                 
                 <button class="email-delete-btn btn" @click.stop="deleteEmail">
                     <span class="far fa-trash-alt"></span>
@@ -34,6 +35,14 @@ export default {
         markEmail() {
             console.log('marking email:', this.email)
             this.email.isRead = !this.email.isRead
+        }
+    },
+    computed: {
+        emailTime() {
+            const sentTime = new Date(this.email.sentAt)
+            const now = new Date()
+            return moment(sentTime).from(moment(now))
+
         }
     }
 }
