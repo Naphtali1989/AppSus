@@ -1,8 +1,11 @@
-.notes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    /* grid-gap: 50px; */
-    grid-gap: 20px;
-    justify-items: center;
-    align-items: center;
-}
+    .notes-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        /* display: grid;
+        grid-template-columns: repeat(4, minmax(150px, 1fr));
+        grid-gap: 5px;
+        justify-items: center;
+        align-items: center; */
+    }

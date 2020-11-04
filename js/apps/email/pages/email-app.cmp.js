@@ -8,7 +8,7 @@ export default {
             <section class="email-app">
                 <h1>mail-app</h1>
                 <search-section />
-                <email-board :emails="currMails"/>
+                <email-board :emails="currMails" @switchedNav="setEmailsToShow"/>
                 <router-view />
             </section>
             `,
@@ -18,17 +18,29 @@ export default {
         }
     },
     methods: {
-        getMails() {
-            emailService.getEmailsToDisplay()
+        setEmailsToShow(status) {
+            console.log('status is: ', status)
+            if (status === 'isTrash') this.getDeletedEmails();
+            else this.getEmails(status)
+        },
+        getEmails(filterBy = null) {
+            emailService.getEmailsToDisplay(filterBy)
                 .then(res => this.currMails = res)
-        }
+        },
+        getDeletedEmails() {
+            emailService.getDeletedEmailsToDisplay()
+                .then(res => this.currMails = res)
+        },
+
     },
     created() {
-        this.getMails()
+        this.getEmails();
+    },
+    updated() {
+        // this.setEmailsToShow(this.emailsToShow)
     },
     components: {
         searchSection,
         emailBoard,
-
     }
 }

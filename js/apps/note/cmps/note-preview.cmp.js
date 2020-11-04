@@ -5,10 +5,9 @@ export default {
     props: ['note'],
     name: 'notePreview',
     template: `
-            <section class="note-preview">
+            <section class="note-preview" :style="{backgroundColor: note.style.backgroundColor}">
                 <component :is="note.type" :note="note"/>
             </section>
-    
     
     `,
     created() {

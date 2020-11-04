@@ -7,11 +7,38 @@ const STORAGE_KEY = 'notesDB';
 
 
 function getDefaultNotes() {
-    return [
-        { type: 'noteTxt', id: '101', info: { txt: 'I love vue js' }, createdAt: Date.now(), isPinned: true },
-        { type: 'noteImg', id: '102', info: { txt: 'I love  js' }, createdAt: Date.now(), isPinned: false },
-        { type: 'noteTxt', id: '103', info: { txt: 'I love html' }, createdAt: Date.now(), isPinned: true },
-        { type: 'noteImg', id: '104', info: { txt: 'I love css' }, createdAt: Date.now(), isPinned: true },
+    return [{
+            type: 'noteTxt',
+            id: '102',
+            info: { txt: 'I love vue js' },
+            style: { backgroundColor: '#ffff88' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteTxt',
+            id: '103',
+            info: { txt: 'I love vue js' },
+            style: { backgroundColor: '#ffff88' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteTxt',
+            id: '104',
+            info: { txt: 'I love vue js' },
+            style: { backgroundColor: '#ffff88' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteTxt',
+            id: '105',
+            info: { txt: 'I love vue js' },
+            style: { backgroundColor: '#ffff88' },
+            createdAt: Date.now(),
+            isPinned: true
+        }
     ]
 }
 
