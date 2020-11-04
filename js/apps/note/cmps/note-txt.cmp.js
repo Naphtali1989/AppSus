@@ -1,17 +1,11 @@
 export default {
+    props: ['note'],
     name: 'noteTxt',
     template: `
             <section class="note-txt">
-                <p>{{txt}}</p>
+                <p>{{note.info.txt}}</p>
             </section>
 
 
     `,
-    data() {
-        return {
-            info: {
-                txt: ''
-            }
-        }
-    }
 }

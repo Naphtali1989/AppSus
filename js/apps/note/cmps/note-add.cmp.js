@@ -1,4 +1,3 @@
-import noteTxt from './note-txt.cmp.js'
 import { utilService } from '../../../services/util-service.js'
 
 
@@ -27,31 +26,29 @@ export default {
             },
             noteType: 'noteTxt',
             newNote: {
-                id: utilService.makeId(),
                 info: {
                     txt: ''
                 },
-                backgroundColor: '#ffff88'
+                backgroundColor: '#ffff88',
+                type: 'noteTxt'
             }
         }
 
     },
     methods: {
         onAddNote() {
-            console.log('note has been added!')
-            this.$emit('addNote', this.newNote)
-
+            const deepCopy = JSON.parse(JSON.stringify(this.newNote))
+            this.$emit('addNote', deepCopy)
         },
         setMode(type) {
             if (type === 'noteTxt') {
                 this.noteType = 'noteTxt'
                 this.newNote.info = { txt: '' }
-                this.newNote.id = utilService.makeId()
             } else if (type === 'noteImg') {
                 this.noteType = 'noteImg'
                 this.newNote.info = { txt: '', url: '' }
-                this.newNote.id = utilService.makeId()
             }
+            this.newNote.type = this.noteType;
         },
     },
     computed: {
@@ -59,14 +56,6 @@ export default {
             if (this.noteType === 'noteTxt') return this.placeholders.noteTxt
             else if (this.noteType === 'noteImg') return this.placeholders.noteImg
         },
-        setModel() {
-            if (this.noteType === 'noteTxt') return 'info.txt'
-            else if (this.noteType === 'noteImg') return 'info.url'
-        }
 
     },
-    components: {
-        noteTxt
-    }
-
 }

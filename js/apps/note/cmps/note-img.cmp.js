@@ -1,19 +1,15 @@
 export default {
+    props: ['note'],
     name: 'noteImg',
     template: `
             <section class="note-img">
-                <img :src="imgUrl" alt=""/>
-                <p>{{txt}}</p>
+                <img :src="note.info.txt" alt=""/>
+                <p>{{note.info.txt}}</p>
             </section>
 
 
     `,
-    data() {
-        return {
-            info: {
-                imgUrl: '',
-                txt: ''
-            }
-        }
+    created() {
+        console.log('note img:', this.note)
     }
 }

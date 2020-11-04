@@ -8,8 +8,8 @@ export default {
             <section class="note-app-container">
                 <!--Search bar-->
                 <!--Note add-->
-                <note-list :notes="notes" />
                 <note-add @addNote="onAddNote" />
+                <note-list :notes="notes" />
 
             </section>
     
@@ -22,13 +22,15 @@ export default {
     methods: {
         getNotes() {
             noteService.getNotesForDisplay()
-                .then(notes => this.notes = notes)
+                .then(notes => {
+                    console.log('getting from service:', notes)
+                    this.notes = notes
+                })
         },
         onAddNote(note) {
             console.log('note:', note)
             noteService.addNote(note)
                 .then(() => console.log('note has been added!'))
-                // this.notes.push(note)
         }
 
     },
