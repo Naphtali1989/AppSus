@@ -1,3 +1,13 @@
+/* BASICS */
+
+@import './helpers.css';
+@import './base.css';
+
+/* MAIL */
+
+
+/* CMPS */
+
 @import './apps/book/cmps/dumby-file.css';
 @import './apps/book/pages/dumby-file.css';
 @import './apps/note/cmps/dumby-file.css';
@@ -6,5 +16,3 @@
 @import './apps/mail/pages/dumby-file.css';
 @import './apps/main-cmps/dumby-file.css';
 @import './apps/main-cmps/app-header.css';
-@import './helpers.css';
-@import './base.css';

@@ -1,20 +1,20 @@
-// import bookApp from './apps/book-main/pages/book-app.cmp.js'
-import keepApp from './apps/keep-main/pages/keep-app.cmp.js';
-import mailApp from './apps/mail-main/pages/mail-app.cmp.js';
-import homePage from './apps/main-cmps/home-page.cmp.js';
+// import bookApp from './apps/book/pages/book-app.cmp.js'
+import noteApp from './apps/note/pages/note-app.cmp.js';
+import emailApp from './apps/email/pages/email-app.cmp.js';
+import homePage from './apps/cmps/home-page.cmp.js';
 
 const myRoutes = [{
         path: '/',
         component: homePage
     },
     {
-        path: '/keep',
-        component: keepApp,
+        path: '/note',
+        component: noteApp,
         children: []
     },
     {
-        path: '/mail',
-        component: mailApp,
+        path: '/email',
+        component: emailApp,
         children: []
     },
     // {
