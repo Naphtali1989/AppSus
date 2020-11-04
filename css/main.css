@@ -1,42 +1,10 @@
-@import './apps/book-main/cmps/dumby-file.css';
-@import './apps/book-main/pages/dumby-file.css';
-@import './apps/keep-main/cmps/dumby-file.css';
-@import './apps/keep-main/pages/dumby-file.css';
-@import './apps/mail-main/cmps/dumby-file.css';
-@import './apps/mail-main/pages/dumby-file.css';
+@import './apps/book/cmps/dumby-file.css';
+@import './apps/book/pages/dumby-file.css';
+@import './apps/note/cmps/dumby-file.css';
+@import './apps/note/pages/dumby-file.css';
+@import './apps/mail/cmps/dumby-file.css';
+@import './apps/mail/pages/dumby-file.css';
 @import './apps/main-cmps/dumby-file.css';
 @import './apps/main-cmps/app-header.css';
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    transform: translateX(250px);
-}
-
-.clean-list {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-.btn {
-    background: transparent;
-    outline: none;
-    border: 0;
-}
-
-button {
-    cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    margin: 0;
-}
+@import './helpers.css';
+@import './base.css';

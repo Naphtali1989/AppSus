@@ -1,0 +1,55 @@
+body.show-nav {
+    transform: translateX(250px);
+}
+
+body {
+    transition: transform .3s ease;
+}
+
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    min-height: 100vh;
+    background-color: #000000;
+    color: white;
+    z-index: 100;
+    text-align: center;
+    transform: translateX(-100%);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+}
+
+.app-header nav {
+    height: 100%;
+}
+
+.app-header nav li {
+    padding: 2rem;
+    font-size: 20px;
+    border-bottom: 2px solid rgba(200, 200, 200, 0.4);
+    transition: .3s ease;
+}
+
+.app-header nav li:first-child {
+    border-top: 2px solid rgba(200, 200, 200, 0.4);
+}
+
+.app-header li a {
+    display: block;
+    color: white;
+    ;
+}

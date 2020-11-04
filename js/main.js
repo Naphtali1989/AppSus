@@ -3,7 +3,7 @@ import userMsg from './apps/main-cmps/user-msg.cmp.js';
 import appHeader from './apps/main-cmps/app-header.cmp.js';
 
 const options = {
-    el: '#appSus',
+    el: '#app',
     router: myRouter,
     template: `
         <section>
