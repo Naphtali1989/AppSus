@@ -15,6 +15,7 @@ export default {
     data() {
         return {
             currMails: '',
+            emailsToShow: 'inbox'
         }
     },
     methods: {
@@ -30,8 +31,7 @@ export default {
         getDeletedEmails() {
             emailService.getDeletedEmailsToDisplay()
                 .then(res => this.currMails = res)
-        },
-
+        }
     },
     created() {
         this.getEmails();
