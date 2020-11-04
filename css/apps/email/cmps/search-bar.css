@@ -1,0 +1,22 @@
+.search-bar {
+    position: relative;
+    font-size: 1.25rem;
+}
+
+.search-bar input {
+    background-color: lightgray;
+    border: none;
+    padding: 1rem;
+    font-size: 1.25rem;
+    border-radius: 5px;
+}
+
+.search-bar span {
+    position: absolute;
+    padding: 1rem;
+    transform: translateX(-90%);
+}
+
+.search-bar span:hover {
+    cursor: pointer;
+}

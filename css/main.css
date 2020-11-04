@@ -11,10 +11,15 @@
 /* CMPS */
 
 @import './apps/email/cmps/dumby-file.css';
+@import './apps/email/cmps/search-section.css';
+@import './apps/email/cmps/search-bar.css';
+@import './apps/email/cmps/filter-bar.css';
+@import './apps/email/cmps/sort-bar.css';
 
 /* PAGES */
 
 @import './apps/email/pages/dumby-file.css';
+@import './apps/email/pages/email-app.css';
 
 /* NOTE */
 

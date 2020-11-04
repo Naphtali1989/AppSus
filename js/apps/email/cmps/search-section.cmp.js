@@ -4,7 +4,7 @@ import filterBar from '../cmps/filter-bar.cmp.js';
 
 export default {
     template: `
-            <section class="search-section">
+            <section class="search-section flex">
                 <search-bar />     
                 <sort-bar :term="sortBy"/>
                 <filter-bar :term="filterBy.mailStatus"/>
