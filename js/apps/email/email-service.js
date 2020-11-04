@@ -103,15 +103,7 @@ function getDeletedEmailsToDisplay() {
     return Promise.resolve(gDeletedEmails);
 }
 
-function getDeletedEmailsToDisplay() {
-    gDeletedEmails = loadDeletedEmailsFromStorage();
-    if (!gDeletedEmails || gDeletedEmails.length < 1) {
-        gDeletedEmails = []
-        saveDeletedEmailsToStorage();
-    }
-    console.log('g gDeletedEmails is:', gDeletedEmails)
-    return Promise.resolve(gDeletedEmails);
-}
+
 
 function deleteEmail(id) {
     gDeletedEmails = loadDeletedEmailsFromStorage();
@@ -139,6 +131,7 @@ function deleteEmail(id) {
 }
 
 function getEmailById(id) {
+    console.log(id)
     const email = gEmails.find(email => email.id === id)
     return Promise.resolve(email);
 }

@@ -24,16 +24,13 @@ export default {
             `,
     methods: {
         deleteEmail() {
-            // console.log('deleting the email:', this.email)
             emailService.deleteEmail(this.email.id);
         },
         prioritizeEmail() {
-            // console.log('making this email prio:', this.email)
             emailService.toggleEmailMark(this.email.id)
 
         },
         markEmail() {
-            // console.log('marking email:', this.email)
             emailService.toggleEmailRead(this.email.id)
         }
     },

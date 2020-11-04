@@ -13,8 +13,10 @@ export default {
             `,
     methods: {
         openEmail(emailId) {
-            console.log(emailId)
             this.$router.push('/email/' + emailId)
+        },
+        emitOpenEmail() {
+            this.$emit('emailOpened')
         }
     },
     components: {
