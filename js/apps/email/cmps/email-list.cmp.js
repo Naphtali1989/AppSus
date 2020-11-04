@@ -1,18 +1,18 @@
-import mailPreview from './mail-preview.cmp.js';
+import emailPreview from './email-preview.cmp.js';
 
 export default {
-    props: ['mails'],
+    props: ['emails'],
     template: `
-                <section class="mail-list">
+                <section class="email-list">
                     <ul class="clean-list">
-                        <li v-for="mailItem in mails" :key="mailItem.id">
-                            <mail-preview :mail="mailItem"/>
+                        <li v-for="emailItem in mails" :key="emailItem.id">
+                            <mail-preview :email="emailItem"/>
                         </li>
-                        {{mails}}
+                        {{emails}}
                     </ul>               
                 </section>
             `,
     components: {
-        mailPreview,
+        emailPreview,
     }
 }

@@ -1,6 +1,6 @@
 import searchSection from '../cmps/search-section.cmp.js';
-import mailBoard from '../cmps/mail-board.cmp.js';
-import { mailService } from '../mail-services/mail-service.js'
+import emailBoard from '../cmps/email-board.cmp.js';
+import { emailService } from '../email-service.js';
 
 export default {
     name: 'mail-app',
@@ -8,7 +8,7 @@ export default {
             <section class="mail-app">
                 <h1>mail-app</h1>
                 <search-section />
-                <mail-board :emails="currMails"/>
+                <email-board :emails="currMails"/>
 <!-- {{currMails}} -->
             </section>
             `,
@@ -19,7 +19,7 @@ export default {
     },
     methods: {
         getMails() {
-            mailService.getMailsToDisplay()
+            emailService.getMailsToDisplay()
                 .then(res => this.currMails = res)
         }
     },
@@ -28,7 +28,7 @@ export default {
     },
     components: {
         searchSection,
-        mailBoard,
+        emailBoard,
 
     }
 }

@@ -2,17 +2,38 @@
 
 @import './helpers.css';
 @import './base.css';
+@import './apps/cmps/dumby-file.css';
+@import './apps/app-header.css';
 
-/* MAIL */
+/* EMAIL */
+
+
+/* CMPS */
+
+@import './apps/email/cmps/dumby-file.css';
+
+/* PAGES */
+
+@import './apps/email/pages/dumby-file.css';
+
+/* NOTE */
+
+
+/* CMPS */
+
+@import './apps/note/cmps/dumby-file.css';
+
+/* PAGES */
+
+@import './apps/note/pages/dumby-file.css';
+
+/* BOOK */
 
 
 /* CMPS */
 
 @import './apps/book/cmps/dumby-file.css';
+
+/* PAGES */
+
 @import './apps/book/pages/dumby-file.css';
-@import './apps/note/cmps/dumby-file.css';
-@import './apps/note/pages/dumby-file.css';
-@import './apps/mail/cmps/dumby-file.css';
-@import './apps/mail/pages/dumby-file.css';
-@import './apps/main-cmps/dumby-file.css';
-@import './apps/main-cmps/app-header.css';

@@ -1,6 +1,6 @@
 import { myRouter } from './routes.js';
-import userMsg from './apps/main-cmps/user-msg.cmp.js';
-import appHeader from './apps/main-cmps/app-header.cmp.js';
+import userMsg from './apps/cmps/user-msg.cmp.js';
+import appHeader from './apps/cmps/app-header.cmp.js';
 
 const options = {
     el: '#app',

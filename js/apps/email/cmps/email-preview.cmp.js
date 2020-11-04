@@ -1,10 +1,10 @@
 export default {
-    props: ['mail'],
+    props: ['email'],
     template: `
-            <section class="mail-preview">
+            <section class="email-preview">
                 <button class="prioritize-btn" @click="">STAR</button>
-                    <div class="mail-preview-subject">{{mail.subject}}</div>
-                    <div class="mail-preview-body">{{mail.body}}</div>
+                    <div class="email-preview-subject">{{email.subject}}</div>
+                    <div class="email-preview-body">{{email.body}}</div>
             </section>
             `
 }
