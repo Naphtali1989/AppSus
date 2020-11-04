@@ -1,10 +1,10 @@
 import noteList from '../cmps/note-list.cmp.js';
-import { keepService } from '../keep-services/keep-service.js';
+import { noteService } from '../note-service.js';
 
 export default {
-    name: 'keepApp',
+    name: 'noteApp',
     template: `
-            <section class="keep-app-container">
+            <section class="note-app-container">
                 <!--Search bar-->
                 <!--Note add-->
                 <note-list :notes="notes" />
@@ -19,7 +19,7 @@ export default {
     },
     methods: {
         getNotes() {
-            keepService.getNotesForDisplay()
+            noteService.getNotesForDisplay()
                 .then(notes => this.notes = notes)
         }
 

@@ -1,4 +1,4 @@
-import { utilService } from '../../../main-services/util-service.js'
+import { utilService } from '../../services/util-service.js';
 
 var gNotes = [
     { type: 'note-text', id: '101', info: { txt: 'I love vue js' }, createdAt: Date.now(), isPinned: true },
@@ -25,6 +25,6 @@ function _saveNotesToStorage() {
 
 
 
-export const keepService = {
+export const noteService = {
     getNotesForDisplay
 }
