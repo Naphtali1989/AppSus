@@ -1,9 +1,13 @@
 export default {
-    prop: ['term'],
+    props: ['term'],
     template: `
             <section class="sort-bar">
                 sorting
-                <input type="checkbox" @input="emitSortTerm('all')"/>     
+                <select v-model="sortTerm" @change="emitSortTerm">
+                    <option value="date">Sort by date</option>     
+                    <option value="name">Sort by Name</option>     
+                    <option value="title">Sort by Title</option>     
+                </select>     
             </section>
             `,
     data() {
@@ -12,8 +16,9 @@ export default {
         }
     },
     methods: {
-        emitSortTerm(sortTerm) {
-            this.$emit('setSort', sortTerm);
+        emitSortTerm() {
+            console.log('this sort term is:', this.sortTerm)
+            this.$emit('setSort', this.sortTerm);
         }
     }
 
