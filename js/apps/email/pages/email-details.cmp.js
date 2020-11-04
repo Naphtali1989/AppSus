@@ -4,8 +4,6 @@ export default {
     name: 'emailDetails',
     template: `
         <section class="email-details">
-            <h1>This is the details!</h1>
-            
             <button class="email-display-close-btn btn" @click="closeEditMode">BACK</button>
             <div class="email-display-header flex space-between">
                <h1 class="email-display-title"> {{emailToDesplay.subject}}</h1>
