@@ -9,7 +9,7 @@ export default {
                 <!--Search bar-->
                 <!--Note add-->
                 <note-add @addNote="onAddNote" />
-                <note-list :notes="notes" />
+                <note-list :notes="notes" @deleteNote="onDeleteNote"/>
 
             </section>
     
@@ -31,6 +31,11 @@ export default {
             console.log('note:', note)
             noteService.addNote(note)
                 .then(() => console.log('note has been added!'))
+        },
+        onDeleteNote(noteId) {
+            console.log('reached main app!')
+            noteService.deleteNote(noteId)
+                .then(() => console.log('note has been deleted'))
         }
 
     },
