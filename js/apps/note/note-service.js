@@ -53,10 +53,20 @@ function getNotesForDisplay() {
     return Promise.resolve(gNotes);
 }
 
+function onChangeStyleProp(id, color) {
+    const noteIdx = getNoteIdxById(id)
+    console.log('gNotes:', gNotes[noteIdx])
+    gNotes[noteIdx].style.backgroundColor = color;
+    _saveNotesToStorage();
+    console.log('note idx:', noteIdx)
+    console.log('id:', id)
+    console.log('color in sertvice:', color)
+    return Promise.resolve()
+}
 
-// function getNoteById(noteId) {
-//     return gNotes.findIndex(note => note)
-// }
+
+
+
 
 
 function addNote(note) {
@@ -78,6 +88,9 @@ function deleteNote(noteId) {
     return Promise.resolve();
 }
 
+function getNoteIdxById(noteId) {
+    return gNotes.findIndex(note => note.id === noteId);
+}
 
 function _saveNotesToStorage() {
     utilService.saveToStorage(STORAGE_KEY, gNotes);
@@ -88,5 +101,6 @@ function _saveNotesToStorage() {
 export const noteService = {
     getNotesForDisplay,
     addNote,
-    deleteNote
+    deleteNote,
+    onChangeStyleProp
 }

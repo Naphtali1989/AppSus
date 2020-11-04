@@ -13,18 +13,12 @@ export default {
                          v-for="note in notes"
                           :key="note.id" 
                           :note="note"
-                          @deleteNote="emitDeleteNote" 
                           />
                     </div>
                 </section>
     
     
         `,
-    methods: {
-        emitDeleteNote(noteId) {
-            this.$emit('deleteNote', noteId)
-        }
-    },
     components: {
         notePreview
     }

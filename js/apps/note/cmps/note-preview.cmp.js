@@ -1,37 +1,43 @@
-import noteTxt from './note-txt.cmp.js'
-import noteImg from './note-img.cmp.js'
+import noteTxt from './note-txt.cmp.js';
+import noteImg from './note-img.cmp.js';
+import noteVideo from './note-video.cmp.js';
+import noteControl from './note-control.cmp.js'
+import { noteService } from '../note-service.js';
 
 export default {
     props: ['note'],
-    name: 'notePreview',
+    name: 'note-preview',
     template: `
-            <section class="note-preview" :style="{backgroundColor: note.style.backgroundColor}">
-                <component :is="note.type" :note="note"/>
-                <div class="control-section">
-                     <i :class="noteTypeIcon"></i>
-                     <div class="btns-section">
-                         <span class="btn" @click="emitDeleteNote"><i class="fas fa-trash"></i></span>
-                     </div>
-                </div>
-            </section>
+                <section class="note-preview" :style="{backgroundColor: note.style.backgroundColor}">
+                    <component :is="note.type" :note="note"/>
+                    <note-control :note="note" @deleteNote="onDeleteNote" @copyNote="onCopyNote" @changeColor="onChangeColor" />
+                </section>
     
     `,
     methods: {
-        emitDeleteNote() {
-            this.$emit('deleteNote', this.note.id)
+        onDeleteNote(noteId) {
+            console.log('reached main app!')
+            noteService.deleteNote(noteId)
+                .then(() => console.log('note has been deleted'))
+        },
+        onCopyNote(note) {
+            console.log('copied!')
+            noteService.addNote(note)
+                .then(() => console.log('note has been copied'))
+        },
+        onChangeColor(color) {
+            this.note.style.backgroundColor = color;
+            noteService.onChangeStyleProp(this.note.id, color)
+                .then(() => console.log('changed color!'))
         }
     },
     created() {
         console.log(this.note)
     },
-    computed: {
-        noteTypeIcon() {
-            if (this.note.type === 'noteTxt') return 'fas fa-font fa-1x'
-            else if (this.note.type === 'noteImg') return 'far fa-image fa-1x'
-        }
-    },
     components: {
         noteTxt,
-        noteImg
+        noteImg,
+        noteVideo,
+        noteControl
     }
 }
