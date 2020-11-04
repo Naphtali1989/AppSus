@@ -14,10 +14,10 @@ export default {
                                 <router-link to="/" exact>Home</router-link>
                             </li>
                             <li>
-                                <router-link to="/keep" exact>Keep App</router-link>
+                                <router-link to="/note" exact>Note App</router-link>
                             </li>
                             <li>
-                                <router-link to="/mail" exact>Mail App</router-link>
+                                <router-link to="/email" exact>Email App</router-link>
                             </li> 
                         </nav>
                     </header>

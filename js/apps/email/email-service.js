@@ -5,10 +5,10 @@ var gMails = [
     { subject: 'Naphtali?', body: 'You are so lazy!!', isRead: false, sentAt: 1551133930594, id: 'u104' },
 ]
 
-function getMailsToDisplay() {
+function getEmailsToDisplay() {
     return Promise.resolve(gMails);
 }
 
 export const mailService = {
-    getMailsToDisplay,
+    getEmailsToDisplay,
 }
