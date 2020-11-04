@@ -4,11 +4,9 @@ import emailNav from './email-nav.cmp.js';
 export default {
     props: ['emails'],
     template: `
-            <section class="email-board">
-                <h1>email board:</h1>
-                <email-list :emails="emails"/>
+            <section class="email-board flex">
                 <email-nav />
-
+                <email-list :emails="emails"/>
             </section>
             `,
 
