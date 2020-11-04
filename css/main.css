@@ -21,3 +21,13 @@ body {
 a {
     text-decoration: none;
 }
+
+.btn {
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+
+button {
+    cursor: pointer;
+}
