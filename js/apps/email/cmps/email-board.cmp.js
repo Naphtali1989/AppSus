@@ -5,7 +5,7 @@ export default {
     props: ['emails'],
     template: `
             <section class="email-board flex">
-                <email-nav />
+                <email-nav @switchedNav="emitNavChange" />
                 <email-list :emails="emails"/>
             </section>
             `,
@@ -13,5 +13,10 @@ export default {
     components: {
         emailList,
         emailNav,
+    },
+    methods: {
+        emitNavChange(status) {
+            this.$emit('switchedNav', status)
+        }
     }
 }

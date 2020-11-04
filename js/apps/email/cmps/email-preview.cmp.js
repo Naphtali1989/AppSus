@@ -24,17 +24,17 @@ export default {
             `,
     methods: {
         deleteEmail() {
-            console.log('deleting the email:', this.email)
-            emailService.deleteEmail(this.email.id)
+            // console.log('deleting the email:', this.email)
+            emailService.deleteEmail(this.email.id);
         },
         prioritizeEmail() {
-            console.log('making this email prio:', this.email)
-            this.email.isMarked = !this.email.isMarked
+            // console.log('making this email prio:', this.email)
+            this.email.isMarked = !this.email.isMarked;
 
         },
         markEmail() {
-            console.log('marking email:', this.email)
-            this.email.isRead = !this.email.isRead
+            // console.log('marking email:', this.email)
+            this.email.isRead = !this.email.isRead;
         }
     },
     computed: {
