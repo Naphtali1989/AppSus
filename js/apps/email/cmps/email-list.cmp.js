@@ -6,7 +6,7 @@ export default {
                 <section class="email-list">
                     <ul class="clean-list flex column">
                         <li  v-for="emailItem in emails" :key="emailItem.id" @click="openEmail(emailItem.id)">
-                            <email-preview :email="emailItem" />
+                            <email-preview :email="emailItem" @bookDeleted="emitBookDeleted"/>
                         </li>
                     </ul>               
                 </section>
@@ -15,8 +15,8 @@ export default {
         openEmail(emailId) {
             this.$router.push('/email/' + emailId)
         },
-        emitOpenEmail() {
-            this.$emit('emailOpened')
+        emitBookDeleted() {
+            this.$emit('bookDeleted')
         }
     },
     components: {

@@ -25,10 +25,10 @@ export default {
     methods: {
         deleteEmail() {
             emailService.deleteEmail(this.email.id);
+            this.$emit('bookDeleted')
         },
         prioritizeEmail() {
             emailService.toggleEmailMark(this.email.id)
-
         },
         markEmail() {
             emailService.toggleEmailRead(this.email.id)

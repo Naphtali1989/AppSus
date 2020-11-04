@@ -8,13 +8,13 @@ export default {
     template: `
             <section class="email-board flex">
                 <email-nav @switchedNav="setEmailsToShow" />
-                <email-list :emails="currMails" />
+                <email-list :emails="currMails"  @bookDeleted="refreshEmails"/>
             </section>
             `,
     data() {
         return {
             currMails: '',
-            emailsToShow: 'inbox',
+            emailsToShow: null,
         }
     },
     components: {
@@ -22,17 +22,15 @@ export default {
         emailNav,
     },
     methods: {
+        refreshEmails() {
+            this.getEmails(this.emailsToShow)
+        },
         setEmailsToShow(status) {
-            console.log('status is: ', status)
-            if (status === 'isTrash') this.getDeletedEmails();
-            else this.getEmails(status)
+            this.getEmails(status)
         },
         getEmails(filterBy = null) {
+            this.emailsToShow = filterBy
             emailService.getEmailsToDisplay(filterBy)
-                .then(res => this.currMails = res)
-        },
-        getDeletedEmails() {
-            emailService.getDeletedEmailsToDisplay()
                 .then(res => this.currMails = res)
         },
     },

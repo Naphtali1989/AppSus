@@ -5,7 +5,6 @@ export default {
     name: 'email-app',
     template: `
             <section class="email-app">
-                <h1>mail-app</h1>
                 <search-section />
                 <router-view />
             </section>
