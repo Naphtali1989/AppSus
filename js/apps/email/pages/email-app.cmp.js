@@ -21,18 +21,11 @@ export default {
     methods: {
         setEmailsToShow(status) {
             console.log('status is: ', status)
-            this.emailsToShow = status;
-            switch (status) {
-                case 'deleted':
-                    this.getDeletedEmails();
-                    break;
-                case 'inbox':
-                    this.getEmails();
-                    break;
-            }
+            if (status === 'isTrash') this.getDeletedEmails();
+            else this.getEmails(status)
         },
-        getEmails() {
-            emailService.getEmailsToDisplay()
+        getEmails(filterBy = null) {
+            emailService.getEmailsToDisplay(filterBy)
                 .then(res => this.currMails = res)
         },
         getDeletedEmails() {

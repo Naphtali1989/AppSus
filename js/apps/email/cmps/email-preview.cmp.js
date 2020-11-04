@@ -29,12 +29,12 @@ export default {
         },
         prioritizeEmail() {
             // console.log('making this email prio:', this.email)
-            this.email.isMarked = !this.email.isMarked;
+            emailService.toggleEmailMark(this.email.id)
 
         },
         markEmail() {
             // console.log('marking email:', this.email)
-            this.email.isRead = !this.email.isRead;
+            emailService.toggleEmailRead(this.email.id)
         }
     },
     computed: {
