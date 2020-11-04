@@ -1,0 +1,21 @@
+.email-nav {
+    font-size: 1.25rem;
+    padding: 2rem;
+}
+
+.new-email-open-btn {
+    border-radius: 3rem;
+    border: 1px outset #1C6EA4;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+    transition: box-shadow .3s;
+}
+
+.new-email-open-btn:hover {
+    box-shadow: 2px 5px 16px 0px #0B325E, 5px 5px 4px 5px rgba(0, 0, 0, 0);
+}
+
+.email-nav li {
+    padding: 1rem;
+}

@@ -6,14 +6,14 @@ export default {
             <section class="email-preview flex align-center space-between btn" :class="emailReadChecker">
                 <button class="prioritize-btn btn" @click.stop="prioritizeEmail">
                     <span v-if="!email.isMarked" class="far fa-star"></span>
-                    <span v-if="email.isMarked" class="fas fa-star"></span>
+                    <span v-if="email.isMarked" class="fas fa-star marked"></span>
                 </button>
                 <div class="email-preview-subject">{{email.subject}}</div>
                 <div class="email-preview-body">{{email.body}}</div>
                 <div class="email-preview-time">{{emailTime}}</div>
                 
                 <button class="email-delete-btn btn" @click.stop="deleteEmail">
-                    <span class="far fa-trash-alt"></span>
+                <i class="fas fa-trash"></i>
                     <!-- <span class="fas fa-trash-alt"></span> -->
                 </button>
                 <button class="email-mark-btn btn" @click.stop="markEmail">
