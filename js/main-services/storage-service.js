@@ -11,5 +11,4 @@ function loadFromStorage(key) {
 export const storageService = {
     saveToStorage,
     loadFromStorage,
-
 }
