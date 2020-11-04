@@ -9,7 +9,7 @@ export default {
                 <h1>mail-app</h1>
                 <search-section />
                 <email-board :emails="currMails"/>
-<!-- {{currMails}} -->
+                <router-view />
             </section>
             `,
     data() {

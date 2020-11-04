@@ -1,19 +1,20 @@
 const EMAIL_STORAGE_KEY = 'emailDB';
 const DELETED_EMAIL_STORAGE_KEY = 'deletedEmailDB';
 
+var gDeletedEmails = [];
 
 var gEmails = [
-    { subject: 'Wassap?', body: 'Pick up!', isRead: false, sentAt: 1551133930594, id: 'u101' },
-    { subject: 'really??', body: 'Shut up!', isRead: false, sentAt: 1551133930594, id: 'u102' },
-    { subject: 'Idan?', body: 'What do you get git?!', isRead: false, sentAt: 1551133930594, id: 'u103' },
-    { subject: 'Naphtali?', body: 'You are so lazy!!', isRead: false, sentAt: 1551133930594, id: 'u104' },
+    { subject: 'Wassap?', body: 'Pick up!!!!!!!!!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u101' },
+    { subject: 'really??', body: 'Shut up!!!!!!!!!!!!!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u102' },
+    { subject: 'Idan?', body: 'What do you get git?!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u103' },
+    { subject: 'Naphtali?', body: 'You are so lazy!!', isRead: false, isMarked: false, sentAt: 1551133930594, id: 'u104' },
 ]
 
-var gDeletedEmails = [];
 
 export const emailService = {
     getEmailsToDisplay,
     deleteEmail,
+    getEmailById,
 }
 
 function getEmailsToDisplay() {
@@ -28,9 +29,11 @@ function deleteEmail(id) {
 }
 
 function getEmailById(id) {
-    return gEmails.find(email => email.id === id)
+    const email = gEmails.find(email => email.id === id)
+    return Promise.resolve(email);
 }
 
 function getEmailIdxById(id) {
-    return gEmails.findIndex(email => email.id === id)
+    const index = gEmails.findIndex(email => email.id === id)
+    return Promise.resolve(index);
 }
