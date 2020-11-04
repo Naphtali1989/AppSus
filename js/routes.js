@@ -1,10 +1,24 @@
-import bookApp from './apps/book-main/book-app.cmp.js'
-import bookApp from './apps/keep-main/keep-app.cmp.js'
-import bookApp from './apps/mail-main/mail-app.cmp.js'
+import bookApp from './apps/book-main/pages/book-app.cmp.js'
+import bookApp from './apps/keep-main/pages/keep-app.cmp.js'
+import bookApp from './apps/mail-main/pages/mail-app.cmp.js'
 
 const myRoutes = [{
         path: '/',
         component: homePage
+    },
+    {
+        path: '/keep',
+        component: keepApp,
+        children: []
+    }, {
+        path: '/mail',
+        component: mailApp,
+        children: []
+    },
+    {
+        path: '/about',
+        component: aboutPage,
+        children: []
     },
     {
         path: '/books',
@@ -23,22 +37,6 @@ const myRoutes = [{
             },
         ]
     },
-    {
-        path: '/keep',
-        component: keepApp,
-        children: []
-    }, {
-        path: '/mail',
-        component: mailApp,
-        children: []
-    },
-    {
-        path: '/about',
-        component: aboutPage,
-        children: []
-    },
-
-
 ]
 
 export const myRouter = new VueRouter({ routes: myRoutes })
