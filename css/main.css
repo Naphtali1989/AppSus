@@ -5,10 +5,19 @@
 @import './apps/mail-main/cmps/dumby-file.css';
 @import './apps/mail-main/pages/dumby-file.css';
 @import './apps/main-cmps/dumby-file.css';
+@import './apps/main-cmps/app-header.css';
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+}
+
+.clean-list {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
 }
