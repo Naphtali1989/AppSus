@@ -6,11 +6,9 @@ export default {
     template: `
                 <section class="notes-container">
                     <h3>Pinned</h3>
-                    <ul>
-                        <li>
-                            <note-preview v-for="note in notes" :key="note.id" :note="note" />
-                        </li>
-                    </ul>
+                    <div class="notes-grid">
+                         <note-preview v-for="note in notes" :key="note.id" :note="note" />
+                    </div>
                     {{notes}}
                 </section>
     

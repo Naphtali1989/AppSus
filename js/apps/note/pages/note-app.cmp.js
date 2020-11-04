@@ -9,7 +9,7 @@ export default {
                 <!--Search bar-->
                 <!--Note add-->
                 <note-list :notes="notes" />
-                <note-add />
+                <note-add @addNote="onAddNote" />
 
             </section>
     
@@ -23,6 +23,12 @@ export default {
         getNotes() {
             noteService.getNotesForDisplay()
                 .then(notes => this.notes = notes)
+        },
+        onAddNote(note) {
+            console.log('note:', note)
+            noteService.addNote(note)
+                .then(() => console.log('note has been added!'))
+                // this.notes.push(note)
         }
 
     },

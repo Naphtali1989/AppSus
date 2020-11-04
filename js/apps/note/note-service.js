@@ -17,6 +17,15 @@ function getNotesForDisplay() {
 }
 
 
+function addNote(note) {
+    console.log('adding note....')
+    note.createdAt = Date.now()
+    note.isPinned = false
+    gNotes.unshift(note);
+    _saveNotesToStorage()
+    return Promise.resolve()
+}
+
 
 
 function _saveNotesToStorage() {
@@ -26,5 +35,6 @@ function _saveNotesToStorage() {
 
 
 export const noteService = {
-    getNotesForDisplay
+    getNotesForDisplay,
+    addNote
 }
