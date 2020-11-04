@@ -5,7 +5,7 @@ export default {
     props: ['emails'],
     template: `
             <section class="email-board">
-                <h1>mail board:</h1>
+                <h1>email board:</h1>
                 <email-list :emails="emails"/>
 
             </section>
