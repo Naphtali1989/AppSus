@@ -1,4 +1,5 @@
 import noteList from '../cmps/note-list.cmp.js';
+import noteAdd from '../cmps/note-add.cmp.js'
 import { noteService } from '../note-service.js';
 
 export default {
@@ -8,6 +9,7 @@ export default {
                 <!--Search bar-->
                 <!--Note add-->
                 <note-list :notes="notes" />
+                <note-add />
 
             </section>
     
@@ -28,6 +30,7 @@ export default {
         this.getNotes();
     },
     components: {
+        noteAdd,
         noteList
     }
 
