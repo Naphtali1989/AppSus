@@ -8,27 +8,46 @@ export default {
             <section class="email-app">
                 <h1>mail-app</h1>
                 <search-section />
-                <email-board :emails="currMails"/>
+                <email-board :emails="currMails" @switchedNav="setEmailsToShow"/>
                 <router-view />
             </section>
             `,
     data() {
         return {
             currMails: '',
+            emailsToShow: 'inbox'
         }
     },
     methods: {
-        getMails() {
+        setEmailsToShow(status) {
+            console.log('status is: ', status)
+            this.emailsToShow = status;
+            switch (status) {
+                case 'deleted':
+                    this.getDeletedEmails();
+                    break;
+                case 'inbox':
+                    this.getEmails();
+                    break;
+            }
+        },
+        getEmails() {
             emailService.getEmailsToDisplay()
+                .then(res => this.currMails = res)
+        },
+        getDeletedEmails() {
+            emailService.getDeletedEmailsToDisplay()
                 .then(res => this.currMails = res)
         }
     },
     created() {
-        this.getMails()
+        this.getEmails();
+    },
+    updated() {
+        // this.setEmailsToShow(this.emailsToShow)
     },
     components: {
         searchSection,
         emailBoard,
-
     }
 }
