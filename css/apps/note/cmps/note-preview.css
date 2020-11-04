@@ -3,8 +3,26 @@
     border-radius: 5px;
     margin-inline-start: 15px;
     margin-inline-end: 15px;
+    color: black;
+    width: 200px;
+    /* padding: 2rem; */
 }
 
 .note-preview .note-img {
+    width: 100%;
     min-height: 200px;
+    object-fit: cover;
+}
+
+.control-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.note-preview .btns-section {
+    visibility: hidden;
+}
+
+.note-preview:hover .btns-section {
+    visibility: visible;
 }

@@ -54,6 +54,11 @@ function getNotesForDisplay() {
 }
 
 
+// function getNoteById(noteId) {
+//     return gNotes.findIndex(note => note)
+// }
+
+
 function addNote(note) {
     console.log('note?:', note)
     note.id = utilService.makeId()
@@ -65,6 +70,14 @@ function addNote(note) {
 }
 
 
+function deleteNote(noteId) {
+    const noteIdx = gNotes.findIndex(note => note.id === noteId);
+    if (noteIdx === -1) return Promise.reject();
+    gNotes.splice(noteIdx, 1);
+    _saveNotesToStorage();
+    return Promise.resolve();
+}
+
 
 function _saveNotesToStorage() {
     utilService.saveToStorage(STORAGE_KEY, gNotes);
@@ -74,5 +87,6 @@ function _saveNotesToStorage() {
 
 export const noteService = {
     getNotesForDisplay,
-    addNote
+    addNote,
+    deleteNote
 }
