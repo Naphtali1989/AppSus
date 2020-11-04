@@ -3,9 +3,9 @@ export default {
     template: `
                 <header class="app-header">
                     <div class="brand">
-                        AppSus
+                        <img src="assets/main-app/img/logo.png"/> AppSus
                     </div>
-                    <nav class="clean-list">
+                    <nav class="main-nav clean-list">
                         <li>
                             <router-link to="/" exact>Home</router-link>
                         </li>
