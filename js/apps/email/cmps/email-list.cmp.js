@@ -5,8 +5,8 @@ export default {
     template: `
                 <section class="email-list">
                     <ul class="clean-list">
-                        <li v-for="emailItem in mails" :key="emailItem.id">
-                            <mail-preview :email="emailItem"/>
+                        <li v-for="emailItem in emails" :key="emailItem.id">
+                            <email-preview :email="emailItem"/>
                         </li>
                         {{emails}}
                     </ul>               
