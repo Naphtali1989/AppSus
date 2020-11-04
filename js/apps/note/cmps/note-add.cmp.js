@@ -7,7 +7,7 @@ export default {
             <section class="note-add-container">
                 <div class="input-container">
                     <form @submit.prevent="onAddNote">
-                        <input type="text" :placeholder="placeholder" v-model="newNote.info.txt" @submit=""/>
+                        <input type="text" :placeholder="placeholder" v-model="newNote.info.txt"/>
                     </form>
                     <div class="btns-container">
                         <button class="btn" @click.stop="setMode('noteTxt')"><i class="fas fa-font fa-2x"></i></button>
@@ -29,7 +29,9 @@ export default {
                 info: {
                     txt: ''
                 },
-                backgroundColor: '#ffff88',
+                style: {
+                    backgroundColor: '#ffff88',
+                },
                 type: 'noteTxt'
             }
         }

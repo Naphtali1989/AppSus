@@ -4,7 +4,7 @@ export default {
     template: `
             <section class="note-img">
                 <img :src="note.info.txt" alt=""/>
-                <p>{{note.info.txt}}</p>
+                <p>Vue js is cool</p>
             </section>
 
 
