@@ -1,4 +1,5 @@
 import { myRouter } from './routes.js';
+import userMsg from './apps/main-cmps/user-msg.cmp.js';
 
 const options = {
     el: '#appSus',
@@ -6,19 +7,19 @@ const options = {
     template: `
         <section >
 
-            <head-cmp />
+            <!-- <head-cmp /> -->
 
             <router-view class="router-view"/>
 
             <user-msg />
 
-            <foot-cmp />
+            <!-- <foot-cmp /> -->
 
         </section>
     `,
     components: {
-        footCmp,
-        headCmp,
+        // footCmp,
+        // headCmp,
         userMsg
     },
 }
