@@ -18,7 +18,7 @@ const myRoutes = [{
         path: '/email',
         component: emailApp,
         children: [{
-            path: '/email/board',
+            path: '/email/board/:details?',
             component: emailBoard,
         }, {
             path: '/email/:emailId',

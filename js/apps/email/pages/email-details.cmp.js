@@ -1,10 +1,11 @@
 import { emailService } from '../email-service.js';
+import { eventBus, SENT_REPLY_EMAIL } from '../../../services/event-bus-service.js';
 
 export default {
     name: 'emailDetails',
     template: `
         <section class="email-details">
-            <button class="email-display-close-btn btn" @click="closeEditMode"><i class="fas fa-backspace"></i></button>
+            <button class="email-display-close-btn btn" @click="closeDetailMode"><i class="fas fa-backspace"></i></button>
             <div class="email-display-header flex space-between">
                <h1 class="email-display-title"> {{emailToDesplay.subject}}</h1>
                <div class="email-display-btns">
@@ -23,19 +24,24 @@ export default {
         }
     },
     methods: {
-        closeEditMode() {
+        closeDetailMode() {
             this.$router.push('/email/board')
         },
         deleteEmail() {
-            console.log('work in progress')
             emailService.deleteEmail(this.emailToDesplay.id)
-                .then(res => {
-                    this.closeEditMode();
-                })
-
+            this.closeDetailMode();
+            // .then(res => {
+            // })
         },
         openReply() {
-            console.log('not yet in')
+            console.log('this email is:', this.emailToDesplay)
+            const replyDetail = {
+                composer: this.emailToDesplay.composerEmail,
+                subject: this.emailToDesplay.subject,
+                body: this.emailToDesplay.body,
+                sentAt: this.emailToDesplay.sentAt
+            }
+            eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
         },
         saveToNote() {
             console.log('not yet in')

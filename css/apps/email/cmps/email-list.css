@@ -4,4 +4,5 @@
 
 .email-list ul {
     flex: 1;
+    margin: 0;
 }

@@ -2,7 +2,8 @@ export const utilService = {
     saveToStorage,
     loadFromStorage,
     getRandomDate,
-    makeId
+    makeId,
+    getRandomInt
 }
 
 
@@ -33,4 +34,10 @@ function getRandomDate() {
     var start = new Date(2010, 0, 1)
     var end = new Date()
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
 }

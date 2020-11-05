@@ -1,14 +1,16 @@
 .email-preview {
+    position: relative;
     background-color: rgb(255, 255, 255);
     padding: 1rem;
     font-size: 1.25rem;
     border-radius: 1px;
-    box-shadow: inset 0px 0px 0px 0px #000000, 1px 0px 0px 1px #000000;
     transition: box-shadow .3s;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
 }
 
 .email-preview:hover {
-    box-shadow: inset 1px -1px 0px 1px #000000, 2px 1px 5px 1px #000000;
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    z-index: 2;
 }
 
 .email-preview.email-read {

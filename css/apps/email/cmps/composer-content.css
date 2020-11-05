@@ -1,0 +1,57 @@
+.composer-content {
+    background-color: #fff;
+    border: 1px solid grey;
+    flex: 1;
+}
+
+.composer-content-head,
+.composer-content-subhead {
+    padding: 1rem;
+    font-size: 1.25rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.composer-content-head input,
+.composer-content-subhead input {
+    margin-inline-start: 1rem;
+    border: none;
+    outline: none;
+}
+
+.composer-content-body {
+    flex: 1;
+}
+
+.composer-email-body-txt {
+    padding: 1rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+.composer-footer-btns {
+    padding: 0.25rem 0;
+}
+
+.email-send,
+.email-composer-close-btn {
+    padding: 1rem;
+    color: rgba(128, 128, 128);
+    font-size: 1.25rem;
+    transition: all .3s;
+}
+
+.email-send:hover,
+.email-composer-close-btn:hover {
+    color: black;
+    background-color: rgba(128, 128, 128, 0.35);
+}
+
+.email-composer-close-btn {
+    border-radius: 50%;
+}
+
+.email-send {
+    border-radius: 4px;
+}

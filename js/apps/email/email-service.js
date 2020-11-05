@@ -56,7 +56,9 @@ const defaultEmails = [{
     },
 ]
 
-// var gFilterBy = null;
+var sampleComposers = ['Mozeratti', 'Bakla', 'Peugoutnini', 'Shortpen', 'Bethover', 'Vardinion', 'Naphtali', 'Idan', 'Eyal', 'Github'];
+var sampleEmails = ['necimih692@play588.com', 'pifese4541@peevr.com', 'kajefik349@peevr.com', 'losewi2043@play588.com', 'daxaxi5278@pnrep.com']
+    // var gFilterBy = null;
 var gEmails;
 
 export const emailService = {
@@ -65,6 +67,9 @@ export const emailService = {
     getEmailById,
     toggleEmailMark,
     toggleEmailRead,
+    getEmptyEmail,
+    saveEmailDraft,
+    saveEmailSent,
 
 }
 
@@ -101,35 +106,33 @@ function getEmailsToDisplay(filterBy) {
     return Promise.resolve(emails);
 }
 
-function getDeletedEmailsToDisplay() {
-    gDeletedEmails = loadDeletedEmailsFromStorage();
-    if (!gDeletedEmails || gDeletedEmails.length < 1) {
-        gDeletedEmails = []
-        saveDeletedEmailsToStorage();
-    }
-    return Promise.resolve(gDeletedEmails);
+function saveEmailDraft(email) {
+    email.isDraft = true;
+    gEmails.unshift(email)
+    saveEmailsToStorage();
+    return Promise.resolve(email);
 }
 
-// function getDeletedEmailsToDisplay() {
-//     gDeletedEmails = loadDeletedEmailsFromStorage();
-//     if (!gDeletedEmails || gDeletedEmails.length < 1) {
-//         gDeletedEmails = []
-//         saveDeletedEmailsToStorage();
-//     }
-//     console.log('g gDeletedEmails is:', gDeletedEmails)
-//     return Promise.resolve(gDeletedEmails);
-// }
+function saveEmailSent(email) {
+    email.isSent = true;
+    email.isDraft = false;
+    gEmails.unshift(email)
+    saveEmailsToStorage();
+    return Promise.resolve(email);
+}
 
 function deleteEmail(id) {
-    return getEmailIdxById(id).then(res => {
-        // if (!gEmails[res].isTrash) {
-        //     gEmails[res].isTrash = true;
-        //     saveEmailsToStorage();
-        //     return gEmails[res].id; // returns promise
-        // }
+    getEmailIdxById(id).then(res => {
+        console.log(res)
+            // if (!gEmails[res].isTrash) {
+            //     gEmails[res].isTrash = true;
+            //     saveEmailsToStorage();
+            //     return gEmails[res].id; // returns promise
+            // }
+        if (res === null) return
         gEmails.splice(res, 1)
         saveEmailsToStorage();
-        return Promise.resolve(gEmails[0].id)
+        return res
     })
 }
 
@@ -140,7 +143,7 @@ function getEmailById(id) {
 
 function getEmailIdxById(id) {
     const index = gEmails.findIndex(email => email.id === id)
-    if (index === -1) return Promise.resolve(0)
+    if (index === -1) return Promise.resolve(null)
     return Promise.resolve(index);
 }
 
@@ -152,10 +155,11 @@ function loadEmailsFromStorage() {
     return storageService.loadFromStorage(EMAIL_STORAGE_KEY)
 }
 
-function _getEmptyEmail() {
+function getEmptyEmail() {
     return {
-        composer: '',
-        composerEmail: '',
+        composer: sampleComposers[utilService.getRandomInt(0, sampleComposers.length)],
+        composerEmail: sampleEmails[utilService.getRandomInt(0, sampleEmails.length)],
+        toName: '',
         subject: '',
         body: '',
         isRead: false,
