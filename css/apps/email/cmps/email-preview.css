@@ -1,16 +1,13 @@
 .email-preview {
     position: relative;
     background-color: rgb(255, 255, 255);
-    padding: 1rem;
-    font-size: 1.25rem;
-    border-radius: 1px;
+    padding: 0.25rem;
+    height: 5rem;
+    font-size: 0.85rem;
+    color: rgb(100, 100, 100);
+    font-family: roboto, Arial, Helvetica, sans-serif;
     transition: box-shadow .3s;
     border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-}
-
-.email-preview:hover {
-    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    z-index: 2;
 }
 
 .email-preview.email-read {
@@ -20,9 +17,16 @@
 
 .email-preview .btn {
     font-size: 1.25rem;
-    padding: 0.75rem;
+    padding: 0.55rem;
     border-radius: 50%;
+    color: rgb(51, 51, 51);
     transition: background-color .3s;
+}
+
+.preview-btns {
+    position: absolute;
+    right: 0;
+    z-index: 3;
 }
 
 .email-preview .btn:hover {
@@ -31,4 +35,17 @@
 
 .marked {
     color: rgb(207, 173, 87);
+}
+
+.email-preview:hover {
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    z-index: 2;
+}
+
+.email-preview-composer-name {
+    width: 20%;
+}
+
+.email-preview-subject {
+    width: 40%;
 }

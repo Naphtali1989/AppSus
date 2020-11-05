@@ -5,11 +5,10 @@ import { eventBus, SET_FILTER, SET_SORT, SET_SEARCH } from '../../../services/ev
 
 export default {
     template: `
-            <section class="search-section flex">
+            <section class="search-section">
                 <search-bar  @setSearch="emitSetSearch"/>     
                 <sort-bar :term="'date'" @setSort="emitSetSort"/>
                 <filter-bar :term="'all'" @setFilter="emitSetFilter"/>
-
             </section>
             `,
     data() {

@@ -11,16 +11,18 @@ export default {
                 </button>
                 <div class="email-preview-composer-name"><long-txt :txt="email.composer" :size="10" /></div>
                 <div class="email-preview-subject"><long-txt :txt="email.subject" :size="20" /></div>
-                <div class="email-preview-body"><long-txt :txt="email.body" :size="25" /></div>
+                <div class="email-preview-body hide"><long-txt :txt="email.body" :size="25" /></div>
                 <div class="email-preview-time">{{emailTime}}</div>
                 
-                <button class="email-delete-btn btn" @click.stop="deleteEmail" title="Delete">
-                    <i class="fas fa-trash"></i>
-                </button>
-                <button class="email-mark-btn btn" @click.stop="markEmail">
-                    <i v-if="email.isRead" class="far fa-envelope-open" title="Mark as unread"></i>
-                    <i v-if="!email.isRead" class="far fa-envelope" title="Mark as read"></i>
-                </button>
+                <div class="preview-btns flex hide"> 
+                    <button class="email-delete-btn btn" @click.stop="deleteEmail" title="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    <button class="email-mark-btn btn " @click.stop="markEmail">
+                        <i v-if="email.isRead" class="fas fa-envelope-open" title="Mark as unread"></i>
+                        <i v-if="!email.isRead" class="fas fa-envelope" title="Mark as read"></i>
+                    </button>
+                </div>
             </section>
             `,
     methods: {

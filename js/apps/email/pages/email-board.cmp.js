@@ -6,7 +6,7 @@ import { eventBus, SET_FILTER, SET_SORT, SET_SEARCH } from '../../../services/ev
 export default {
     name: `emailBoard`,
     template: `
-            <section class="email-board flex">
+            <section class="email-board flex column">
                 <email-list :emails="currMailsShowing"  @emailDeleted="refreshEmails"/>
             </section>
             `,

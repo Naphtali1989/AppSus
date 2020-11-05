@@ -1,7 +1,7 @@
 export default {
     props: ['term'],
     template: `
-            <section class="filter-bar">
+            <section class="filter-bar hide">
                 <input type="radio" id="All" value="all" v-model="filterTerm">
                 <label for="All" @click="emitFilterTerm('all')">All</label>
 

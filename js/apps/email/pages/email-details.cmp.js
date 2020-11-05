@@ -25,6 +25,7 @@ export default {
     },
     methods: {
         closeDetailMode() {
+            this.emailToDesplay.isRead = true;
             this.$router.push('/email/board')
         },
         deleteEmail() {
@@ -51,13 +52,19 @@ export default {
     created() {
         const id = this.$route.params.emailId;
         emailService.getEmailById(id)
-            .then(res => this.emailToDesplay = res)
+            .then(res => {
+                this.emailToDesplay = res
+
+            })
     },
     watch: {
         '$route.params.emailId' (to, from) {
             // console.log('the to is:', to, 'The from is:', from)
             emailService.getEmailById(to)
-                .then(res => this.emailToDesplay = res)
+                .then(res => {
+                    this.emailToDesplay = res
+                        // this.emailToDesplay.isRead = true;
+                })
         }
     }
 }
