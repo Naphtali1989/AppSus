@@ -3,24 +3,12 @@ export default {
     props: ['note'],
     name: 'note-video',
     template: `
-            <section class="note-video" v-show="note">
-                 <iframe width="200" height="200" :src="note.info.val" class="video-frame" frameBorder="0"></iframe>
+            <section class="note-video">
+                 <iframe width="200" height="200" :src="convertedUrl" class="video-frame" frameBorder="0"></iframe>
                   <p contenteditable="true" class="img-title"  @blur="emitChange">{{note.info.title}}</p>
             </section>
     `,
-    data() {
-        return {
-            isFixed: false
-        }
-    },
     methods: {
-        convertUrl(url) {
-            console.log('the url:', url)
-            var id = url.split("?v=")[1];
-            console.log('id:', id)
-            this.note.info.val = `http://www.youtube.com/embed/${id}`;
-
-        },
         emitChange(ev) {
             console.log('event:', ev)
             console.log('getting:', ev.target.textContent)
@@ -28,8 +16,13 @@ export default {
             this.$emit('update', this.note.id)
         }
     },
-    created() {
-        console.log('Note video:', this.note.info.val)
-        this.convertUrl(this.note.info.val)
-    }
+    computed: {
+        convertedUrl() {
+            var id = this.note.info.val.split("?v=")[1];
+            console.log('youtube id:', id)
+            return `http://www.youtube.com/embed/${id}`;
+
+
+        }
+    },
 }

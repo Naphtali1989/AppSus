@@ -28,9 +28,10 @@ export default {
                 noteTodo: 'Please enter a todo'
             },
             titles: {
-
+                noteTxt: 'Txt title go here',
+                noteImg: 'img tritrle go here',
+                noteVideo: 'video title go here'
             },
-            noteType: 'noteTxt',
             newNote: {
                 info: {
                     title: 'Txt title goes here'
@@ -51,23 +52,19 @@ export default {
             }
             const deepCopy = JSON.parse(JSON.stringify(this.newNote))
             this.$emit('addNote', deepCopy);
-            this.newNote = {
+            let type = this.newNote.type
+            this.newNote.info = {
                 val: '',
-                title: ''
+                title: this.titles[type]
 
             }
         },
         setMode(type) {
-            this.newNote.info.val = ''
-            this.newNote.title
-            if (type === 'noteTxt') {
-                this.newNote.info = { val: '', title: 'Txt title goes here' }
-            } else if (type === 'noteImg') {
-                this.newNote.info = { val: '', title: 'Image Title goes here' }
-            } else if (type === 'noteVideo') {
-                this.newNote.info = { val: '', title: 'Video Title goes here' }
-            }
             this.newNote.type = type
+            this.newNote.info = {
+                val: '',
+                title: this.titles[type]
+            }
         }
     },
     computed: {

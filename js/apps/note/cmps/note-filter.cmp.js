@@ -21,7 +21,6 @@ export default {
     },
     methods: {
         emitFilter() {
-            console.log('clicked!')
             this.$emit('doFilter', this.filterBy);
         }
     }
