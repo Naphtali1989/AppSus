@@ -46,7 +46,6 @@ export default {
             console.log('Not yet in!')
         },
         saveToDrafts() {
-            console.log(this.email.subject)
             if (!this.email.subject) return this.emitStopCompose();
             emailService.saveEmailDraft(this.email)
                 .then(res => {
@@ -67,11 +66,14 @@ export default {
     },
     created() {
         this.email = emailService.getEmptyEmail();
-        const details = JSON.parse(this.$route.params.details);
-        if (details) {
-            this.email.subject = details.subject
+        var details = this.$route.params.details;
+        if (details && details !== 'null') {
+            console.log('why am i even here???', details)
+            const { sentAt, subject, composer, body } = JSON.parse(details)
+            this.email.subject = 'Re: ' + subject
+            this.email.body = `On ${sentAt} <${composer}> wrote: "${body}"`
+            this.email.toName = composer
         }
-        console.log(JSON.parse(details))
     },
     components: {
         composerContent,

@@ -1,6 +1,6 @@
 import { emailService } from '../email-service.js';
 import emailList from '../cmps/email-list.cmp.js';
-import { eventBus } from '../../../services/event-bus-service.js';
+import { eventBus, SET_FILTER } from '../../../services/event-bus-service.js';
 
 
 export default {
@@ -42,6 +42,11 @@ export default {
         eventBus.$on('switchedNav', status => {
             this.$router.push('/email/board')
             this.getEmails(status)
+        })
+        eventBus.$on(SET_FILTER, filterby => {
+            var status = (filterby === 'all') ? null : 'isRead';
+            if (filterby === 'all')
+                this.getEmails(status)
         })
     },
     components: {

@@ -7,14 +7,20 @@ export default {
             <section class="search-section flex">
                 <search-bar />     
                 <sort-bar :term="sortBy"/>
-                <filter-bar :term="filterBy.mailStatus"/>
+                <filter-bar :term="'all'" @setFilter="emitFilterStatus"/>
 
             </section>
             `,
     data() {
         return {
             sortBy: 'date',
-            filterBy: { searchTerm: '', mailStatus: 'All' }
+            searchBy: ''
+        }
+    },
+    methods: {
+        emitFilterStatus(filterTerm) {
+            console.log('status of filter is:', filterTerm)
+            this.$emit('setFilter', filterTerm)
         }
     },
     components: {

@@ -35,11 +35,11 @@ export default {
         },
         openReply() {
             console.log('this email is:', this.emailToDesplay)
-                // const replyDetail = `{composer${this.emailToDesplay.composer}+subject:${this.emailToDesplay.subject}+body${this.emailToDesplay.body}`
             const replyDetail = {
-                composer: this.emailToDesplay.composer,
+                composer: this.emailToDesplay.composerEmail,
                 subject: this.emailToDesplay.subject,
-                body: this.emailToDesplay.body
+                body: this.emailToDesplay.body,
+                sentAt: this.emailToDesplay.sentAt
             }
             eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
         },

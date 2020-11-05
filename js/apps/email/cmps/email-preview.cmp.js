@@ -4,7 +4,7 @@ import longTxt from './long-txt.cmp.js';
 export default {
     props: ['email'],
     template: `
-            <section class="email-preview flex align-center space-between btn" :class="emailReadChecker">
+            <section class="email-preview flex align-center btn" :class="emailReadChecker">
                 <button class="prioritize-btn btn" @click.stop="prioritizeEmail">
                     <span v-if="!email.isMarked" class="far fa-star" title="Mark as important"></span>
                     <span v-if="email.isMarked" class="fas fa-star marked" title="Unmark priority"></span>
