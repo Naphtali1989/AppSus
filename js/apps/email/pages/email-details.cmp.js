@@ -1,4 +1,5 @@
 import { emailService } from '../email-service.js';
+import { eventBus, SENT_REPLY_EMAIL } from '../../../services/event-bus-service.js';
 
 export default {
     name: 'emailDetails',
@@ -27,14 +28,20 @@ export default {
             this.$router.push('/email/board')
         },
         deleteEmail() {
-            console.log('work in progress')
             emailService.deleteEmail(this.emailToDesplay.id)
-                .then(res => {
-                    this.closeDetailMode();
-                })
+            this.closeDetailMode();
+            // .then(res => {
+            // })
         },
         openReply() {
-            console.log('not yet in')
+            console.log('this email is:', this.emailToDesplay)
+                // const replyDetail = `{composer${this.emailToDesplay.composer}+subject:${this.emailToDesplay.subject}+body${this.emailToDesplay.body}`
+            const replyDetail = {
+                composer: this.emailToDesplay.composer,
+                subject: this.emailToDesplay.subject,
+                body: this.emailToDesplay.body
+            }
+            eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
         },
         saveToNote() {
             console.log('not yet in')

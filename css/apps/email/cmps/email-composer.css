@@ -4,6 +4,8 @@
     width: 450px;
     right: 3rem;
     bottom: 0;
+    z-index: 200;
+    transition: all .2s;
 }
 
 .composer-head {
@@ -17,4 +19,13 @@
 .maximize-toggle-btn,
 .composer-close-btn {
     color: white;
+}
+
+.email-composer.minimized {
+    height: 50px;
+    width: 320px;
+}
+
+.composer-close-btn {
+    font-size: 1.15rem;
 }

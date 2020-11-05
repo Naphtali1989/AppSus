@@ -7,7 +7,7 @@ export default {
     name: `emailBoard`,
     template: `
             <section class="email-board flex">
-                <email-list :emails="currMails"  @bookDeleted="refreshEmails"/>
+                <email-list :emails="currMailsShowing"  @bookDeleted="refreshEmails"/>
             </section>
             `,
     data() {
@@ -16,9 +16,17 @@ export default {
             emailsToShow: null,
         }
     },
+    computed: {
+        currMailsShowing() {
+            return this.currMails
+        }
+    },
     methods: {
         refreshEmails() {
-            this.getEmails(this.emailsToShow)
+            // this.$router.push('/email')
+            console.log('refreshing!')
+            eventBus.$emit('switchedNav', this.emailsToShow);
+            // this.setEmailsToShow(this.emailsToShow)
         },
         setEmailsToShow(status) {
             this.getEmails(status)
