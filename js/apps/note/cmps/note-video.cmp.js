@@ -20,9 +20,7 @@ export default {
         convertedUrl() {
             var id = this.note.info.val.split("?v=")[1];
             console.log('youtube id:', id)
-            return `http://www.youtube.com/embed/${id}`;
-
-
+            return `https://www.youtube.com/embed/${id}`;
         }
     },
 }
