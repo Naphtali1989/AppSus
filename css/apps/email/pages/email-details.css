@@ -5,17 +5,22 @@
 }
 
 .email-display-header {
-    /* font-size: 2rem; */
-    padding: 1rem;
-    border-bottom: 1px solid black;
+    color: rgb(100, 100, 100);
+    padding: 0.5rem;
+    border-bottom: 1px solid rgb(160, 160, 160);
+}
+
+.email-display-title {
+    max-width: 50%;
 }
 
 .email-display-close-btn,
 .email-display-reply-btn,
 .email-display-save-btn,
 .email-display-delete-btn {
-    font-size: 1.5rem;
-    padding: 1rem;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    color: rgb(60, 60, 60);
     border-radius: 50%;
     transition: all .2s;
 }
@@ -27,13 +32,22 @@
     background-color: rgb(240, 236, 236);
 }
 
+.email-display-name,
+.email-display-body {
+    font-family: roboto, Arial, Helvetica, sans-serif;
+    color: rgb(60, 60, 60);
+}
+
 .email-display-name {
-    font-size: 1.5rem;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .email-display-body {
     font-size: 1.25rem;
-    margin: 0 auto;
-    padding-inline-start: 3rem;
+    padding: 1rem;
+}
+
+.muted-txt {
+    margin: 0.25rem;
+    color: rgb(160, 160, 160);
 }

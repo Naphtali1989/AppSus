@@ -1,7 +1,8 @@
 .composer-content {
-    background-color: #fff;
-    border: 1px solid grey;
+    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(151, 151, 151);
     flex: 1;
+    color: rgb(80, 80, 80);
 }
 
 .composer-content-head,
@@ -13,6 +14,7 @@
 
 .composer-content-head input,
 .composer-content-subhead input {
+    background-color: rgb(246, 246, 246);
     margin-inline-start: 1rem;
     border: none;
     outline: none;

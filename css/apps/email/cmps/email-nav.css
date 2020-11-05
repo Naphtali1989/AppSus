@@ -2,6 +2,7 @@
     background-color: white;
     font-size: 1.25rem;
     flex: 1;
+    color: rgb(100, 100, 100);
 }
 
 .email-nav-list {
@@ -9,7 +10,6 @@
 }
 
 .new-email-open-btn {
-    /* background-image: url(../../../../assets/email/img/icon/create_32dp.png); */
     position: fixed;
     display: flex;
     background-color: white;
@@ -33,10 +33,58 @@
 }
 
 .email-nav li.focused {
-    background-color: #c86b6b2d;
+    background-color: #c86b6b25;
+    color: rgb(55, 55, 55);
 }
 
-
-/* .email-nav li:hover {
-    background-color: #1C6EA410;
-} */
+@media (min-width:640px) {
+    .email-nav {
+        flex: unset;
+    }
+    .new-email-open-btn {
+        position: static;
+        align-items: center;
+        margin: 1rem 2rem 1rem 2rem;
+        border-radius: 3rem;
+    }
+    .email-nav-list {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .email-nav li {
+        border-radius: 0 2rem 2rem 0;
+        padding: 1rem 2rem;
+    }
+    .email-nav li:hover {
+        background-color: #1C6EA410;
+    }
+    .new-email-open-btn::after {
+        content: "Compose";
+        font-size: 1.25rem;
+        padding: 0 1rem;
+    }
+    .inbox-navigator::after {
+        content: "Inbox";
+    }
+    .starred-navigator::after {
+        content: "Starred";
+    }
+    .sent-navigator::after {
+        content: "Sent";
+    }
+    .drafts-navigator::after {
+        content: "Drafts";
+    }
+    .trash-navigator::after {
+        content: "Trash";
+    }
+    .inbox-navigator::after,
+    .starred-navigator::after,
+    .sent-navigator::after,
+    .drafts-navigator::after,
+    .trash-navigator::after {
+        font-size: 1rem;
+        padding: 0 1rem;
+        font-family: roboto, Arial, Helvetica, sans-serif;
+    }
+}

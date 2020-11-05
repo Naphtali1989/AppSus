@@ -3,3 +3,9 @@
     border-bottom: 1px solid rgba(128, 128, 128, 0.5);
     width: 100%;
 }
+
+@media (min-width:680px) {
+    .search-section {
+        display: flex;
+    }
+}

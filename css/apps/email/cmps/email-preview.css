@@ -26,7 +26,12 @@
 .preview-btns {
     position: absolute;
     right: 0;
-    z-index: 3;
+    z-index: 5;
+}
+
+.email-preview:hover .preview-btns {
+    background-color: inherit;
+    display: flex;
 }
 
 .email-preview .btn:hover {
@@ -42,10 +47,41 @@
     z-index: 2;
 }
 
+.email-preview-composer-name,
+.email-preview-subject,
+.email-preview-body {
+    padding-inline-start: 1rem;
+}
+
 .email-preview-composer-name {
-    width: 20%;
+    width: 25%;
+    text-overflow: ellipsis;
 }
 
 .email-preview-subject {
-    width: 40%;
+    width: 30%;
+    text-overflow: ellipsis;
+}
+
+.email-preview-body {
+    width: 30%;
+}
+
+.email-preview-time {
+    flex: 1;
+    padding: 0.5rem;
+    text-align: end;
+}
+
+@media (min-width:1080px) {
+    .email-preview-composer-name {
+        width: 15%;
+    }
+    .email-preview-subject {
+        width: 25%;
+    }
+    .email-preview-body {
+        display: block;
+        width: 40%;
+    }
 }
