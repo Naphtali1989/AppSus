@@ -1,11 +1,11 @@
 .email-details {
-    padding: 2rem;
+    padding: 0.5rem;
     max-width: 1060px;
     flex: 1;
 }
 
 .email-display-header {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     padding: 1rem;
     border-bottom: 1px solid black;
 }
