@@ -12,7 +12,7 @@ export default {
                 <note-add @addNote="onAddNote" />
                 <template v-if="notes">
                     <h3>Pinned</h3>
-                    <note-list :notes="pinnedNotes" />
+                    <note-list :notes="notesToShow" />
                     <h3>Others</h3>
                     <note-list :notes="unPinnedNotes" />
                 </template>
@@ -47,14 +47,12 @@ export default {
     },
     computed: {
         notesToShow() {
-            console.log('notes in filter:', this.notes)
             if (!this.filterBy) return this.notes;
-            const { byText, byNoteType } = this.filterBy;
-            const title = byText.toLowerCase();
-            console.log('what is title?:', title)
+            const { txt, type } = this.filterBy;
+            if (type === 'all') return this.notes;
             return this.notes.filter(note => {
-                if (note.type === 'noteTxt') return note.info.txt.toLowerCase().includes(title)
-                else return note.info.title.toLowerCase().includes(title)
+                return note.info.title.toLowerCase().includes(txt.toLowerCase()) &&
+                    note.type === type
             })
         },
         pinnedNotes() {
@@ -80,3 +78,17 @@ export default {
     }
 
 }
+
+
+
+// notesToShow() {
+//         console.log('notes in filter:', this.notes)
+//         if (!this.filterBy) return this.notes;
+//         const { txt, type } = this.filterBy;
+//         const title = txt.toLowerCase();
+//         console.log('what is title?:', title)
+//         return this.notes.filter(note => {
+//             if (note.type === 'noteTxt') return note.info.txt.toLowerCase().includes(title)
+//             else return note.info.title.toLowerCase().includes(title)
+//         })
+//     },
