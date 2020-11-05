@@ -3,7 +3,7 @@ import { eventBus } from '../../../services/event-bus-service.js';
 export default {
     template: `
             <section class="email-nav flex column">
-                <button class="new-email-open-btn btn" @click="openNewEmail">+ Compose</button>
+                <button class="new-email-open-btn btn" @click="emitCompose">+ Compose</button>
                 <ul class="clean-list email-navbar">
                     <li class="inbox-navigator btn" @click="emitNavChange()"><i class="fas fa-inbox"></i> Inbox</li>
                     <li class="starred-navigator btn" @click="emitNavChange('isMarked')"><i class="fas fa-star"></i> Starred</li>
@@ -14,11 +14,12 @@ export default {
             </section>
             `,
     methods: {
-        openNewEmail() {
-            console.log('writing a new mail!')
+        emitCompose() {
+            this.$emit('startCompose')
+            console.log('Whats wrong with this????')
+
         },
         emitNavChange(status = null) {
-            // this.$emit('switchedNav', status)
             eventBus.$emit('switchedNav', status);
         }
     }

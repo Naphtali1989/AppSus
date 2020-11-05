@@ -9,6 +9,7 @@ export default {
                     <span v-if="!email.isMarked" class="far fa-star" title="Mark as important"></span>
                     <span v-if="email.isMarked" class="fas fa-star marked" title="Unmark priority"></span>
                 </button>
+                <div class="email-preview-composer-name"><long-txt :txt="email.composer" :size="10" /></div>
                 <div class="email-preview-subject"><long-txt :txt="email.subject" :size="20" /></div>
                 <div class="email-preview-body"><long-txt :txt="email.body" :size="25" /></div>
                 <div class="email-preview-time">{{emailTime}}</div>

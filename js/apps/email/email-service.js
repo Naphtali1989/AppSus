@@ -65,6 +65,7 @@ export const emailService = {
     getEmailById,
     toggleEmailMark,
     toggleEmailRead,
+    getEmptyEmail,
 
 }
 
@@ -110,16 +111,6 @@ function getDeletedEmailsToDisplay() {
     return Promise.resolve(gDeletedEmails);
 }
 
-// function getDeletedEmailsToDisplay() {
-//     gDeletedEmails = loadDeletedEmailsFromStorage();
-//     if (!gDeletedEmails || gDeletedEmails.length < 1) {
-//         gDeletedEmails = []
-//         saveDeletedEmailsToStorage();
-//     }
-//     console.log('g gDeletedEmails is:', gDeletedEmails)
-//     return Promise.resolve(gDeletedEmails);
-// }
-
 function deleteEmail(id) {
     return getEmailIdxById(id).then(res => {
         // if (!gEmails[res].isTrash) {
@@ -152,7 +143,7 @@ function loadEmailsFromStorage() {
     return storageService.loadFromStorage(EMAIL_STORAGE_KEY)
 }
 
-function _getEmptyEmail() {
+function getEmptyEmail() {
     return {
         composer: '',
         composerEmail: '',

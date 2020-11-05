@@ -1,5 +1,6 @@
 import searchSection from '../cmps/search-section.cmp.js';
 import emailNav from '../cmps/email-nav.cmp.js';
+import emailComposer from '../cmps/email-composer.cmp.js';
 // import { emailService } from '../email-service.js';
 
 export default {
@@ -8,23 +9,26 @@ export default {
             <section class="email-app">
                 <search-section />
                 <div class="flex">
-                <email-nav @switchedNav="setEmailsToShow" />
+                    <email-nav @startCompose="toggleComposer" />
                     <router-view />
                 </div>
+                <email-composer v-if="showComposer" @stopCompose="toggleComposer"/>
             </section>
             `,
     data() {
         return {
-
+            isComposing: false,
         }
     },
     computed: {
-
+        showComposer() {
+            return this.isComposing
+        },
     },
     methods: {
-        setEmailsToShow(status) {
-            console.log('', status)
-                // this.$router.push('/email/board', )
+        toggleComposer() {
+            console.log('lets start composing', this.isComposing)
+            this.isComposing = !this.isComposing
         }
     },
     created() {
@@ -33,6 +37,7 @@ export default {
 
     components: {
         searchSection,
-        emailNav
+        emailNav,
+        emailComposer
     }
 }
