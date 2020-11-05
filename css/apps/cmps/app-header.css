@@ -17,6 +17,7 @@ body {
     z-index: 100;
     text-align: center;
     transform: translateX(-100%);
+    display: none;
 }
 
 .logo {

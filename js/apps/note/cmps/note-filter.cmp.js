@@ -2,7 +2,7 @@ export default {
     name: 'noteFilter',
     template: `
                 <section>
-                    <form>
+                    <form @submit.prevent="emitFilter">
                         <input type="text" v-model.trim="filterBy.byText"/>
                         <select v-model="filterBy.byNoteType">
                             <option value="noteTxt">Text</option>
@@ -19,6 +19,7 @@ export default {
     },
     methods: {
         emitFilter() {
+            console.log('clicked!')
             this.$emit('doFilter', this.filterBy);
         }
     }

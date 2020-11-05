@@ -4,6 +4,7 @@
 @import './base.css';
 @import './apps/cmps/dumby-file.css';
 @import './apps/cmps/app-header.css';
+@import './apps/cmps/user-msg.css';
 
 /* EMAIL */
 
@@ -15,10 +16,14 @@
 @import './apps/email/cmps/search-bar.css';
 @import './apps/email/cmps/filter-bar.css';
 @import './apps/email/cmps/sort-bar.css';
+@import './apps/email/cmps/email-preview.css';
+@import './apps/email/cmps/email-nav.css';
 
 /* PAGES */
 
 @import './apps/email/pages/dumby-file.css';
+@import './apps/email/pages/email-details.css';
+@import './apps/email/pages/email-board.css';
 @import './apps/email/pages/email-app.css';
 
 /* NOTE */

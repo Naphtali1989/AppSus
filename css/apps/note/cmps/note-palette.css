@@ -1,6 +1,6 @@
 .palette-container {
-    width: 109px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
     background: #fafafa;
     border: 1px solid black;
     display: flex;
@@ -9,6 +9,9 @@
     align-items: center;
     border-radius: 8px;
     z-index: 1;
+    position: absolute;
+    bottom: 28px;
+    right: 0;
 }
 
 .color-circle {

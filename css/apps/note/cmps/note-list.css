@@ -1,11 +1,23 @@
-    .notes-grid {
-        display: flex;
+    .notes-container {
+        /* display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
-        /* display: grid;
-        grid-template-columns: repeat(4, minmax(150px, 1fr));
-        grid-gap: 5px;
+        flex-wrap: wrap; */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 15px;
         justify-items: center;
-        align-items: center; */
+        align-items: center;
+        margin-block-end: 40px;
+    }
+    
+    .pinned {
+        font-family: roboto;
+        padding: 10px;
+        font-size: 25px;
+    }
+    
+    .main-notes {
+        max-width: 1200px;
+        margin: 0 auto;
     }

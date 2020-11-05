@@ -6,15 +6,18 @@ export default {
     props: ['notes'],
     name: 'nodeList',
     template: `
-                <section class="notes-container">
-                    <h3>Pinned</h3>
-                    <div class="notes-grid">
+                <section class="main-notes">
+                    <h3 class="pinned">
+                        <i class="fas fa-thumbtack"></i> Pinned
+                        </h3>
+                    <div class="notes-container">
                          <note-preview 
                          v-for="note in notes"
                           :key="note.id" 
                           :note="note"
                           />
                     </div>
+                    <h3 class="pinned">Others</h3>
                 </section>
     
     

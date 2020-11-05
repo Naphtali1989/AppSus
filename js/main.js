@@ -17,7 +17,7 @@ const options = {
     router: myRouter,
     template: `
         <section>
-            <app-header />
+            <!-- <app-header /> -->
             <router-view class="router-view"/>
             <user-msg />
 

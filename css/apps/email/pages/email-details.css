@@ -1,0 +1,38 @@
+.email-details {
+    padding: 2rem;
+    max-width: 1060px;
+}
+
+.email-display-header {
+    font-size: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.email-display-close-btn,
+.email-display-reply-btn,
+.email-display-save-btn,
+.email-display-delete-btn {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 50%;
+    transition: all .2s;
+}
+
+.email-display-close-btn:hover,
+.email-display-reply-btn:hover,
+.email-display-save-btn:hover,
+.email-display-delete-btn:hover {
+    background-color: rgb(240, 236, 236);
+}
+
+.email-display-name {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.email-display-body {
+    font-size: 1.25rem;
+    margin: 0 auto;
+    padding-inline-start: 3rem;
+}

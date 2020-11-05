@@ -1,0 +1,73 @@
+.user-msg {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 350px;
+    height: 65px;
+    color: black;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    background-color: #fafafa;
+    font-family: cursive, sans-serif;
+}
+
+.icon {
+    margin-inline-start: 5px;
+    margin-inline-end: 5px;
+}
+
+.user-msg .msg-info {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 20px;
+}
+
+.msg-info p:first-child {
+    text-transform: uppercase;
+}
+
+.msg-txt {
+    font-size: 12px;
+}
+
+.msg-link {
+    font-size: 10px;
+    color: black;
+}
+
+.msg-info p {
+    margin: 0;
+}
+
+.close-btn {
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    background-color: #64e764;
+    border-radius: 50%;
+    color: white;
+}
+
+.user-msg.error .close-btn {
+    background-color: #8b1a1a;
+}
+
+.success {
+    border: 5px solid #64e764;
+}
+
+.error {
+    border: 5px solid #8b1a1a;
+}
+
+.fa-check-circle {
+    color: darkgreen;
+}
+
+.fa-exclamation-triangle {
+    color: #8b1a1a;
+}

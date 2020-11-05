@@ -2,7 +2,6 @@ import { storageService } from '../../services/storage-service.js';
 import { utilService } from '../../services/util-service.js';
 
 const EMAIL_STORAGE_KEY = 'emailDB';
-const DELETED_EMAIL_STORAGE_KEY = 'deletedEmailDB';
 const defaultEmails = [{
         subject: 'Wassap?',
         body: 'Pick up!!!!!!!!!',
@@ -49,12 +48,10 @@ const defaultEmails = [{
     },
 ]
 
-var gDeletedEmails;
+// var gFilterBy = null;
 var gEmails;
 
-
 export const emailService = {
-    getDeletedEmailsToDisplay,
     getEmailsToDisplay,
     deleteEmail,
     getEmailById,
@@ -85,12 +82,14 @@ function getEmailsToDisplay(filterBy) {
         gEmails = defaultEmails
         saveEmailsToStorage();
     }
-    if (!filterBy) return Promise.resolve(gEmails);
-    var emails = gEmails.filter(email => {
-        console.log('curr email in filter:', email[filterBy])
+    var emails;
+    if (!filterBy) {
+        emails = gEmails.filter(mail => !mail.isTrash)
+        return Promise.resolve(emails);
+    }
+    emails = gEmails.filter(email => {
         return email[filterBy]
     })
-    console.log('filtered emails:', emails)
     return Promise.resolve(emails);
 }
 
@@ -114,28 +113,16 @@ function getDeletedEmailsToDisplay() {
 // }
 
 function deleteEmail(id) {
-    gDeletedEmails = loadDeletedEmailsFromStorage();
-    if (!gDeletedEmails || gDeletedEmails.length < 1) {
-        gDeletedEmails = []
-    }
     return getEmailIdxById(id).then(res => {
-        if (res === undefined) {
-            return getDeletedEmailIdxById(id)
-                .then(res => {
-                    gDeletedEmails.splice(res, 1)
-                        // console.log(gDeletedEmails)
-                    saveDeletedEmailsToStorage();
-                    return res
-                })
-        }
-        const email = gEmails.splice(res, 1)
-        email[0].isTrash = true;
-        gDeletedEmails.push(email[0])
+        // if (!gEmails[res].isTrash) {
+        //     gEmails[res].isTrash = true;
+        //     saveEmailsToStorage();
+        //     return gEmails[res].id; // returns promise
+        // }
+        gEmails.splice(res, 1)
         saveEmailsToStorage();
-        saveDeletedEmailsToStorage();
-        return email.id; // returns promise
+        return Promise.resolve()
     })
-
 }
 
 function getEmailById(id) {
@@ -145,13 +132,7 @@ function getEmailById(id) {
 
 function getEmailIdxById(id) {
     const index = gEmails.findIndex(email => email.id === id)
-    if (index === -1) return Promise.resolve()
-    return Promise.resolve(index);
-}
-
-function getDeletedEmailIdxById(id) {
-    const index = gDeletedEmails.findIndex(email => email.id === id)
-    if (index === -1) return Promise.resolve()
+    if (index === -1) return Promise.resolve(0)
     return Promise.resolve(index);
 }
 
@@ -159,14 +140,6 @@ function saveEmailsToStorage() {
     storageService.saveToStorage(EMAIL_STORAGE_KEY, gEmails)
 }
 
-function saveDeletedEmailsToStorage() {
-    storageService.saveToStorage(DELETED_EMAIL_STORAGE_KEY, gDeletedEmails)
-}
-
 function loadEmailsFromStorage() {
     return storageService.loadFromStorage(EMAIL_STORAGE_KEY)
-}
-
-function loadDeletedEmailsFromStorage() {
-    return storageService.loadFromStorage(DELETED_EMAIL_STORAGE_KEY, )
 }
