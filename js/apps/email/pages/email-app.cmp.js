@@ -1,14 +1,15 @@
 import searchSection from '../cmps/search-section.cmp.js';
 import emailNav from '../cmps/email-nav.cmp.js';
 import emailComposer from '../cmps/email-composer.cmp.js';
-import { eventBus, SENT_REPLY_EMAIL, SET_FILTER } from '../../../services/event-bus-service.js';
+import { eventBus, SENT_REPLY_EMAIL, SET_FILTER, SET_SORT } from '../../../services/event-bus-service.js';
+
 // import { emailService } from '../email-service.js';
 
 export default {
     name: 'email-app',
     template: `
             <section class="email-app">
-                <search-section @setFilter="emitSetFilter" />
+                <search-section />
                 <div class="flex">
                     <email-nav @startCompose="toggleComposer" />
                     <router-view />
@@ -31,9 +32,7 @@ export default {
             this.isComposing = !this.isComposing
             this.$router.push('/email/board/' + JSON.stringify(detail))
         },
-        emitSetFilter(filterBy) {
-            eventBus.$emit(SET_FILTER, filterBy)
-        }
+
     },
     created() {
         this.$router.push('/email/board');

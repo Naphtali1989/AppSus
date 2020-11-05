@@ -1,27 +1,33 @@
 import searchBar from '../cmps/search-bar.cmp.js';
 import sortBar from '../cmps/sort-bar.cmp.js';
 import filterBar from '../cmps/filter-bar.cmp.js';
+import { eventBus, SET_FILTER, SET_SORT, SET_SEARCH } from '../../../services/event-bus-service.js';
 
 export default {
     template: `
             <section class="search-section flex">
-                <search-bar />     
-                <sort-bar :term="sortBy"/>
-                <filter-bar :term="'all'" @setFilter="emitFilterStatus"/>
+                <search-bar  @setSearch="emitSetSearch"/>     
+                <sort-bar :term="'date'" @setSort="emitSetSort"/>
+                <filter-bar :term="'all'" @setFilter="emitSetFilter"/>
 
             </section>
             `,
     data() {
         return {
-            sortBy: 'date',
             searchBy: ''
         }
     },
     methods: {
-        emitFilterStatus(filterTerm) {
-            console.log('status of filter is:', filterTerm)
-            this.$emit('setFilter', filterTerm)
+        emitSetFilter(filterBy) {
+            eventBus.$emit(SET_FILTER, filterBy)
+        },
+        emitSetSort(sortBy) {
+            eventBus.$emit(SET_SORT, sortBy)
+        },
+        emitSetSearch(searchBy) {
+            eventBus.$emit(SET_SEARCH, searchBy)
         }
+
     },
     components: {
         searchBar,

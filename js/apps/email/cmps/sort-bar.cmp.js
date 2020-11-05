@@ -5,7 +5,7 @@ export default {
                 <select v-model="sortTerm" @change="emitSortTerm">
                     <option value="date">Sort by date</option>     
                     <option value="name">Sort by Name</option>     
-                    <option value="title">Sort by Title</option>     
+                    <option value="title">Sort by subject</option>     
                 </select>     
             </section>
             `,
@@ -16,7 +16,6 @@ export default {
     },
     methods: {
         emitSortTerm() {
-            console.log('this sort term is:', this.sortTerm)
             this.$emit('setSort', this.sortTerm);
         }
     }
