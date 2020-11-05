@@ -9,9 +9,16 @@ export default {
                         <h1 class="composer-title">New Message</h1>
 
                         <div class="composer-head-btns flex">
-                            <button class="minimize-toggle-btn btn" @click.stop="toggleMinimize">_</button>
-                            <button class="maximize-toggle-btn btn" @click.stop="toggleMaximize">Max</button>
-                            <button class="composer-close-btn btn" @click.stop="emitStopCompose">X</button>
+                            <button class="minimize-toggle-btn btn" @click.stop="toggleMinimize">
+                                <i class="fas fa-window-minimize"></i>
+                            </button>
+                            <button class="maximize-toggle-btn btn" @click.stop="toggleMaximize">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </button>
+                            <button class="composer-close-btn btn" @click.stop="emitStopCompose">
+                                <i class="fas fa-times"></i>
+                            </button>
                         </div>
                     </div>  
                     
