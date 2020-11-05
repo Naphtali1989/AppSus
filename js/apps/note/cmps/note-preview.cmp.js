@@ -3,6 +3,7 @@ import noteImg from './note-img.cmp.js';
 import noteVideo from './note-video.cmp.js';
 import noteControl from './note-control.cmp.js'
 import { noteService } from '../note-service.js';
+import editNote from '../cmps/edit-note.cmp.js';
 import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
 
 export default {
@@ -10,19 +11,35 @@ export default {
     name: 'note-preview',
     template: `
                 <section class="note-preview" :style="{backgroundColor: backgroundColor}">
-                    <component :is="note.type" :note="note" @update="onUpdate"/>
+                    <edit-note :note="note" v-if="editMode" @confirmEdit=" onConfirmNoteEdit"/>
+                    <component :is="note.type" :note="note" @update="onUpdate" v-else/>
                       <span class="note-created">{{formatTime}}</span>
                     <note-control 
                         :note="note"
                         @deleteNote="onDeleteNote"
                         @copyNote="onCopyNote"
                         @changeColor="onChangeColor"
-                        
+                        @editNote="onEditNote"
                         />
                 </section>
     
     `,
+    data() {
+        return {
+            editMode: false
+        }
+    },
     methods: {
+        onConfirmNoteEdit(id, value) {
+            this.editMode = false;
+            noteService.confirmNoteEdit(id, value)
+                .then(() => console.log('Note has been changed !'))
+
+        },
+        onEditNote() {
+            this.editMode = !this.editMode
+            console.log('edit mode is:', this.editMode)
+        },
         onUpdate() {
             noteService.updateNote()
                 .then(() => console.log('title has been updated'))
@@ -57,6 +74,7 @@ export default {
         noteTxt,
         noteImg,
         noteVideo,
-        noteControl
+        noteControl,
+        editNote
     }
 }

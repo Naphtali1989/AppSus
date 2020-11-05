@@ -10,31 +10,31 @@ function getDefaultNotes() {
     return [{
             type: 'noteTxt',
             id: '102',
-            info: { txt: 'I love vue js' },
+            info: { value: 'I like vue js', title: 'hello' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
         },
         {
-            type: 'noteTxt',
+            type: 'noteImg',
             id: '103',
-            info: { txt: 'I love vue js' },
+            info: { value: 'https://images-na.ssl-images-amazon.com/images/I/61U3W11hFnL._AC_SL1000_.jpg', title: 'Cool title here' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
         },
         {
-            type: 'noteTxt',
+            type: 'noteImg',
             id: '104',
-            info: { txt: 'I love vue js' },
+            info: { value: 'https://giffiles.alphacoders.com/208/208599.gif', title: 'some img here' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
         },
         {
-            type: 'noteTxt',
+            type: 'noteVideo',
             id: '105',
-            info: { txt: 'I love vue js' },
+            info: { value: 'https://www.youtube.com/watch?v=I-HC_k1mrUo', title: 'some video' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
@@ -93,9 +93,22 @@ function getNoteIdxById(noteId) {
     return gNotes.findIndex(note => note.id === noteId);
 }
 
+function getNoteById(noteId) {
+    return gNotes.find(note => note.id === noteId)
+}
+
 function _saveNotesToStorage() {
     utilService.saveToStorage(STORAGE_KEY, gNotes);
 }
+
+function confirmNoteEdit(id, noteInfo) {
+    const note = getNoteById(id)
+    if (!id) return;
+    note.info.val = noteInfo;
+    _saveNotesToStorage();
+    return Promise.resolve();
+}
+
 
 function updateNote(url) {
     _saveNotesToStorage()
@@ -109,5 +122,6 @@ export const noteService = {
     deleteNote,
     onChangeStyleProp,
     pinNote,
-    updateNote
+    updateNote,
+    confirmNoteEdit
 }

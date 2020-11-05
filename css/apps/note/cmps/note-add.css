@@ -18,4 +18,25 @@
     padding: 0.6rem 1rem;
     font-weight: bold;
     outline: none;
+    font-family: roboto, sans-serif;
+}
+
+.input-container span {
+    color: #bbb;
+    margin-inline-start: 5px;
+    margin-inline-end: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.input-container .btn-txt.focused {
+    color: #282828;
+}
+
+.input-container .btn-img.focused {
+    color: #93ccea;
+}
+
+.input-container .btn-video.focused {
+    color: #FF0000;
 }

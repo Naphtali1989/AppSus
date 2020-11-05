@@ -48,8 +48,14 @@ export default {
         notesToShow() {
             if (!this.filterBy) return this.notes;
             const { txt, type } = this.filterBy;
-            console.log('txt:', txt)
-            console.log('type:', type)
+            // if (type === 'all' && !txt) {
+            //     const notes = this.notes.filter(note => {
+            //         return note.info.title.toLowerCase().includes(txt.toLowerCase())
+
+            //     })
+            //     console.log('notes:', notes)
+            // }
+            if (type === 'all') return this.notes
             return this.notes.filter(note => {
                 return note.info.title.toLowerCase().includes(txt.toLowerCase()) &&
                     note.type === type

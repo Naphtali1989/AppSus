@@ -11,10 +11,16 @@ export default {
                         <input type="text" :placeholder="placeholder" v-model="newNote.info.val"/>
                     </form>
                     <div class="btns-container">
-                        <span class="btn" @click.stop="setMode('noteTxt')"><i class="fas fa-font fa-2x"></i></span>
-                        <span class="btn" @click.stop="setMode('noteImg')"><i class="far fa-image fa-2x"></i></span>
-                        <span class="btn" @click.stop="setMode('noteVideo')"><i class="fab fa-youtube fa-2x"></i></span>
-                        <span class="btn" @click.stop="setMode('noteTodo')"><i class="fas fa-list fa-2x" ></i></span>
+                        <span class="btn-txt" :class="{focused:newNote.type === 'noteTxt'}" @click.stop="setMode('noteTxt')">
+                            <i class="fas fa-font fa-2x"></i>
+                        </span>
+                        <span class="btn-img" :class="{focused:newNote.type === 'noteImg'}"  @click.stop="setMode('noteImg')">
+                            <i class="far fa-image fa-2x"></i>
+                        </span>
+                        <span class="btn-video" :class="{focused:newNote.type === 'noteVideo'}"  @click.stop="setMode('noteVideo')">
+                            <i class="fab fa-youtube fa-2x"></i>
+                        </span>
+                        <!-- <span :class="{focused:newNote.type === 'noteList'}" class="btn" @click.stop="setMode('noteTodo')"><i class="fas fa-list fa-2x"  :class=""></i></span> -->
                     </div>
                 </div>
             </section>

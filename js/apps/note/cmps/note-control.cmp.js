@@ -14,7 +14,8 @@ export default {
                          <span class="btn" @click="show= !show"><i class="fas fa-palette"></i></span>
                          <!-- <span class="btn" @mouseover.stop="hover = true" @mouseleave ="hover = false"><i class="fas fa-palette"></i></span> -->
                          <span class="btn" @click="emitPinNote"><i class="fas fa-thumbtack"></i></span>
-                             <note-palette  v-show="show" @changeColor="emitChangeColor" :note="note"/>
+                         <span class="btn" @click="emitEdit"><i class="fas fa-edit"></i></span>
+                        <note-palette  v-show="show" @changeColor="emitChangeColor" :note="note"/>
                      </div>
                 </div>
     `,
@@ -38,7 +39,10 @@ export default {
         },
         emitPinNote() {
             eventBus.$emit('pinNote', this.note.id)
-                // this.$emit('pinNote', this.note.id)
+        },
+        emitEdit() {
+            console.log('entered edit mode1')
+            this.$emit('editNote')
         }
     },
     computed: {
