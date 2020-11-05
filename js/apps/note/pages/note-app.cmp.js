@@ -12,14 +12,10 @@ export default {
                 <note-add @addNote="onAddNote" />
                 <template v-if="notes">
                     <h3>Pinned</h3>
-                    <note-list :notes="notesToShow" />
+                    <note-list :notes="pinnedNotes" />
                     <h3>Others</h3>
-                    <!-- <note-list :notes="unPinnedNotes" /> -->
+                    <note-list :notes="unPinnedNotes" />
                 </template>
-                
-
-                    
-
             </section>
     
         `,

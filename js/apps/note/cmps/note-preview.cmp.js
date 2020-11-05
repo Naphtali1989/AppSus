@@ -23,8 +23,7 @@ export default {
     
     `,
     methods: {
-        onUpdate(id) {
-            console.log('id:', id)
+        onUpdate() {
             noteService.updateNote()
                 .then(() => console.log('title has been updated'))
         },

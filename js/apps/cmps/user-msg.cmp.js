@@ -41,7 +41,6 @@ export default {
             this.timer = setTimeout(() => {
                 this.closeMsg();
             }, 3000)
-            console.log(this.msg)
         })
 
     }

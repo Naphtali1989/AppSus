@@ -4,18 +4,16 @@ export default {
     name: 'noteImg',
     template: `
             <section class="note-img">
-                <img :src="note.info.txt" alt=""/>
+                <img :src="note.info.val" alt=""/>
                 <!-- <editable :note="note" @update="emitChange"/> -->
-                <p contenteditable="true" class="img-title" @blur="emitChange">{{note.info.url}}</p>
-                
+                <p contenteditable="true" class="img-title" @blur="emitChange">{{note.info.title}}</p>
             </section>
-
-
     `,
     methods: {
         emitChange(ev) {
             console.log('event', ev)
-            this.note.info.url = ev.target.textContent;
+                //change the object pointer directly;
+            this.note.info.title = ev.target.textContent;
             this.$emit('update', this.note.id)
         }
     },

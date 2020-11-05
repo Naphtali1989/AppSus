@@ -8,7 +8,7 @@ export default {
             <section class="note-add-container">
                 <div class="input-container">
                     <form @submit.prevent="onAddNote">
-                        <input type="text" :placeholder="placeholder" v-model="newNote.info.txt"/>
+                        <input type="text" :placeholder="placeholder" v-model="newNote.info.val"/>
                     </form>
                     <div class="btns-container">
                         <span class="btn" @click.stop="setMode('noteTxt')"><i class="fas fa-font fa-2x"></i></span>
@@ -18,8 +18,6 @@ export default {
                     </div>
                 </div>
             </section>
-    
-    
     `,
     data() {
         return {
@@ -32,7 +30,7 @@ export default {
             noteType: 'noteTxt',
             newNote: {
                 info: {
-                    txt: ''
+                    title: 'Txt title goes here'
                 },
                 style: {
                     backgroundColor: '#ffff88',
@@ -44,26 +42,23 @@ export default {
     },
     methods: {
         onAddNote() {
-            if (!this.newNote.info.txt) {
+            if (!this.newNote.info.val) {
                 eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Please fill the input', type: 'error' })
                 return;
             }
             const deepCopy = JSON.parse(JSON.stringify(this.newNote))
             this.$emit('addNote', deepCopy);
-            this.newNote.info = {
-                txt: ''
-            }
         },
         setMode(type) {
             if (type === 'noteTxt') {
-                this.newNote.info = { txt: '' }
+                this.newNote.info = { val: '', title: 'Txt title goes here' }
             } else if (type === 'noteImg') {
-                this.newNote.info = { txt: '', title: '' }
+                this.newNote.info = { val: '', title: 'Image Title goes here' }
             } else if (type === 'noteVideo') {
-                this.newNote.info = { txt: '', title: '' }
+                this.newNote.info = { val: '', title: 'Video Title goes here' }
             }
             this.newNote.type = type
-        },
+        }
     },
     computed: {
         placeholder() {
