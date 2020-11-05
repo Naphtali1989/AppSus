@@ -2,7 +2,7 @@ export default {
     props: ['term'],
     template: `
             <section class="sort-bar hide">
-                <select v-model="sortTerm" @change="emitSortTerm">
+                <select class="custom-select btn" v-model="sortTerm" @change.stop="emitSortTerm">
                     <option value="date">Sort by date</option>     
                     <option value="name">Sort by Name</option>     
                     <option value="title">Sort by subject</option>     

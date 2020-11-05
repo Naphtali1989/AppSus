@@ -6,7 +6,7 @@ export default {
     template: `
         <section class="email-details">
             <button class="email-display-close-btn btn" @click="closeDetailMode"><i class="fas fa-backspace"></i></button>
-            <div class="email-display-header flex space-between">
+            <div class="email-display-header flex align-center space-between">
                <h1 class="email-display-title"> {{emailToDesplay.subject}}</h1>
                <div class="email-display-btns">
                    <button class="email-display-reply-btn btn" @click="openReply"><i class="fas fa-reply"></i></button>
@@ -14,7 +14,7 @@ export default {
                    <button class="email-display-delete-btn btn" @click="deleteEmail"><i class="fas fa-trash"></i></button>
                </div>
             </div>
-            <div class="email-display-name">from: {{emailToDesplay.composer}} <p class="muted-txt"><{{emailToDesplay.composerEmail}}></p></div>
+            <div class="email-display-name flex align-center">from: {{emailToDesplay.composer}} <p class="muted-txt"><{{emailToDesplay.composerEmail}}></p></div>
             <div class="email-display-body">{{emailToDesplay.body}}</div>
         </section>
     `,

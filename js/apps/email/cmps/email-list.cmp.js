@@ -5,7 +5,7 @@ export default {
     template: `
                 <section class="email-list flex">
                     <ul class="clean-list flex column">
-                        <li  v-for="emailItem in emails" :key="emailItem.id" @click="openEmail(emailItem.id)">
+                        <li v-for="emailItem in emails" :key="emailItem.id" @click="openEmail(emailItem.id)">
                             <email-preview :email="emailItem" @emailDeleted="emitEmailDeleted"/>
                         </li>
                     </ul>               

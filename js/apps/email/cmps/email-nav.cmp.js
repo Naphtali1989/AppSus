@@ -2,7 +2,7 @@ import { eventBus } from '../../../services/event-bus-service.js';
 
 export default {
     template: `
-            <section class="email-nav flex">
+            <section class="email-nav flex column">
                 <button class="new-email-open-btn btn" @click="emitCompose"><img src="./assets/email/img/icon/create_32dp.png" /></button>
                 <ul class="email-nav-list clean-list flex space-between">
                     <li :class="{focused:!focusOn}" class="inbox-navigator btn" @click="emitNavChange()">
