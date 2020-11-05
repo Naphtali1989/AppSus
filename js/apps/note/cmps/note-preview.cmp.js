@@ -9,14 +9,25 @@ export default {
     props: ['note'],
     name: 'note-preview',
     template: `
-                <section class="note-preview" :style="{backgroundColor: note.style.backgroundColor}">
-                    <component :is="note.type" :note="note"/>
+                <section class="note-preview" :style="{backgroundColor: backgroundColor}">
+                    <component :is="note.type" :note="note" @update="onUpdate"/>
                       <span class="note-created">{{formatTime}}</span>
-                    <note-control :note="note" @deleteNote="onDeleteNote" @copyNote="onCopyNote" @changeColor="onChangeColor" />
+                    <note-control 
+                        :note="note"
+                        @deleteNote="onDeleteNote"
+                        @copyNote="onCopyNote"
+                        @changeColor="onChangeColor"
+                        
+                        />
                 </section>
     
     `,
     methods: {
+        onUpdate(id) {
+            console.log('id:', id)
+            noteService.updateNote()
+                .then(() => console.log('title has been updated'))
+        },
         onDeleteNote(noteId) {
             console.log('reached main app!')
             noteService.deleteNote(noteId)
@@ -37,11 +48,12 @@ export default {
     computed: {
         formatTime() {
             return new Date(this.note.createdAt).toLocaleDateString()
+        },
+        backgroundColor() {
+            return this.note.style.backgroundColor
         }
     },
-    created() {
-        console.log(this.note)
-    },
+    created() {},
     components: {
         noteTxt,
         noteImg,

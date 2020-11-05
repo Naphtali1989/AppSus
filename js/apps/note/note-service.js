@@ -49,34 +49,36 @@ function getNotesForDisplay() {
     if (!gNotes || !gNotes.length) {
         gNotes = getDefaultNotes();
         _saveNotesToStorage();
-    }
+    };
     return Promise.resolve(gNotes);
 }
 
 function onChangeStyleProp(id, color) {
     const noteIdx = getNoteIdxById(id)
-    console.log('gNotes:', gNotes[noteIdx])
     gNotes[noteIdx].style.backgroundColor = color;
     _saveNotesToStorage();
-    console.log('note idx:', noteIdx)
-    console.log('id:', id)
-    console.log('color in sertvice:', color)
     return Promise.resolve()
 }
 
-
-
-
+function pinNote(noteId) {
+    console.log('note has been unpinned:', noteId)
+    const noteIdx = getNoteIdxById(noteId)
+    gNotes[noteIdx].isPinned = !gNotes[noteIdx].isPinned;
+    // gNotes.filter(note => note.isPinned === false)
+    _saveNotesToStorage()
+    console.log('pinned note:', noteIdx);
+    return Promise.resolve(gNotes)
+}
 
 
 function addNote(note) {
     console.log('note?:', note)
-    note.id = utilService.makeId()
-    note.createdAt = Date.now()
-    note.isPinned = false
+    note.id = utilService.makeId();
+    note.createdAt = Date.now();
+    note.isPinned = true;
     gNotes.unshift(note);
-    _saveNotesToStorage()
-    return Promise.resolve()
+    _saveNotesToStorage();
+    return Promise.resolve();
 }
 
 
@@ -96,11 +98,17 @@ function _saveNotesToStorage() {
     utilService.saveToStorage(STORAGE_KEY, gNotes);
 }
 
+function updateNote(id, title) {
+    _saveNotesToStorage()
+    return Promise.resolve();
+}
 
 
 export const noteService = {
     getNotesForDisplay,
     addNote,
     deleteNote,
-    onChangeStyleProp
+    onChangeStyleProp,
+    pinNote,
+    updateNote
 }

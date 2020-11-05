@@ -45,11 +45,9 @@ export default {
     methods: {
         onAddNote() {
             if (!this.newNote.info.txt) {
-                eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Please fill the form', type: 'error' })
+                eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Please fill the input', type: 'error' })
                 return;
             }
-            if (this.noteType === 'noteVideo') this.convertUrlToEmbed()
-                // if (this.nodeType === 'noteTodo')
             const deepCopy = JSON.parse(JSON.stringify(this.newNote))
             this.$emit('addNote', deepCopy);
             this.newNote.info = {
@@ -58,41 +56,19 @@ export default {
         },
         setMode(type) {
             if (type === 'noteTxt') {
-                this.noteType = 'noteTxt'
                 this.newNote.info = { txt: '' }
             } else if (type === 'noteImg') {
-                this.noteType = 'noteImg'
-                this.newNote.info = { txt: '', url: '' }
+                this.newNote.info = { txt: '', title: '' }
             } else if (type === 'noteVideo') {
-                this.noteType = 'noteVideo'
-                this.newNote.info = { txt: '', url: '' }
-            } else if (type === 'noteTodo') {
-                this.noteType = 'noteTodo'
-                this.newNote.info = {
-                    todos: [
-                        { txt: '', isComplete: false }
-                    ]
-
-                }
+                this.newNote.info = { txt: '', title: '' }
             }
-            this.newNote.type = this.noteType;
-        },
-        convertUrlToEmbed() {
-            var url = this.newNote.info.txt
-            var id = url.split("?v=")[1];
-            console.log('id of yotube:', id)
-            console.log('id:', id)
-            this.newNote.info.txt = `http://www.youtube.com/embed/${id}`
-            console.log('new video url:', this.newNote.info.txt)
-
+            this.newNote.type = type
         },
     },
     computed: {
         placeholder() {
-            if (this.noteType === 'noteTxt') return this.placeholders.noteTxt
-            else if (this.noteType === 'noteImg') return this.placeholders.noteImg
-            else if (this.noteType === 'noteVideo') return this.placeholders.noteVideo
-            else if (this.noteType === 'noteTodo') return this.placeholders.noteTodo
+            const { type } = this.newNote
+            return this.placeholders[type]
         }
     }
 }
