@@ -10,7 +10,15 @@ export default {
             <section class="note-app-container">
                 <note-filter @doFilter="setFilter" v-if="this.notes" />
                 <note-add @addNote="onAddNote" />
-                <note-list :notes="notes" />
+                <template v-if="notes">
+                    <h3>Pinned</h3>
+                    <note-list :notes="notesToShow" />
+                    <h3>Others</h3>
+                    <!-- <note-list :notes="unPinnedNotes" /> -->
+                </template>
+                
+
+                    
 
             </section>
     
@@ -18,17 +26,16 @@ export default {
     data() {
         return {
             notes: null,
-            filterBy: null
-
+            filterBy: null,
         }
     },
     methods: {
         getNotes() {
             noteService.getNotesForDisplay()
                 .then(notes => {
-                    console.log('getting from service:', notes)
-                    this.notes = notes
+                    this.notes = notes;
                 })
+
         },
         setFilter(filterBy) {
             console.log('getting:', filterBy);
@@ -40,24 +47,35 @@ export default {
                 .then(() => eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Note has been added!', type: 'success' }))
         },
 
+
     },
     computed: {
         notesToShow() {
-            console.log('notes!!', this.notes)
+            console.log('notes in filter:', this.notes)
             if (!this.filterBy) return this.notes;
             const { byText, byNoteType } = this.filterBy;
-            const txt = byText.toLowerCase();
-            const notes = this.notes.filter(note =>
-                note.txt.toLowerCase().includes(txt)
-
-            )
-            console.log('notes:', notes)
-
-
+            const title = byText.toLowerCase();
+            console.log('what is title?:', title)
+            return this.notes.filter(note => {
+                if (note.type === 'noteTxt') return note.info.txt.toLowerCase().includes(title)
+                else return note.info.title.toLowerCase().includes(title)
+            })
+        },
+        pinnedNotes() {
+            return this.notes.filter(note => note.isPinned)
+        },
+        unPinnedNotes() {
+            return this.notes.filter(note => !note.isPinned)
         }
     },
     created() {
         this.getNotes();
+        eventBus.$on('pinNote', id => {
+            noteService.pinNote(id)
+                .then(notes => {
+                    this.notes = notes;
+                })
+        })
     },
     components: {
         noteFilter,

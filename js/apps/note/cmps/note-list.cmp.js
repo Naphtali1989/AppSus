@@ -4,12 +4,9 @@ import noteImg from './note-img.cmp.js'
 
 export default {
     props: ['notes'],
-    name: 'nodeList',
+    name: 'noteList',
     template: `
                 <section class="main-notes">
-                    <h3 class="pinned">
-                        <i class="fas fa-thumbtack"></i> Pinned
-                        </h3>
                     <div class="notes-container">
                          <note-preview 
                          v-for="note in notes"
@@ -17,7 +14,9 @@ export default {
                           :note="note"
                           />
                     </div>
-                    <h3 class="pinned">Others</h3>
+                    <div class="other-notes-container">
+                             
+                    </div>
                 </section>
     
     

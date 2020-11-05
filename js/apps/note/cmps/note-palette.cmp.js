@@ -5,6 +5,7 @@ export default {
                 <div v-for="(i,idx) in 12"
                 :key="idx"
                  class="color-circle"
+                 
                  :style="{backgroundColor:  colors[i - 1]}"
                  @click="emitChangeColor(colors[i - 1])"
                  >

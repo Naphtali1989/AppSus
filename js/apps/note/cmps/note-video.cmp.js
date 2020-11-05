@@ -7,7 +7,14 @@ export default {
                   <p contenteditable="true" class="img-title">Vue js is cool</p>
             </section>
     `,
+    methods: {
+        convertUrl(url) {
+            var id = url.split("?v=")[1];
+            this.note.info.txt = `http://www.youtube.com/embed/${id}`
+
+        },
+    },
     created() {
-        console.log('note img:', this.note)
+        this.convertUrl(this.note.info.txt)
     }
 }

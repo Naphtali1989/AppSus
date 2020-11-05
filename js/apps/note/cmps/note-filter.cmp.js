@@ -9,6 +9,7 @@ export default {
                             <option value="noteImg">Images</option>
                             <option value="noteVideo">Videos</option>
                         </select>
+                        <button>Submit</button>
                     </form>
                 </section>
         `,
