@@ -6,8 +6,8 @@ export default {
     template: `
             <section class="email-preview flex align-center btn" :class="emailReadChecker">
                 <button class="prioritize-btn btn" @click.stop="prioritizeEmail">
-                    <span v-if="!email.isMarked" class="far fa-star" title="Mark as important"></span>
-                    <span v-if="email.isMarked" class="fas fa-star marked" title="Unmark priority"></span>
+                    <i v-if="!email.isMarked" class="far fa-star" title="Mark as important"></i>
+                    <i v-if="email.isMarked" class="fas fa-star marked" title="Unmark priority"></i>
                 </button>
                 <div class="email-preview-composer-name"><long-txt :txt="email.composer" :size="10" /></div>
                 <div class="email-preview-subject"><long-txt :txt="email.subject" :size="20" /></div>
@@ -18,15 +18,15 @@ export default {
                     <i class="fas fa-trash"></i>
                 </button>
                 <button class="email-mark-btn btn" @click.stop="markEmail">
-                    <span v-if="email.isRead" class="far fa-envelope-open" title="Mark as unread"></span>
-                    <span v-if="!email.isRead" class="far fa-envelope" title="Mark as read"></span>
+                    <i v-if="email.isRead" class="far fa-envelope-open" title="Mark as unread"></i>
+                    <i v-if="!email.isRead" class="far fa-envelope" title="Mark as read"></i>
                 </button>
             </section>
             `,
     methods: {
         deleteEmail() {
             emailService.deleteEmail(this.email.id);
-            this.$emit('bookDeleted')
+            this.$emit('emailDeleted')
         },
         prioritizeEmail() {
             emailService.toggleEmailMark(this.email.id)

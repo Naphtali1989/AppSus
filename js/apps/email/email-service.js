@@ -70,7 +70,20 @@ export const emailService = {
     getEmptyEmail,
     saveEmailDraft,
     saveEmailSent,
+    setSortEmailsBy,
+}
 
+function setSortEmailsBy(sortBy = 'date') {
+    const sorter = (sortBy === 'date') ? 'sentAt' : ((sortBy === 'name') ? 'composer' : 'subject')
+    gEmails.sort((a, b) => {
+        let email1 = (typeof a[sorter] === 'string') ? a[sorter].toLowerCase() : a[sorter];
+        let email2 = (typeof b[sorter] === 'string') ? b[sorter].toLowerCase() : b[sorter];
+        return ((email1 > email2) ? -1 : ((email1 < email2) ? 1 : 0));
+    });
+    saveEmailsToStorage();
+
+    console.log('resolving gmails...', gEmails)
+    return Promise.resolve(gEmails)
 }
 
 function toggleEmailMark(emailId) {
@@ -128,12 +141,11 @@ function saveEmailSent(email) {
 
 function deleteEmail(id) {
     getEmailIdxById(id).then(res => {
-        console.log(res)
-            // if (!gEmails[res].isTrash) {
-            //     gEmails[res].isTrash = true;
-            //     saveEmailsToStorage();
-            //     return gEmails[res].id; // returns promise
-            // }
+        // if (!gEmails[res].isTrash) {
+        //     gEmails[res].isTrash = true;
+        //     saveEmailsToStorage();
+        //     return gEmails[res].id; // returns promise
+        // }
         if (res === null) return
         gEmails.splice(res, 1)
         saveEmailsToStorage();

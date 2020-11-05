@@ -1,11 +1,12 @@
 .email-nav {
     font-size: 1.25rem;
-    padding: 2rem;
+    min-width: 300px;
 }
 
 .new-email-open-btn {
     border-radius: 3rem;
     border: 1px outset #1C6EA4;
+    margin: 2rem;
     padding: 1rem;
     font-weight: bold;
     font-size: 1.25rem;
@@ -17,5 +18,15 @@
 }
 
 .email-nav li {
+    text-align: center;
     padding: 1rem;
+    border-radius: 0 2rem 2rem 0;
+}
+
+.email-nav li:hover {
+    background-color: #1C6EA410;
+}
+
+.email-nav li.focused {
+    background-color: #c86b6b2d;
 }
