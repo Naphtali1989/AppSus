@@ -44,9 +44,12 @@ export default {
             this.getEmails(status)
         })
         eventBus.$on(SET_FILTER, filterby => {
-            var status = (filterby === 'all') ? null : 'isRead';
-            if (filterby === 'all')
-                this.getEmails(status)
+            var status;
+            console.log('the filter is now:', filterby)
+            if (filterby === 'all') status = null;
+            else if (filterby === 'read') status = 'isRead';
+            else status = '!isRead';
+            this.getEmails(status)
         })
     },
     components: {

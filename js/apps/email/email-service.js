@@ -99,10 +99,15 @@ function getEmailsToDisplay(filterBy) {
     if (!filterBy) {
         emails = gEmails.filter(mail => !mail.isTrash)
         return Promise.resolve(emails);
+    } else if (filterBy === '!isRead') {
+        emails = gEmails.filter(email => {
+            return !email.isRead
+        })
+    } else {
+        emails = gEmails.filter(email => {
+            return email[filterBy]
+        })
     }
-    emails = gEmails.filter(email => {
-        return email[filterBy]
-    })
     return Promise.resolve(emails);
 }
 
