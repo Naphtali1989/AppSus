@@ -12,7 +12,7 @@ export default {
                 <note-add @addNote="onAddNote" />
                 <template v-if="notes">
                     <h3>Pinned</h3>
-                    <note-list :notes="notesToShow" />
+                    <note-list :notes="pinnedNotes" />
                     <h3>Others</h3>
                     <note-list :notes="unPinnedNotes" />
                 </template>
@@ -34,7 +34,6 @@ export default {
 
         },
         setFilter(filterBy) {
-            console.log('getting:', filterBy);
             this.filterBy = filterBy;
         },
         onAddNote(note) {
@@ -49,17 +48,19 @@ export default {
         notesToShow() {
             if (!this.filterBy) return this.notes;
             const { txt, type } = this.filterBy;
-            if (type === 'all') return this.notes;
+            console.log('txt:', txt)
+            console.log('type:', type)
             return this.notes.filter(note => {
                 return note.info.title.toLowerCase().includes(txt.toLowerCase()) &&
                     note.type === type
             })
         },
         pinnedNotes() {
-            return this.notes.filter(note => note.isPinned)
+            // return this.notes.filter(note => note.isPinned)
+            return this.notesToShow.filter(note => note.isPinned)
         },
         unPinnedNotes() {
-            return this.notes.filter(note => !note.isPinned)
+            return this.notesToShow.filter(note => !note.isPinned)
         }
     },
     created() {

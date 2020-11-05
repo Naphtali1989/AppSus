@@ -10,7 +10,7 @@ export default {
                      <i :class="noteTypeIcon" class="noteIcon"></i>
                      <div class="btns-section">
                          <span class="btn" @click="emitDeleteNote"><i class="fas fa-trash"></i></span>
-                         <span class="btn" @click="emitCopyNote"><i class="fas fa-clone"></i></span>
+                         <span class="btn" @click="emitCopyNote" title="Copy"><i class="fas fa-clone"></i></span>
                          <span class="btn" @click="show= !show"><i class="fas fa-palette"></i></span>
                          <!-- <span class="btn" @mouseover.stop="hover = true" @mouseleave ="hover = false"><i class="fas fa-palette"></i></span> -->
                          <span class="btn" @click="emitPinNote"><i class="fas fa-thumbtack"></i></span>

@@ -15,6 +15,7 @@
 }
 
 .color-circle {
+    display: inline-block;
     width: 26px;
     height: 26px;
     border-radius: 50%;
