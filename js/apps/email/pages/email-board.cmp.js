@@ -1,38 +1,40 @@
 import { emailService } from '../email-service.js';
 import emailList from '../cmps/email-list.cmp.js';
-import { eventBus, SET_FILTER, SET_SORT } from '../../../services/event-bus-service.js';
+import { eventBus, SET_FILTER, SET_SORT, SET_SEARCH } from '../../../services/event-bus-service.js';
 
 
 export default {
     name: `emailBoard`,
     template: `
             <section class="email-board flex">
-                <email-list :emails="currEmails"  @emailDeleted="refreshEmails"/>
+                <email-list :emails="currMailsShowing"  @emailDeleted="refreshEmails"/>
             </section>
             `,
     data() {
         return {
             currEmails: '',
-            emailsToShow: null,
+            filterBy: null,
+            searchBy: ''
         }
     },
     computed: {
         currMailsShowing() {
-            return this.getEmails(this.emailsToShow)
+            if (!this.searchBy.length) return this.currEmails;
+            return this.currEmails.filter(email => {
+                return email.subject.toLowerCase().includes(this.searchBy.toLowerCase()) ||
+                    email.composer.toLowerCase().includes(this.searchBy.toLowerCase());
+            });
         }
     },
     methods: {
         refreshEmails() {
-            this.getEmails(this.emailsToShow)
-                // eventBus.$emit('switchedNav', this.emailsToShow);
-                // this.setEmailsToShow(this.emailsToShow)
+            this.getEmails(this.filterBy)
         },
         setEmailsToShow(status) {
             this.getEmails(status)
         },
         getEmails(filterBy = null) {
-            this.emailsToShow = filterBy
-            console.log('refreshing!', filterBy)
+            this.filterBy = filterBy
             emailService.getEmailsToDisplay(filterBy)
                 .then(res => this.currEmails = res)
         },
@@ -51,15 +53,11 @@ export default {
             this.getEmails(status)
         });
         eventBus.$on(SET_SORT, sortBy => {
-            console.log('Sorting by:', sortBy)
             emailService.setSortEmailsBy(sortBy)
-                // var status;
-                // if (filterBy === 'all') status = null;
-                // else if (filterBy === 'read') status = 'isRead';
-                // else status = '!isRead';
-                .then(res => {
-                    this.getEmails(this.emailsToShow)
-                })
+                .then(res => { this.getEmails(this.emailsToShow) })
+        });
+        eventBus.$on(SET_SEARCH, searchBy => {
+            this.searchBy = searchBy;
         });
     },
     components: {

@@ -1,8 +1,8 @@
 export default {
     template: `
             <section class="search-bar">
-                <input type="text" placeholder="Search email" v-model="searchTerm" @input="emitSearchTerm"/>
-                <span class="fas fa-search" @click="emitSearchTerm"></span>     
+                <i class="fas fa-search" @click="emitSearchTerm"></i>     
+                <input type="search" placeholder="Search email" v-model="searchTerm" @input="emitSearchTerm"/>
             </section>
             `,
     data() {
@@ -12,7 +12,6 @@ export default {
     },
     methods: {
         emitSearchTerm() {
-            console.log('search by:', this.searchTerm)
             this.$emit('setSearch', this.searchTerm);
         }
     }

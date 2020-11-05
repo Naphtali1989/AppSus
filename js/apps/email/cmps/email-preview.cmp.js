@@ -25,14 +25,18 @@ export default {
             `,
     methods: {
         deleteEmail() {
-            emailService.deleteEmail(this.email.id);
-            this.$emit('emailDeleted')
+            emailService.deleteEmail(this.email.id)
+                .then(ans => { this.$emit('emailDeleted') });
         },
         prioritizeEmail() {
             emailService.toggleEmailMark(this.email.id)
+                .then(ans => { this.$emit('emailDeleted') });
+            // .then(ans => { this.$emit('emailPrioritized') })
         },
         markEmail() {
             emailService.toggleEmailRead(this.email.id)
+                .then(ans => { this.$emit('emailDeleted') });
+            // .then(ans => { this.$emit('emailMarked') })
         }
     },
     computed: {

@@ -44,7 +44,7 @@ const defaultEmails = [{
     {
         composer: 'GitHub',
         composerEmail: 'official@githard.come',
-        subject: 'Naphtali?',
+        subject: 'Naphtali',
         body: 'You are so lazy!! go back to work!',
         isRead: false,
         isMarked: false,
@@ -87,7 +87,7 @@ function setSortEmailsBy(sortBy = 'date') {
 }
 
 function toggleEmailMark(emailId) {
-    getEmailById(emailId)
+    return getEmailById(emailId)
         .then(res => {
             res.isMarked = !res.isMarked;
             saveEmailsToStorage();
@@ -95,7 +95,7 @@ function toggleEmailMark(emailId) {
 }
 
 function toggleEmailRead(emailId) {
-    getEmailById(emailId)
+    return getEmailById(emailId)
         .then(res => {
             res.isRead = !res.isRead;
             saveEmailsToStorage();
@@ -140,16 +140,17 @@ function saveEmailSent(email) {
 }
 
 function deleteEmail(id) {
-    getEmailIdxById(id).then(res => {
+    return getEmailIdxById(id).then(index => {
         // if (!gEmails[res].isTrash) {
         //     gEmails[res].isTrash = true;
         //     saveEmailsToStorage();
         //     return gEmails[res].id; // returns promise
         // }
-        if (res === null) return
-        gEmails.splice(res, 1)
+        // if (index === null) return
+        console.log('EYAL! Here is my index!', index)
+        gEmails.splice(index, 1)
         saveEmailsToStorage();
-        return res
+        return index
     })
 }
 
@@ -160,7 +161,7 @@ function getEmailById(id) {
 
 function getEmailIdxById(id) {
     const index = gEmails.findIndex(email => email.id === id)
-    if (index === -1) return Promise.resolve(null)
+    if (index === -1) return Promise.reject(null)
     return Promise.resolve(index);
 }
 
