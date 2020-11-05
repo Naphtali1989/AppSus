@@ -5,7 +5,6 @@
     border-radius: 1px;
     box-shadow: inset 0px 0px 0px 0px #000000, 1px 0px 0px 1px #000000;
     transition: box-shadow .3s;
-    text-align: center;
 }
 
 .email-preview:hover {

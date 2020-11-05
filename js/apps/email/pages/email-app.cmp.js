@@ -1,4 +1,5 @@
 import searchSection from '../cmps/search-section.cmp.js';
+import emailNav from '../cmps/email-nav.cmp.js';
 // import { emailService } from '../email-service.js';
 
 export default {
@@ -6,7 +7,10 @@ export default {
     template: `
             <section class="email-app">
                 <search-section />
-                <router-view />
+                <div class="flex">
+                <email-nav @switchedNav="setEmailsToShow" />
+                    <router-view />
+                </div>
             </section>
             `,
     data() {
@@ -18,7 +22,10 @@ export default {
 
     },
     methods: {
-
+        setEmailsToShow(status) {
+            console.log('', status)
+                // this.$router.push('/email/board', )
+        }
     },
     created() {
         this.$router.push('/email/board')
@@ -26,6 +33,6 @@ export default {
 
     components: {
         searchSection,
-
+        emailNav
     }
 }

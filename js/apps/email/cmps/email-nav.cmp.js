@@ -1,3 +1,5 @@
+import { eventBus } from '../../../services/event-bus-service.js';
+
 export default {
     template: `
             <section class="email-nav flex column">
@@ -16,7 +18,8 @@ export default {
             console.log('writing a new mail!')
         },
         emitNavChange(status = null) {
-            this.$emit('switchedNav', status)
+            // this.$emit('switchedNav', status)
+            eventBus.$emit('switchedNav', status);
         }
     }
 }

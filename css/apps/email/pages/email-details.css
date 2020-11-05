@@ -1,6 +1,7 @@
 .email-details {
     padding: 2rem;
     max-width: 1060px;
+    flex: 1;
 }
 
 .email-display-header {

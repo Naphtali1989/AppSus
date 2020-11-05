@@ -13,7 +13,7 @@ export default {
                    <button class="email-display-delete-btn btn" @click="deleteEmail"><i class="fas fa-trash"></i></button>
                </div>
             </div>
-            <div class="email-display-name">from: placeholder</div>
+            <div class="email-display-name">from: {{emailToDesplay.composer}} <p class="muted-txt"><{{emailToDesplay.composerEmail}}></p></div>
             <div class="email-display-body">{{emailToDesplay.body}}</div>
         </section>
     `,
@@ -30,7 +30,7 @@ export default {
             console.log('work in progress')
             emailService.deleteEmail(this.emailToDesplay.id)
                 .then(res => {
-                    this.closeEditMode()
+                    this.closeEditMode();
                 })
 
         },
