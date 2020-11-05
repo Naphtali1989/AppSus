@@ -72,7 +72,6 @@ function pinNote(noteId) {
 
 
 function addNote(note) {
-    console.log('note?:', note)
     note.id = utilService.makeId();
     note.createdAt = Date.now();
     note.isPinned = true;
@@ -98,7 +97,7 @@ function _saveNotesToStorage() {
     utilService.saveToStorage(STORAGE_KEY, gNotes);
 }
 
-function updateNote(id, title) {
+function updateNote(url) {
     _saveNotesToStorage()
     return Promise.resolve();
 }
