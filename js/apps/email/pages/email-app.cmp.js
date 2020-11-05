@@ -27,7 +27,6 @@ export default {
     },
     methods: {
         toggleComposer() {
-            console.log('lets start composing', this.isComposing)
             this.isComposing = !this.isComposing
         }
     },

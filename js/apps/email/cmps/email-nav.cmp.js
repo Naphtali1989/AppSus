@@ -16,8 +16,6 @@ export default {
     methods: {
         emitCompose() {
             this.$emit('startCompose')
-            console.log('Whats wrong with this????')
-
         },
         emitNavChange(status = null) {
             eventBus.$emit('switchedNav', status);

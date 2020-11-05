@@ -2,7 +2,6 @@ import composerContent from './composer-content.cmp.js';
 import { emailService } from '../email-service.js';
 
 export default {
-    // props: [''],
     template: `
                 <section class="email-composer flex column">
                     <div class="composer-head flex space-between btn" @click="toggleMinimize">
@@ -17,6 +16,7 @@ export default {
                                 <i class="fas fa-compress-arrows-alt"></i>
                             </button>
                             <button class="composer-close-btn btn" @click.stop="emitStopCompose">
+                                
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
@@ -26,6 +26,11 @@ export default {
 
                 </section>
             `,
+    data() {
+        return {
+            email: ''
+        }
+    },
     methods: {
         toggleMinimize() {
             console.log('Not yet in!')
@@ -34,12 +39,13 @@ export default {
             console.log('Not yet in!')
         },
         emitStopCompose() {
-            console.log('Not yet in!')
+            // TODO add in a save to drafts
             this.$emit('stopCompose')
         }
     },
     created() {
         this.email = emailService.getEmptyEmail();
+        console.log('this email is:', this.email)
     },
     components: {
         composerContent,

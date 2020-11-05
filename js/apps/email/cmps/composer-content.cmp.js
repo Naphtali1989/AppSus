@@ -12,7 +12,7 @@ export default {
                     
                         <label class="composer-content-subhead flex">
                             <h1 class="composer-email-sent-to">To:</h1>
-                            <input class="composer-email-sent-to-txt" type="text" v-model="email.subject" />
+                            <input class="composer-email-sent-to-txt" type="text" v-model="email.toName" />
                         </label>
                         
                         <div class="composer-content-body flex">

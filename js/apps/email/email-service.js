@@ -146,7 +146,8 @@ function loadEmailsFromStorage() {
 function getEmptyEmail() {
     return {
         composer: '',
-        composerEmail: '',
+        composerEmail: 'Naphtali',
+        toName: '',
         subject: '',
         body: '',
         isRead: false,
