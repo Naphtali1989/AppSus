@@ -7,7 +7,7 @@ export default {
                 <button class="new-email-open-btn btn" @click="emitCompose"><img src="./assets/email/img/icon/create_32dp.png" /></button>
                 <ul class="email-nav-list clean-list flex space-between">
                     <li :class="{focused:!focusOn}" class="inbox-navigator btn" @click="emitNavChange()">
-                        <i class="fas fa-inbox"></i>
+                        <i class="fas fa-inbox"></i><span v-if="showUnreads" class="span-for-read">{{totalUnreads}}</span>
                     </li>
                     <li :class="{focused:focusOn==='isMarked'}" class="starred-navigator btn" @click="emitNavChange('isMarked')">
                         <i class="fas fa-star"></i>
@@ -19,7 +19,7 @@ export default {
                         <i class="fab fa-firstdraft"></i>
                     </li>
                     <li :class="{focused:focusOn==='isTrash'}" class="trash-navigator btn" @click="emitNavChange('isTrash')">
-                        <i class="fas fa-trash"></i> <span v-if="showUnreads" class="span-for-read hide">{{trashUnreads}}</span>
+                        <i class="fas fa-trash"></i>
                     </li>
                 </ul>
             </section>
@@ -31,8 +31,10 @@ export default {
         }
     },
     computed: {
-        trashUnreads() {
-            return
+        totalUnreads() {
+            const unread = emailService.updateUnreads()
+            if (unread === 0) return ''
+            return unread
         }
     },
     methods: {

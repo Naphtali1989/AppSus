@@ -14,7 +14,8 @@ export default {
         return {
             currEmails: '',
             filterBy: null,
-            searchBy: ''
+            searchBy: '',
+
         }
     },
     computed: {

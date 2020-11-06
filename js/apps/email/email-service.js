@@ -428,7 +428,7 @@ const defaultEmails = [{
 
 var sampleComposers = ['Naphtali', 'Idan', 'Eyal'];
 var sampleEmails = ['Naphtali@play588.com', 'IdanDaMan@peevr.com', 'Eyalzor@pnrep.com']
-var gUnreads = []
+var gUnreads = {};
 var gEmails;
 
 export const emailService = {
@@ -441,7 +441,7 @@ export const emailService = {
     saveEmailDraft,
     saveEmailSent,
     setSortEmailsBy,
-    getUnreadsAmount
+    updateUnreads
 }
 
 function setSortEmailsBy(sortBy = 'date') {
@@ -563,12 +563,26 @@ function getEmptyEmail() {
     }
 }
 
-function updateUnreads(status) {
-    console.log(gEmails)
-    var emailsReadMap = 0
-    return
+function updateUnreads() {
+    if (gEmails) {
+        var reads = gEmails.reduce(function(acc, email) {
+            var currStatus = acc[email.isRead];
+            acc[email.isRead] = (!currStatus) ? 1 : currStatus + 1;
+            return acc;
+        }, {})
+        gUnreads.unRead = reads.false
+        return reads.false
+    } else return 0
 }
 
 function getUnreadsAmount() {
-
+    return gUnreads.unRead
 }
+
+// var res = employees.reduce(function(acc, employee) {
+//     var exp = employee.yearsExperience;
+//     var dept = employee.department;
+//     if (!acc[dept]) acc[dept] = 0;
+//     acc[dept] += exp;
+//     return acc;
+// }, {});
