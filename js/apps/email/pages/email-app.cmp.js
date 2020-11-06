@@ -30,8 +30,9 @@ export default {
     methods: {
         toggleComposer(detail = null) {
             this.isComposing = !this.isComposing
+            eventBus.$emit('emailsRefreshed')
             this.$router.push('/email/board/' + JSON.stringify(detail))
-            console.log('the detail is:', detail)
+                // console.log('the detail is:', detail)
                 // this.$router.push({ path: '/email/board/', params: { detail } })
 
         },

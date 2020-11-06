@@ -1,4 +1,5 @@
 import emailPreview from './email-preview.cmp.js';
+import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
 
 export default {
     props: ['emails'],
@@ -17,6 +18,7 @@ export default {
         },
         emitEmailDeleted() {
             this.$emit('emailDeleted')
+            eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' })
         }
     },
     components: {

@@ -444,6 +444,8 @@ export const emailService = {
     updateUnreads
 }
 
+getEmailsToDisplay(null)
+
 function setSortEmailsBy(sortBy = 'date') {
     const sorter = (sortBy === 'date') ? 'sentAt' : ((sortBy === 'name') ? 'composer' : 'subject')
     gEmails.sort((a, b) => {
@@ -576,7 +578,11 @@ function updateUnreads() {
 }
 
 function getUnreadsAmount() {
-    return gUnreads.unRead
+    var count = 0;
+    gEmails.forEach(email => {
+        if (!email.isRead) count++
+    })
+    return count;
 }
 
 // var res = employees.reduce(function(acc, employee) {

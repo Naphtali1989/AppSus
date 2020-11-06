@@ -30,6 +30,7 @@ export default {
     methods: {
         refreshEmails() {
             this.getEmails(this.filterBy)
+            eventBus.$emit('emailsRefreshed')
         },
         setEmailsToShow(status) {
             this.getEmails(status)
