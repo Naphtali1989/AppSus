@@ -30,15 +30,16 @@ export default {
     },
     methods: {
         sendAsMail() {
-            // var noteEmail = `?composer=${composer}&subject=${subject}&body=${body}`;
             let note;
             const { title, val } = this.note.info
             const formatTime = new Date(this.note.createdAt).toLocaleString();
             if (this.note.type === 'noteTodo') {
-                const todos = JSON.stringify(this.note.info.todos)
-                note = `?composer=Ninja Coder&subject=${title}&body=${todos}&createdAt=${formatTime}`
+                const todos = this.note.info.todos.map((todo, idx) => {
+                    return `Task ${idx + 1}: ${todo.todoTxt} `
+                }).join('\n');
+                note = `?composer=Ninja Coder&subject=${this.note.info.label}&body=${todos}&sentAt=${formatTime}`
             } else {
-                note = `?composer=Ninja Coder&subject=${title}&body=${val}&createdAt=${formatTime}`
+                note = `?composer=Ninja Coder&subject=${title}&body=${val}&sentAt=${formatTime}`
             }
             this.$router.push('/email/board/' + note);
         },
@@ -78,7 +79,7 @@ export default {
     }
 }
 
-
+//    const todos = this.note.info.todos.map(todo,idx =>  todo.todoTxt).join('\n');
 
 
 
