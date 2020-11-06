@@ -1,0 +1,14 @@
+.todos-edit-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.todos-edit-container input {
+    width: 100px;
+}
+
+.confirm-list-btn {
+    width: 50%;
+    margin: 0 auto;
+}

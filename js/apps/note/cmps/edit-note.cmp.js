@@ -4,8 +4,8 @@ export default {
     template: ` 
             <section class="edit-note">
                 <form @submit.prevent="emitNoteEdit">
-                    <input type="text" v-model="noteInfo"/>
-                    <button>Confirm!</button>
+                    <input type="text" v-model="noteInfo" placeholder="Edit me!"/>
+                    <button class="btn">Confirm!</button>
                 </form>
             </section>
     

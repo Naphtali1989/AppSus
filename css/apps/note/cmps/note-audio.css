@@ -1,0 +1,11 @@
+.note-audio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+audio {
+    width: 240px;
+}

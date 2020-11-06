@@ -6,7 +6,7 @@ export default {
             <section class="note-img">
                 <img :src="note.info.val" alt=""/>
                 <!-- <editable :note="note" @update="emitChange"/> -->
-                <p contenteditable="true" class="img-title" @blur="emitChange">{{note.info.title}}</p>
+                <p contenteditable="true" class="editable-title" @blur="emitChange">{{note.info.title}}</p>
             </section>
     `,
     methods: {

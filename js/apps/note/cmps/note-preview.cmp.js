@@ -2,6 +2,7 @@ import noteTxt from './note-txt.cmp.js';
 import noteImg from './note-img.cmp.js';
 import noteVideo from './note-video.cmp.js';
 import noteControl from './note-control.cmp.js'
+import noteAudio from './note-audio.cmp.js'
 import { noteService } from '../note-service.js';
 import editNote from '../cmps/edit-note.cmp.js';
 import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
@@ -13,7 +14,6 @@ export default {
                 <section class="note-preview" :style="{backgroundColor: backgroundColor}">
                     <edit-note :note="note" v-if="editMode" @confirmEdit=" onConfirmNoteEdit"/>
                     <component :is="note.type" :note="note" @update="onUpdate" v-else/>
-                      <span class="note-created">{{formatTime}}</span>
                     <note-control 
                         :note="note"
                         @deleteNote="onDeleteNote"
@@ -21,6 +21,7 @@ export default {
                         @changeColor="onChangeColor"
                         @editNote="onEditNote"
                         />
+                     
                 </section>
     
     `,
@@ -62,9 +63,6 @@ export default {
         }
     },
     computed: {
-        formatTime() {
-            return new Date(this.note.createdAt).toLocaleDateString()
-        },
         backgroundColor() {
             return this.note.style.backgroundColor
         }
@@ -75,6 +73,7 @@ export default {
         noteImg,
         noteVideo,
         noteControl,
-        editNote
+        editNote,
+        noteAudio
     }
 }
