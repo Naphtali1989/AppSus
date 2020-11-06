@@ -23,7 +23,7 @@
 
 .email-composer.minimized {
     height: 50px;
-    width: 15rem;
+    width: 18rem;
 }
 
 .composer-close-btn {
@@ -34,4 +34,9 @@
     .email-composer {
         max-width: 450px;
     }
+    .minimize-toggle-btn:hover,
+    .maximize-toggle-btn:hover,
+    .composer-close-btn:hover{
+    background-color: #00000040;
+}
 }
