@@ -4,7 +4,7 @@ export default {
     template: `
             <section class="note-txt">
                   <h3>{{note.info.val}}</h3>
-                  <p contenteditable="true"  @blur="emitChange">{{note.info.title}}</p>
+                  <p contenteditable="true" class="editable-title"   @blur="emitChange">{{note.info.title}}</p>
             </section>
 
 

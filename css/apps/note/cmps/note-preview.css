@@ -5,12 +5,10 @@
 margin-inline-end: 15px; */
     margin-block-start: 15px;
     color: black;
-    width: 200px;
+    width: 250px;
     word-break: break-word;
     border-radius: 8px;
     font-family: cursive, sans-serif;
-    position: relative;
-    /* padding: 2rem; */
 }
 
 
@@ -42,10 +40,34 @@ margin-inline-end: 15px; */
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    position: relative;
 }
 
-.note-created {
+.control-section span {
+    margin-inline-start: 5px;
+    margin-inline-end: 5px;
+    transition: transform .3s ease;
+}
+
+.control-section span i:hover {
+    transform: scale(1.1);
+}
+
+.control-section .note-created {
     padding: 5px;
+    font-size: 12px;
+    position: absolute;
+    left: -5px;
+    padding: 3px;
+    margin-block-start: 10px;
+}
+
+.editable-title {
+    margin-block-end: 10px;
+}
+
+.btns-section {
+    position: relative;
 }
 
 

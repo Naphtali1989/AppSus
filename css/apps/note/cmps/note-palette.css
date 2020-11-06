@@ -1,6 +1,6 @@
 .palette-container {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     background: #fafafa;
     border: 1px solid black;
     display: flex;
@@ -15,15 +15,10 @@
 }
 
 .color-circle {
-    display: inline-block;
     width: 26px;
     height: 26px;
     border-radius: 50%;
     margin-inline-start: 3px;
     margin-inline-end: 3px;
     cursor: pointer;
-}
-
-.color-circle:hover {
-    border: 1px solid black;
 }
