@@ -11,10 +11,8 @@ export default {
                 <note-filter @doFilter="setFilter" v-if="this.notes" />
                 <note-add @addNote="onAddNote"/>
                 <template v-if="notes">
-                    <h3>Pinned</h3>
-                    <note-list :notes="pinnedNotes" />
-                    <h3>Others</h3>
-                    <note-list :notes="unPinnedNotes" />
+                    <note-list :notes="pinnedNotes" :listType="'PINNED'" />
+                    <note-list :notes="unPinnedNotes" :listType="'OTHERS'" />
                 </template>
             </section>
     

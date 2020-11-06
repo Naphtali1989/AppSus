@@ -10,7 +10,7 @@ function getDefaultNotes() {
     return [{
             type: 'noteTxt',
             id: '102',
-            info: { value: 'I like vue js', title: 'hello' },
+            info: { val: 'I like vue js', title: 'hello' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
@@ -18,7 +18,7 @@ function getDefaultNotes() {
         {
             type: 'noteImg',
             id: '103',
-            info: { value: 'https://images-na.ssl-images-amazon.com/images/I/61U3W11hFnL._AC_SL1000_.jpg', title: 'Cool title here' },
+            info: { val: 'https://downthetubes.net/wp-content/uploads/2020/01/dragon-ball-super-goku-ultra-instinct-mastered-01.jpg', title: 'Cool title here' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
@@ -26,19 +26,37 @@ function getDefaultNotes() {
         {
             type: 'noteImg',
             id: '104',
-            info: { value: 'https://giffiles.alphacoders.com/208/208599.gif', title: 'some img here' },
+            info: { val: 'https://troll.link/bl-content/uploads/pages/dec2b671ff28d69d3ad97bc5c890ca35/Pikachu_trollface.png', title: 'I like to troll all' },
+            style: { backgroundColor: '#ffff88' },
+            createdAt: Date.now(),
+            isPinned: false
+        },
+        {
+            type: 'noteVideo',
+            id: '105',
+            info: { val: 'https://www.youtube.com/watch?v=j18d-hLdTD8', title: 'Good music!' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
         },
         {
-            type: 'noteVideo',
-            id: '105',
-            info: { value: 'https://www.youtube.com/watch?v=I-HC_k1mrUo', title: 'some video' },
+            type: 'noteTodo',
+            id: '106',
+            info: {
+                label: "List Name(editable)",
+                todos: [
+                    { todoTxt: 'Learn vue', isDone: false, id: '0cSqrq9mBu9' },
+                    { todoTxt: "Learn Node JS", isDone: false, id: 'qmUeHTYlzC3' },
+                    { todoTxt: "Learn To catch errors", isDone: false, id: 'jaPqbc92601' },
+                    { todoTxt: "Eat more food", isDone: false, id: 'hseW4Q4hCcb' },
+                ]
+            },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
-        }
+        },
+
+
     ]
 }
 
@@ -129,10 +147,6 @@ function deleteTodo(noteId, todoId) {
     _saveNotesToStorage()
     return Promise.resolve();
 }
-
-// function getTodoIdxById() {
-
-// }
 
 function saveMarkTodo(noteId, todoId, markStatus) {
     const note = getNoteById(noteId);
