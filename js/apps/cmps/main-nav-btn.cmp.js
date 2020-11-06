@@ -1,7 +1,7 @@
 export default {
     template: `
             <section class="">
-            <div :class="{change:menuOn}" class="show-menu-btn btn" @click="onToggleMenu">
+            <div :class="{change:menuOn}" class="show-menu-btn btn" @click="onToggleMenu" >
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>

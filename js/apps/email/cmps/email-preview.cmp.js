@@ -1,5 +1,6 @@
 import { emailService } from '../email-service.js';
 import longTxt from './long-txt.cmp.js';
+import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
 
 export default {
     props: ['email'],
@@ -7,7 +8,7 @@ export default {
             <section class="email-preview flex align-center btn" :class="emailReadChecker">
                 <button class="prioritize-btn btn" @click.stop="prioritizeEmail">
                     <i v-if="!email.isMarked" class="far fa-star" title="Mark as important"></i>
-                    <i v-if="email.isMarked" class="fas fa-star marked" title="Unmark priority"></i>
+                    <i v-if="email.isMarked" class="fas fa-star email-marked" title="Unmark priority"></i>
                 </button>
                 <div class="email-preview-composer-name"><long-txt :txt="email.composer" :size="20" /></div>
                 <div class="email-preview-subject"><long-txt :txt="email.subject" :size="35" /></div>
@@ -28,11 +29,14 @@ export default {
     methods: {
         deleteEmail() {
             emailService.deleteEmail(this.email.id)
-                .then(ans => { this.$emit('emailDeleted') });
+                .then(ans => { 
+                    eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' });
+                    this.$emit('emailDeleted') });
         },
         prioritizeEmail() {
             emailService.toggleEmailMark(this.email.id)
-                .then(ans => { this.$emit('emailDeleted') });
+                .then(ans => { 
+                    this.$emit('emailDeleted') });
             // .then(ans => { this.$emit('emailPrioritized') })
         },
         markEmail() {

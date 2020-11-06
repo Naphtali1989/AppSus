@@ -30,7 +30,6 @@ export default {
         deleteEmail() {
             emailService.deleteEmail(this.emailToDesplay.id)
             this.closeDetailMode();
-            eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' })
         },
         openReply() {
             // console.log('this email is:', this.emailToDesplay)

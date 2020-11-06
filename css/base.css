@@ -39,24 +39,26 @@ input {
 .bar1,
 .bar2,
 .bar3 {
-    background-color: black;
+    background-color: rgb(141, 141, 141);
     position: relative;
     width: 35px;
     height: 5px;
     margin: 6px 0;
-    transition: all 0.33s;
+    transition: all 0.83s;
     z-index: 3;
 }
 
-.change .bar1 {
+body.show-nav .bar1 {
+    background: linear-gradient(90deg, rgba(255,0,0,1) 33%, rgb(47, 179, 55) 77%);
     transform: rotate(-45deg) translate(-9px, 6px);
 }
 
-.change .bar2 {
+body.show-nav  .bar2 {
     opacity: 0;
 }
 
-.change .bar3 {
+body.show-nav  .bar3 {
+    background: linear-gradient(90deg,#ffc000 30%,#005fff 75%);
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
