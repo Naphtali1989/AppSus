@@ -5,8 +5,8 @@ export default {
     name: 'note-todo',
     template: `
             <section class="note-todos-container">
+                <h1 class="todo-list-name" contenteditable="true"   @blur="emitChange" >{{note.info.label}}</h1>
                 <ul>
-                    <h1 class="todo-list-name" contenteditable="true" class="editable-title"   @blur="emitChange" >{{note.info.label}}</h1>
                     <note-todo-item 
                         v-for="todo in note.info.todos" 
                         :key="todo.id" 

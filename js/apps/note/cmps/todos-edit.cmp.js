@@ -14,7 +14,7 @@ export default {
                             v-model="todo.todoTxt" />
                             <button class="hide"></button>
                     </form>
-                    <button class="confirm-list-btn" @click="emitConfirm">Confirm!</button>
+                    <button class="confirm-list-btn" @click="emitConfirm">Save</button>
                 </section>
     
             `,

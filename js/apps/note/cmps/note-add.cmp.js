@@ -22,11 +22,11 @@ export default {
                         <span class="btn-video" :class="{focused:newNote.type === 'noteVideo'}"  @click.stop="setMode('noteVideo')">
                             <i class="fab fa-youtube fa-2x"></i>
                         </span>
-                        <span :class="{focused:newNote.type === 'noteList'}" class="btn" @click.stop="setMode('noteTodo')">
-                            <i class="fas fa-list fa-2x"></i>
-                        </span>
-                        <span :class="{focused:newNote.type === 'noteAudio'}" class="btn" @click.stop="setMode('noteAudio')">
+                        <span class="btn-audio" :class="{focused:newNote.type === 'noteAudio'}"  @click.stop="setMode('noteAudio')">
                             <i class="fas fa-volume-up fa-2x"></i>
+                        </span>
+                        <span class="btn-list" :class="{focused:newNote.type === 'noteTodo'}"  @click.stop="setMode('noteTodo')">
+                            <i class="fas fa-list fa-2x"></i>
                         </span>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ export default {
             this.newNote.type = type
             if (type === 'noteTodo') {
                 this.newNote.info = {
-                    label: 'Todo List Name(You can edit)',
+                    label: 'List Name(editable)',
                     todos: []
                 }
             } else {
