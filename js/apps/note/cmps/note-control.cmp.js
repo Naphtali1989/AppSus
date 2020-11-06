@@ -36,9 +36,9 @@ export default {
             const formatTime = new Date(this.note.createdAt).toLocaleString();
             if (this.note.type === 'noteTodo') {
                 const todos = JSON.stringify(this.note.info.todos)
-                note = `?composer=Ninja Coder&subject=${title}}&body=${todos}&createdAt=${formatTime}`
+                note = `?composer=Ninja Coder&subject=${title}&body=${todos}&createdAt=${formatTime}`
             } else {
-                note = `?composer=Ninja Coder&subject=${title}}&body=${val}&createdAt=${formatTime}`
+                note = `?composer=Ninja Coder&subject=${title}&body=${val}&createdAt=${formatTime}`
             }
             this.$router.push('/email/board/' + note);
         },
