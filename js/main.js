@@ -11,6 +11,14 @@ Vue.directive('rainbow', {
     }
 })
 
+Vue.directive('focus', {
+    inserted: function(el, binding, vnode) {
+        Vue.nextTick(function() {
+            el.focus()
+        })
+    }
+})
+
 
 const options = {
     el: '#app',

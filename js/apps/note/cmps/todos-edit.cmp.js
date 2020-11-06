@@ -1,3 +1,6 @@
+import { utilService } from '../../../services/util-service.js';
+
+
 export default {
     name: 'todos-edit',
     template: `
@@ -6,29 +9,28 @@ export default {
                         <input v-for="(todo,idx) in todos"
                             :key="idx"
                             type="text" 
+                            v-focus
                             placeholder="Enter to add a todo"
                             v-model="todo.todoTxt" />
                             <button class="hide"></button>
                     </form>
-                    <button class="confirm-list-btn" @click="confirm">Confirm!</button>
+                    <button class="confirm-list-btn" @click="emitConfirm">Confirm!</button>
                 </section>
     
             `,
     data() {
         return {
-            inputCount: 1,
-            todos: [
-                { todoTxt: '' }
-            ]
+            todos: [{ todoTxt: '', isDone: false, id: utilService.makeId() }]
         }
     },
     methods: {
         onAddInput() {
-            this.inputCount++;
-            this.todos.push({ todoTxt: '' })
+            this.todos.push({ todoTxt: '', isDone: false, id: utilService.makeId() })
         },
-        confirm() {
-            console.log('confirmed!')
+        emitConfirm() {
+            console.log(this.todos)
+            this.$emit('confirmTodos', this.todos)
+            this.todos = [{ todoTxt: '', isDone: false, id: utilService.makeId() }]
         }
     }
 }

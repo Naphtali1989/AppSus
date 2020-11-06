@@ -8,7 +8,7 @@ export default {
     template: `
             <section class="note-add-container">
                 <div class="input-container">
-                    <todos-edit  v-if="newNote.type === 'noteTodo' "/>
+                    <todos-edit  v-if="newNote.type === 'noteTodo'" @confirmTodos="onAddNote"/>
                     <form @submit.prevent="onAddNote" v-if="newNote.type != 'noteTodo'">
                         <input type="text" :placeholder="placeholder" v-model="newNote.info.val"/>
                     </form>
@@ -60,7 +60,16 @@ export default {
 
     },
     methods: {
-        onAddNote() {
+        addTodosToNote(todos) {
+            console.log('worked!')
+            this.newNote.info.todos = todos;
+        },
+        onAddNote(todos) {
+            if (this.newNote.type === 'noteTodo') {
+                this.addTodosToNote(todos);
+                this.$emit('addNote', this.newNote)
+                return;
+            }
             if (!this.newNote.info.val) {
                 eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Please fill the input', type: 'error' })
                 return;
@@ -78,10 +87,7 @@ export default {
             this.newNote.type = type
             if (type === 'noteTodo') {
                 this.newNote.info = {
-                    label: 'Shopping list',
-                    todos: [{ txt: "Do that", doneAt: null },
-                        { txt: "Do this", doneAt: 187111111 }
-                    ]
+                    todos: []
                 }
             } else {
                 this.newNote.info = { val: '', title: this.titles[type] }

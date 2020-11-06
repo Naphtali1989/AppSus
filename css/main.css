@@ -42,6 +42,7 @@
 @import './apps/note/cmps/edit-note.css';
 @import './apps/note/cmps/todos-edit.css';
 @import './apps/note/cmps/note-audio.css';
+@import './apps/note/cmps/note-todo-item.css';
 
 /* PAGES */
 

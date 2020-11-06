@@ -1,4 +1,3 @@
-import editable from './editable.cmp.js'
 export default {
     props: ['note'],
     name: 'noteImg',
@@ -20,7 +19,4 @@ export default {
     created() {
         console.log('note img:', this.note)
     },
-    components: {
-        editable
-    }
 }

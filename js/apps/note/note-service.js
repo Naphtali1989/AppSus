@@ -80,6 +80,9 @@ function addNote(note) {
     return Promise.resolve();
 }
 
+function addTodoNote(todos) {
+
+}
 
 function deleteNote(noteId) {
     const noteIdx = gNotes.findIndex(note => note.id === noteId);
@@ -104,18 +107,29 @@ function _saveNotesToStorage() {
 function confirmNoteEdit(id, noteInfo) {
     const note = getNoteById(id)
     if (!id) return;
+    console.log('note info in service:', noteInfo);
     note.info.val = noteInfo;
     _saveNotesToStorage();
     return Promise.resolve();
 }
-
 
 function updateNote(url) {
     _saveNotesToStorage()
     return Promise.resolve();
 }
 
+function deleteTodo(noteId, todoId) {
+    const note = getNoteById(noteId)
+    console.log('note id:', noteId);
+    console.log('todo id:', todoId);
+    const todoIdx = note.info.todos.findIndex(todo => todo.id === todoId);
+    if (todoIdx == -1) return Promise.reject()
+    note.info.todos.splice(todoIdx, 1);
+    console.log('todo idx:', todoIdx)
+    _saveNotesToStorage()
+    return Promise.resolve();
 
+}
 export const noteService = {
     getNotesForDisplay,
     addNote,
@@ -123,5 +137,6 @@ export const noteService = {
     onChangeStyleProp,
     pinNote,
     updateNote,
-    confirmNoteEdit
+    confirmNoteEdit,
+    deleteTodo
 }

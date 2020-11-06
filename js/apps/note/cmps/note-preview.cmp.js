@@ -2,7 +2,8 @@ import noteTxt from './note-txt.cmp.js';
 import noteImg from './note-img.cmp.js';
 import noteVideo from './note-video.cmp.js';
 import noteControl from './note-control.cmp.js'
-import noteAudio from './note-audio.cmp.js'
+import noteAudio from './note-audio.cmp.js';
+import noteTodo from './note-todo.cmp.js';
 import { noteService } from '../note-service.js';
 import editNote from '../cmps/edit-note.cmp.js';
 import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
@@ -12,8 +13,8 @@ export default {
     name: 'note-preview',
     template: `
                 <section class="note-preview" :style="{backgroundColor: backgroundColor}">
-                    <edit-note :note="note" v-if="editMode" @confirmEdit=" onConfirmNoteEdit"/>
-                    <component :is="note.type" :note="note" @update="onUpdate" v-else/>
+                    <edit-note :note="note" v-if="editMode" @confirmEdit="onConfirmNoteEdit"/>
+                    <component :is="note.type" :note="note" @update="onUpdate"  @deleteTodo="onDeleteTodo"  v-else/>
                     <note-control 
                         :note="note"
                         @deleteNote="onDeleteNote"
@@ -31,7 +32,13 @@ export default {
         }
     },
     methods: {
+        onDeleteTodo(todoId) {
+            noteService.deleteTodo(this.note.id, todoId)
+                .then(() => console.log(`todo ${todoId} has been deleted!`))
+        },
         onConfirmNoteEdit(id, value) {
+            console.log('what im getting id?:', id)
+            console.log('what im getting value?:', value)
             this.editMode = false;
             noteService.confirmNoteEdit(id, value)
                 .then(() => console.log('Note has been changed !'))
@@ -67,13 +74,13 @@ export default {
             return this.note.style.backgroundColor
         }
     },
-    created() {},
     components: {
         noteTxt,
         noteImg,
         noteVideo,
         noteControl,
         editNote,
-        noteAudio
+        noteAudio,
+        noteTodo
     }
 }

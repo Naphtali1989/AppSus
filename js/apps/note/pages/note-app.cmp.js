@@ -9,7 +9,7 @@ export default {
     template: `
             <section class="note-app-container">
                 <note-filter @doFilter="setFilter" v-if="this.notes" />
-                <note-add @addNote="onAddNote" />
+                <note-add @addNote="onAddNote"/>
                 <template v-if="notes">
                     <h3>Pinned</h3>
                     <note-list :notes="pinnedNotes" />
@@ -37,12 +37,10 @@ export default {
             this.filterBy = filterBy;
         },
         onAddNote(note) {
-            console.log('note:', note)
+            console.log('Note todo:', note)
             noteService.addNote(note)
                 .then(() => eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Note has been added!', type: 'success' }))
         },
-
-
     },
     computed: {
         notesToShow() {
