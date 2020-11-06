@@ -73,7 +73,6 @@ export default {
         this.email = emailService.getEmptyEmail();
         var details = this.$route.params.details;
         if (details && details !== 'null') {
-            // console.log('why am i even here???', details)
             const { sentAt, subject, composer, body } = JSON.parse(details);
             this.email.subject = 'Re: ' + subject;
             this.email.body = `On ${sentAt} <${composer}> wrote: "${body}"`;

@@ -1,11 +1,13 @@
 import searchBar from '../cmps/search-bar.cmp.js';
 import sortBar from '../cmps/sort-bar.cmp.js';
 import filterBar from '../cmps/filter-bar.cmp.js';
+import mainNavBtn from '../../cmps/main-nav-btn.cmp.js';
 import { eventBus, SET_FILTER, SET_SORT, SET_SEARCH } from '../../../services/event-bus-service.js';
 
 export default {
     template: `
-            <section class="search-section">
+            <section class="search-section flex">
+                 <main-nav-btn />
                 <search-bar  @setSearch="emitSetSearch"/>     
                 <sort-bar :term="'date'" @setSort="emitSetSort"/>
                 <filter-bar :term="'all'" @setFilter="emitSetFilter"/>
@@ -13,7 +15,8 @@ export default {
             `,
     data() {
         return {
-            searchBy: ''
+            searchBy: '',
+
         }
     },
     methods: {
@@ -25,13 +28,15 @@ export default {
         },
         emitSetSearch(searchBy) {
             eventBus.$emit(SET_SEARCH, searchBy)
-        }
+        },
+
 
     },
     components: {
         searchBar,
         sortBar,
-        filterBar
+        filterBar,
+        mainNavBtn
     }
 
 

@@ -14,11 +14,11 @@ export default {
             `,
     methods: {
         openEmail(emailId) {
-            this.$router.push('/email/' + emailId)
+            this.$router.push('/email/' + emailId);
         },
         emitEmailDeleted() {
-            this.$emit('emailDeleted')
-            eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' })
+            this.$emit('emailDeleted');
+            eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' });
         }
     },
     components: {
