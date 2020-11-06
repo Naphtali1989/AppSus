@@ -44,7 +44,7 @@ export default {
         saveToNote() {
             const { composer, subject, body } = this.emailToDesplay;
             const noteEmail = { composer, subject, body };
-            this.$router.push('/note/' + JSON.stringify(noteEmail))
+            this.$router.push('/note?' + JSON.stringify(noteEmail))
         }
 
     },
