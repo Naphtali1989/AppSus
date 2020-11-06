@@ -1,4 +1,5 @@
 import { eventBus } from '../../../services/event-bus-service.js';
+import { emailService } from '../email-service.js';
 
 export default {
     template: `
@@ -18,14 +19,20 @@ export default {
                         <i class="fab fa-firstdraft"></i>
                     </li>
                     <li :class="{focused:focusOn==='isTrash'}" class="trash-navigator btn" @click="emitNavChange('isTrash')">
-                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-trash"></i> <span v-if="showUnreads" class="span-for-read hide">{{trashUnreads}}</span>
                     </li>
                 </ul>
             </section>
             `,
     data() {
         return {
-            focusOn: null
+            focusOn: null,
+            showUnreads: true
+        }
+    },
+    computed: {
+        trashUnreads() {
+            return
         }
     },
     methods: {
@@ -36,8 +43,5 @@ export default {
             this.focusOn = status;
             eventBus.$emit('switchedNav', status);
         }
-    },
-    computed: {
-
     }
 }
