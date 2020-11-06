@@ -26,6 +26,10 @@ margin-inline-end: 15px; */
     margin: 0;
 }
 
+.note-txt h3 {
+    padding: 5px;
+}
+
 
 /*note-video comp*/
 

@@ -76,12 +76,7 @@ export default {
         this.getNotes();
         console.log("what is it", this.$route.query)
         if (Object.keys(this.$route.query).length !== 0) {
-
-            // this.$route.query.substring(0);
-            // this.$route.query.substring(th)
-            console.log('this.route:', this.$route)
-            console.log('before parse:', this.$route.query)
-                // const emailNote = JSON.parse(JSON.stringify(this.$route.query));
+            console.log(typeof this.$route.query)
             const query = this.$route.query
             console.log('QUERY???', query)
             const emailNote = JSON.parse(JSON.stringify(query))
