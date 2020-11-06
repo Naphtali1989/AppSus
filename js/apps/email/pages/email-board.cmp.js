@@ -1,6 +1,6 @@
 import { emailService } from '../email-service.js';
 import emailList from '../cmps/email-list.cmp.js';
-import { eventBus, SET_FILTER, SET_SORT, SET_SEARCH } from '../../../services/event-bus-service.js';
+import { eventBus, SET_FILTER, SET_SORT, SET_SEARCH, SENT_REPLY_EMAIL } from '../../../services/event-bus-service.js';
 
 
 export default {
@@ -43,6 +43,7 @@ export default {
     },
     created() {
         this.getEmails();
+        if (this.$route.params.details !== undefined) eventBus.$emit(SENT_REPLY_EMAIL, this.$route.params.details)
         eventBus.$on('switchedNav', status => {
             this.$router.push('/email/board')
             this.getEmails(status)
@@ -62,7 +63,7 @@ export default {
             this.searchBy = searchBy;
         });
         console.log('this is the route', this.$route.params)
-        if (this.$route.params.detail !== undefined) eventBus.$emit(SENT_REPLY_EMAIL, this.$route.params.detail)
+
     },
     components: {
         emailList,
