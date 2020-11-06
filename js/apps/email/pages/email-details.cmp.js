@@ -32,7 +32,6 @@ export default {
             this.closeDetailMode();
         },
         openReply() {
-            // console.log('this email is:', this.emailToDesplay)
             const replyDetail = {
                 composer: this.emailToDesplay.composerEmail,
                 subject: this.emailToDesplay.subject,
@@ -43,8 +42,8 @@ export default {
         },
         saveToNote() {
             const { composer, subject, body } = this.emailToDesplay;
-            const noteEmail = { composer, subject, body };
-            this.$router.push('/note?' + JSON.stringify(noteEmail))
+            var noteEmail = `?composer="${composer}"&subject="${subject}&body="${body}"`;
+            this.$router.push('/note' + noteEmail)
         }
 
     },

@@ -42,7 +42,6 @@ export default {
         },
     },
     created() {
-        console.log('Created board!!!', this.$router.params)
         this.getEmails();
         eventBus.$on('switchedNav', status => {
             this.$router.push('/email/board')
