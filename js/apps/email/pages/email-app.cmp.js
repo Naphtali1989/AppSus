@@ -44,7 +44,6 @@ export default {
 
     },
     created() {
-        console.log('Napthlie:', this.$router.params)
         this.$router.push('/email/board');
         eventBus.$on(SENT_REPLY_EMAIL, detail => {
             this.toggleComposer(detail)
