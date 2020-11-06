@@ -18,7 +18,7 @@ export default {
         },
         emitEmailDeleted() {
             this.$emit('emailDeleted');
-            eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' });
+            
         }
     },
     components: {
