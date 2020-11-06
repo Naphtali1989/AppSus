@@ -50,7 +50,7 @@ input {
 }
 
 body.show-nav .bar1 {
-    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 33%, rgb(47, 179, 55) 77%);
+    background: linear-gradient(90deg, rgb(255, 0, 0) 33%, rgb(47, 179, 55) 77%);
     transform: rotate(-45deg) translate(-9px, 6px);
 }
 
