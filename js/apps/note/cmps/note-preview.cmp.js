@@ -14,7 +14,7 @@ export default {
     template: `
                 <section class="note-preview" :style="{backgroundColor: backgroundColor}">
                     <edit-note :note="note" v-if="editMode" @confirmEdit="onConfirmNoteEdit"/>
-                    <component :is="note.type" :note="note" @update="onUpdate"  @deleteTodo="onDeleteTodo"  v-else/>
+                    <component :is="note.type" :note="note" @update="onUpdate"  @deleteTodo="onDeleteTodo" @saveMarkTodo="onSaveMarkTodo" v-else/>
                     <note-control 
                         :note="note"
                         @deleteNote="onDeleteNote"
@@ -32,6 +32,10 @@ export default {
         }
     },
     methods: {
+        onSaveMarkTodo(todoId, markStatus) {
+            noteService.saveMarkTodo(this.note.id, todoId, markStatus)
+                .then(() => console.log('Status has been saved!'))
+        },
         onDeleteTodo(todoId) {
             noteService.deleteTodo(this.note.id, todoId)
                 .then(() => console.log(`todo ${todoId} has been deleted!`))

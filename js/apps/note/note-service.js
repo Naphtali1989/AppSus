@@ -128,8 +128,22 @@ function deleteTodo(noteId, todoId) {
     console.log('todo idx:', todoIdx)
     _saveNotesToStorage()
     return Promise.resolve();
+}
+
+// function getTodoIdxById() {
+
+// }
+
+function saveMarkTodo(noteId, todoId, markStatus) {
+    const note = getNoteById(noteId);
+    const todoIdx = note.info.todos.findIndex(todo => todo.id === todoId);
+    note.info.todos[todoIdx].isDone = markStatus;
+    _saveNotesToStorage();
+    return Promise.resolve();
 
 }
+
+
 export const noteService = {
     getNotesForDisplay,
     addNote,
@@ -138,5 +152,6 @@ export const noteService = {
     pinNote,
     updateNote,
     confirmNoteEdit,
-    deleteTodo
+    deleteTodo,
+    saveMarkTodo
 }
