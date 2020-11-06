@@ -1,6 +1,7 @@
-import notePreview from './note-preview.cmp.js'
-import noteTxt from './note-txt.cmp.js'
-import noteImg from './note-img.cmp.js'
+import notePreview from './note-preview.cmp.js';
+import noteTxt from './note-txt.cmp.js';
+import noteImg from './note-img.cmp.js';
+// import draggable from 'vuedraggable'
 
 export default {
     props: ['notes', 'listType'],
@@ -8,6 +9,9 @@ export default {
     template: `
                 <section class="main-notes">
                     <h3>{{listType}}</h3>
+                    <!-- <draggable v-model="notes" group="note" @start="drag=true" @end="drag=false">
+
+                    </draggable> -->
                     <div class="notes-container">
                          <note-preview 
                          v-for="note in notes"
@@ -23,7 +27,8 @@ export default {
     
         `,
     components: {
-        notePreview
+        notePreview,
+        // draggable
     },
     created() {
         console.log('listType', this.listType)
