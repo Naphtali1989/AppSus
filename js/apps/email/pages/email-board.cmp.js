@@ -61,6 +61,8 @@ export default {
         eventBus.$on(SET_SEARCH, searchBy => {
             this.searchBy = searchBy;
         });
+        console.log('this is the route', this.$route.params)
+        if (this.$route.params.detail !== undefined) eventBus.$emit(SENT_REPLY_EMAIL, this.$route.params.detail)
     },
     components: {
         emailList,

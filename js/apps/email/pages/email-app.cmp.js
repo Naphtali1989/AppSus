@@ -36,9 +36,6 @@ export default {
             this.isComposing = !this.isComposing
             eventBus.$emit('emailsRefreshed')
             this.$router.push('/email/board/' + JSON.stringify(detail))
-                // console.log('the detail is:', detail)
-                // this.$router.push({ path: '/email/board/', params: { detail } })
-
         },
         onToggleMenu() {
             console.log('Work in Progress!')
