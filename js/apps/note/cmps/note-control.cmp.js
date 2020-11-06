@@ -33,11 +33,12 @@ export default {
             // var noteEmail = `?composer=${composer}&subject=${subject}&body=${body}`;
             let note;
             const { title, val } = this.note.info
+            const formatTime = new Date(this.note.createdAt).toLocaleString();
             if (this.note.type === 'noteTodo') {
                 const todos = JSON.stringify(this.note.info.todos)
-                note = `?composer=Ninja Coder&subject=${title}}&body=${todos}&createdAt=${this.note.createdAt}`
+                note = `?composer=Ninja Coder&subject=${title}}&body=${todos}&createdAt=${formatTime}`
             } else {
-                note = `?composer=Ninja Coder&subject=${title}}&body=${val}&createdAt=${this.note.createdAt}`
+                note = `?composer=Ninja Coder&subject=${title}}&body=${val}&createdAt=${formatTime}`
             }
             this.$router.push('/email/board/' + note);
         },
