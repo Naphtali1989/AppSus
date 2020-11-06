@@ -21,6 +21,7 @@ export default {
         return {
             notes: null,
             filterBy: null,
+            emailNote: null
         }
     },
     methods: {
@@ -39,18 +40,24 @@ export default {
             noteService.addNote(note)
                 .then(() => eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Note has been added!', type: 'success' }))
         },
+        onAddEmailNote(emailNote) {
+            console.log('email note?', emailNote)
+            console.log('composer:', emailNote.composer)
+            console.log('subject:', emailNote.subject)
+            console.log('body:', emailNote.body)
+                // const noteBody = `Email note from ${this.emailNote.composer}: \n 
+                //                     ${this.emailNote.body}
+
+            //                  `
+            // const note = { title: subject, val: noteBody };
+            // this.onAddNote(note);
+
+        }
     },
     computed: {
         notesToShow() {
             if (!this.filterBy) return this.notes;
             const { txt, type } = this.filterBy;
-            // if (type === 'all' && !txt) {
-            //     const notes = this.notes.filter(note => {
-            //         return note.info.title.toLowerCase().includes(txt.toLowerCase())
-
-            //     })
-            //     console.log('notes:', notes)
-            // }
             if (type === 'all') return this.notes
             return this.notes.filter(note => {
                 return note.info.title.toLowerCase().includes(txt.toLowerCase()) &&
@@ -67,6 +74,21 @@ export default {
     },
     created() {
         this.getNotes();
+        console.log("what is it", this.$route.query)
+        if (Object.keys(this.$route.query).length !== 0) {
+
+            // this.$route.query.substring(0);
+            // this.$route.query.substring(th)
+            console.log('this.route:', this.$route)
+            console.log('before parse:', this.$route.query)
+                // const emailNote = JSON.parse(JSON.stringify(this.$route.query));
+            const query = this.$route.query
+            console.log('QUERY???', query)
+            const emailNote = JSON.parse(JSON.stringify(query))
+            console.log('AFTER OBJECT PARSE:', emailNote)
+            this.onAddEmailNote(emailNote);
+        }
+
         eventBus.$on('pinNote', id => {
             noteService.pinNote(id)
                 .then(notes => {

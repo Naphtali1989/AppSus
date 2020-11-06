@@ -25,6 +25,6 @@ export default {
         }
     },
     created() {
-        console.log(this.todo);
+        // console.log(this.todo);
     }
 }

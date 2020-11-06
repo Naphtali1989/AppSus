@@ -28,9 +28,9 @@ export default {
             this.$emit('deleteTodo', todoId)
         },
         emitChange(ev) {
-            console.log('event:', ev)
-            console.log('getting:', ev.target.textContent)
-                //change list name header
+            // console.log('event:', ev)
+            // console.log('getting:', ev.target.textContent)
+            //change list name header
             this.note.info.label = ev.target.textContent;
             this.$emit('update', this.note.id)
         },

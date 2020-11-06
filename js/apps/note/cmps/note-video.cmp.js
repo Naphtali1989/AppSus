@@ -10,8 +10,8 @@ export default {
     `,
     methods: {
         emitChange(ev) {
-            console.log('event:', ev)
-            console.log('getting:', ev.target.textContent)
+            // console.log('event:', ev)
+            // console.log('getting:', ev.target.textContent)
             this.note.info.title = ev.target.textContent;
             this.$emit('update', this.note.id)
         }

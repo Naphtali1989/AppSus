@@ -10,13 +10,13 @@ export default {
     `,
     methods: {
         emitChange(ev) {
-            console.log('event', ev)
-                //change the object pointer directly;
+            // console.log('event', ev)
+            //change the object pointer directly;
             this.note.info.title = ev.target.textContent;
             this.$emit('update', this.note.id)
         }
     },
     created() {
-        console.log('note img:', this.note)
+        // console.log('note img:', this.note)
     },
 }

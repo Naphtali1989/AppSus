@@ -46,7 +46,7 @@ export default {
                     sentAt: new Date(this.note.createdAt).toLocaleString()
                 }
             }
-            console.log('reply detail is:', replyDetail)
+            // console.log('reply detail is:', replyDetail)
 
             this.$router.push('/email/board/' + JSON.stringify(replyDetail));
             // eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
@@ -66,7 +66,7 @@ export default {
             eventBus.$emit('pinNote', this.note.id)
         },
         emitEdit() {
-            console.log('entered edit mode1')
+            // console.log('entered edit mode1')
             this.$emit('editNote')
         }
     },
@@ -84,7 +84,7 @@ export default {
         notePalette
     },
     created() {
-        console.log('note information:', this.note)
+        // console.log('note information:', this.note)
     }
 
 }

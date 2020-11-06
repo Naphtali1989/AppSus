@@ -9,7 +9,7 @@ export default {
     template: `
                 <section class="main-notes">
                     <h3>{{listType}}</h3>
-                     <draggable :list="notes">
+                   
                          <div class="notes-container">
                               <note-preview 
                               v-for="note in notes"
@@ -17,7 +17,7 @@ export default {
                                :note="note"
                                />
                          </div>
-                    </draggable>
+                   
                     <div class="other-notes-container">
                              
                     </div>
@@ -29,7 +29,7 @@ export default {
         notePreview,
     },
     created() {
-        console.log('listType', this.listType)
+        // console.log('listType', this.listType)
     }
 
 }

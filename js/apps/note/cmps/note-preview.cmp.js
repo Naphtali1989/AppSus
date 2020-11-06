@@ -12,7 +12,7 @@ export default {
     props: ['note'],
     name: 'note-preview',
     template: `
-                <section class="note-preview" :style="{backgroundColor: backgroundColor}">
+                <section class="note-preview" :style="{backgroundColor: getBackgroundColor}">
                     <edit-note :note="note" v-if="editMode" @confirmEdit="onConfirmNoteEdit"/>
                     <component :is="note.type" :note="note" @update="onUpdate"  @deleteTodo="onDeleteTodo" @saveMarkTodo="onSaveMarkTodo" v-else/>
                     <note-control 
@@ -74,9 +74,12 @@ export default {
         }
     },
     computed: {
-        backgroundColor() {
+        getBackgroundColor() {
             return this.note.style.backgroundColor
         }
+    },
+    created() {
+        console.log('background', this.note.style.backgroundColor)
     },
     components: {
         noteTxt,

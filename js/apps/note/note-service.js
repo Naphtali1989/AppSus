@@ -98,9 +98,7 @@ function addNote(note) {
     return Promise.resolve();
 }
 
-function addTodoNote(todos) {
 
-}
 
 function deleteNote(noteId) {
     const noteIdx = gNotes.findIndex(note => note.id === noteId);
