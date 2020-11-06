@@ -76,9 +76,8 @@ export default {
         this.getNotes();
         console.log("what is it", this.$route.query)
         if (Object.keys(this.$route.query).length !== 0) {
-            console.log(typeof this.$route.query)
+
             const query = this.$route.query
-            console.log('QUERY???', query)
             const emailNote = JSON.parse(JSON.stringify(query))
             console.log('AFTER OBJECT PARSE:', emailNote)
             this.onAddEmailNote(emailNote);
