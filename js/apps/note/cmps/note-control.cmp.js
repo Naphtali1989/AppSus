@@ -30,27 +30,16 @@ export default {
     },
     methods: {
         sendAsMail() {
-            let replyDetail;
+            // var noteEmail = `?composer=${composer}&subject=${subject}&body=${body}`;
+            let note;
+            const { title, val } = this.note.info
             if (this.note.type === 'noteTodo') {
-                replyDetail = {
-                    composer: 'Ninja coder',
-                    subject: this.note.info.label,
-                    body: JSON.stringify(this.note.info.todos),
-                    sentAt: new Date(this.note.createdAt).toLocaleString()
-                }
+                const todos = JSON.stringify(this.note.info.todos)
+                note = `?composer=Ninja Coder&subject=${title}}&body=${todos}&createdAt=${this.note.createdAt}`
             } else {
-                replyDetail = {
-                    composer: 'Ninja coder',
-                    subject: this.note.info.title,
-                    body: this.note.info.val,
-                    sentAt: new Date(this.note.createdAt).toLocaleString()
-                }
+                note = `?composer=Ninja Coder&subject=${title}}&body=${val}&createdAt=${this.note.createdAt}`
             }
-            // console.log('reply detail is:', replyDetail)
-
-            this.$router.push('/email/board/' + JSON.stringify(replyDetail));
-            // eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
-
+            this.$router.push('/email/board/' + note);
         },
         emitDeleteNote() {
             this.$emit('deleteNote', this.note.id)
@@ -68,7 +57,7 @@ export default {
         emitEdit() {
             // console.log('entered edit mode1')
             this.$emit('editNote')
-        }
+        },
     },
     computed: {
         noteTypeIcon() {
@@ -86,5 +75,28 @@ export default {
     created() {
         // console.log('note information:', this.note)
     }
-
 }
+
+
+
+
+
+
+//    if (this.note.type === 'noteTodo') {
+//                 replyDetail = {
+//                     composer: 'Ninja coder',
+//                     subject: this.note.info.label,
+//                     body: JSON.stringify(this.note.info.todos),
+//                     sentAt: new Date(this.note.createdAt).toLocaleString()
+//                 }
+//             } else {
+//                 replyDetail = {
+//                     composer: 'Ninja coder',
+//                     subject: this.note.info.title,
+//                     body: this.note.info.val,
+//                     sentAt: new Date(this.note.createdAt).toLocaleString()
+//                 }
+//             }
+
+
+// var noteEmail = `?composer=${composer}&subject=${subject}&body=${body}`;

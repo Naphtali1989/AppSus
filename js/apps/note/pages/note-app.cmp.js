@@ -36,21 +36,30 @@ export default {
             this.filterBy = filterBy;
         },
         onAddNote(note) {
-            console.log('Note todo:', note)
+            console.log('Mail note:', note)
             noteService.addNote(note)
                 .then(() => eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Note has been added!', type: 'success' }))
+                .then(() => this.$router.push('/note'))
         },
         onAddEmailNote(emailNote) {
             console.log('email note?', emailNote)
             console.log('composer:', emailNote.composer)
             console.log('subject:', emailNote.subject)
             console.log('body:', emailNote.body)
-                // const noteBody = `Email note from ${this.emailNote.composer}: \n 
-                //                     ${this.emailNote.body}
+            const { composer, body, subject } = emailNote;
+            const noteBody = `Email note from ${composer}: \n 
+                                    ${body}
 
-            //                  `
-            // const note = { title: subject, val: noteBody };
-            // this.onAddNote(note);
+                             `
+            const note = {
+                type: 'noteTxt',
+                style: { backgroundColor: "#ffff88" },
+                info: {
+                    title: subject,
+                    val: noteBody
+                }
+            };
+            this.onAddNote(note)
 
         }
     },
@@ -75,11 +84,9 @@ export default {
     created() {
         this.getNotes();
         console.log("what is it", this.$route.query)
+            //checking if  the obj of the query string is not empty
         if (Object.keys(this.$route.query).length !== 0) {
-
-            const query = this.$route.query
-            const emailNote = JSON.parse(JSON.stringify(query))
-            console.log('AFTER OBJECT PARSE:', emailNote)
+            const emailNote = this.$route.query
             this.onAddEmailNote(emailNote);
         }
 
