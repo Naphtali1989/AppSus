@@ -17,7 +17,7 @@ export default {
                                 <router-link to="/note" exact >Note App</router-link>
                             </li>
                             <li>
-                                <router-link to="/email" exact >Email App</router-link>
+                                <router-link to="/email/board" exact >Email App</router-link>
                             </li> 
                         </nav>
                     </header>
@@ -28,8 +28,8 @@ export default {
             isShowNav: true
         }
     },
-    methods:{
-        toggleNav(){
+    methods: {
+        toggleNav() {
             document.body.classList.remove('show-nav')
         }
     }

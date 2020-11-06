@@ -9,10 +9,8 @@ export default {
     name: 'email-app',
     template: `
             <section class="email-app">
-                <div class="email-header flex">
-                
                 <search-section />
-            </div>
+
                 <div class="main-email-content flex column">
                     <email-nav @startCompose="toggleComposer" />
                     <router-view />
