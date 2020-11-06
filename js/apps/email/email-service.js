@@ -297,12 +297,12 @@ function saveEmailSent(email) {
 
 function deleteEmail(id) {
     return getEmailIdxById(id).then(index => {
-        // if (!gEmails[res].isTrash) {
-        //     gEmails[res].isTrash = true;
-        //     saveEmailsToStorage();
-        //     return gEmails[res].id; // returns promise
-        // }
-        // if (index === null) return
+        if (!gEmails[index].isTrash) {
+            gEmails[index].isTrash = true;
+            saveEmailsToStorage();
+            return gEmails[index].id; // returns promise
+        }
+        if (index === null) return
         console.log('EYAL! Here is my index!', index)
         gEmails.splice(index, 1)
         saveEmailsToStorage();
