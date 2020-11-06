@@ -42,7 +42,7 @@ export default {
         },
         saveToNote() {
             const { composer, subject, body } = this.emailToDesplay;
-            var noteEmail = `?composer="${composer}"&subject="${subject}&body="${body}"`;
+            var noteEmail = `?composer=${composer}&subject=${subject}&body=${body}`;
             this.$router.push('/note' + noteEmail)
         }
 
