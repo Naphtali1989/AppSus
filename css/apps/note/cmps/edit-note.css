@@ -1,0 +1,23 @@
+.edit-note {
+    padding: 3rem;
+}
+
+.edit-note form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-note input {
+    padding: .50rem 1rem;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: transform .3s ease;
+    margin-block-end: 20px;
+}
+
+.edit-note input:focus {
+    border: 1px solid black;
+}

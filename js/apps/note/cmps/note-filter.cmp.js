@@ -1,14 +1,17 @@
 export default {
     name: 'noteFilter',
     template: `
-                <section class="note-filter">
-                        <input type="text" v-model.trim="filterBy.txt" @input="emitFilter" placeholder="search.."/>
-                        <select v-model="filterBy.type" @change="emitFilter">
-                            <option value="all">All</option>
-                            <option value="noteTxt">Text</option>
-                            <option value="noteImg">Images</option>
-                            <option value="noteVideo">Videos</option>
-                        </select>
+                <section class="note-filter-container">
+                    <section class="note-filter">
+                            <i class="fas fa-search btn" @click="emitFilter"></i>  
+                            <input type="search" v-model.trim="filterBy.txt" @input="emitFilter" placeholder="search.."/>
+                            <select v-model="filterBy.type" @change="emitFilter">
+                                <option value="all">All</option>
+                                <option value="noteTxt">Text</option>
+                                <option value="noteImg">Images</option>
+                                <option value="noteVideo">Videos</option>
+                            </select>
+                    </section>
                 </section>
         `,
     data() {

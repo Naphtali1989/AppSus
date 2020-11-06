@@ -1,0 +1,36 @@
+.note-filter-container {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    margin-block-end: 20px;
+    padding: 5px;
+}
+
+.note-filter {
+    background-color: rgb(233, 233, 233);
+    border-radius: 7px;
+    position: relative;
+    font-size: 1.25rem;
+    box-shadow: 1px 0.5px 3px 0.5px rgba(0, 0, 0, 0.35);
+    transition: all .33s;
+    width: 380px;
+    margin-block-start: 5px;
+    margin-inline-start: 10px;
+    margin-inline-end: 5px;
+}
+
+.note-filter:focus-within {
+    background-color: rgb(250, 250, 250);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.45);
+}
+
+.note-filter input {
+    background-color: transparent;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.note-filter i {
+    margin-inline-start: 5px;
+}
