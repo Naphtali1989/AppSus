@@ -7,7 +7,7 @@ export default {
                 <button class="new-email-open-btn btn" @click="emitCompose"><img src="./assets/email/img/icon/create_32dp.png" /></button>
                 <ul class="email-nav-list clean-list flex space-between">
                     <li :class="{focused:!focusOn}" class="inbox-navigator btn" @click="emitNavChange()">
-                        <i class="fas fa-inbox"></i><span v-if="showUnreads" class="span-for-read">{{totalUnreads}}</span>
+                        <i class="fas fa-inbox"></i><span v-if="showUnreads" class="span-for-read hide">{{totalUnreads}}</span>
                     </li>
                     <li :class="{focused:focusOn==='isMarked'}" class="starred-navigator btn" @click="emitNavChange('isMarked')">
                         <i class="fas fa-star"></i>
@@ -27,17 +27,21 @@ export default {
     data() {
         return {
             focusOn: null,
-            showUnreads: true
+            showUnreads: true,
+            unread: null
         }
     },
     computed: {
         totalUnreads() {
-            const unread = emailService.updateUnreads()
-            if (unread === 0) return ''
-            return unread
+            if (this.unread === 0) return ''
+            return this.unread
         }
     },
     methods: {
+        updateUnreads() {
+            const unread = emailService.updateUnreads()
+            console.log(unread)
+        },
         emitCompose() {
             this.$emit('startCompose')
         },
@@ -45,5 +49,11 @@ export default {
             this.focusOn = status;
             eventBus.$emit('switchedNav', status);
         }
+    },
+    created() {
+        this.unread = emailService.updateUnreads()
+        eventBus.$on('emailsRefreshed', () => {
+            this.unread = emailService.updateUnreads()
+        })
     }
 }

@@ -40,7 +40,7 @@
 
 .email-nav li.focused {
     background-color: #c86b6b15;
-    color: rgb(55, 55, 55);
+    color: #c86b6b;
 }
 
 @media (min-width:640px) {
@@ -69,6 +69,7 @@
     }
     .email-nav li:hover {
         background-color: #1C6EA408;
+        color: #1C6EA4;
     }
     .new-email-open-btn::after {
         content: "Compose";

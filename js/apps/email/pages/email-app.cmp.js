@@ -9,7 +9,10 @@ export default {
     name: 'email-app',
     template: `
             <section class="email-app">
+                <div class="email-header flex">
+                
                 <search-section />
+            </div>
                 <div class="main-email-content flex column">
                     <email-nav @startCompose="toggleComposer" />
                     <router-view />
@@ -20,6 +23,7 @@ export default {
     data() {
         return {
             isComposing: false,
+            menuOn: false
         }
     },
     computed: {
@@ -30,11 +34,16 @@ export default {
     methods: {
         toggleComposer(detail = null) {
             this.isComposing = !this.isComposing
+            eventBus.$emit('emailsRefreshed')
             this.$router.push('/email/board/' + JSON.stringify(detail))
-            console.log('the detail is:', detail)
+                // console.log('the detail is:', detail)
                 // this.$router.push({ path: '/email/board/', params: { detail } })
 
         },
+        onToggleMenu() {
+            console.log('Work in Progress!')
+            this.menuOn = !this.menuOn
+        }
 
     },
     created() {

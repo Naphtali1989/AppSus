@@ -1,5 +1,5 @@
 import { emailService } from '../email-service.js';
-import { eventBus, SENT_REPLY_EMAIL } from '../../../services/event-bus-service.js';
+import { eventBus, SENT_REPLY_EMAIL, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
 
 export default {
     name: 'emailDetails',
@@ -25,17 +25,15 @@ export default {
     },
     methods: {
         closeDetailMode() {
-            this.emailToDesplay.isRead = true;
             this.$router.push('/email/board')
         },
         deleteEmail() {
             emailService.deleteEmail(this.emailToDesplay.id)
             this.closeDetailMode();
-            // .then(res => {
-            // })
+            eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' })
         },
         openReply() {
-            console.log('this email is:', this.emailToDesplay)
+            // console.log('this email is:', this.emailToDesplay)
             const replyDetail = {
                 composer: this.emailToDesplay.composerEmail,
                 subject: this.emailToDesplay.subject,
@@ -54,7 +52,6 @@ export default {
         emailService.getEmailById(id)
             .then(res => {
                 this.emailToDesplay = res
-
             })
     },
     watch: {
@@ -63,7 +60,6 @@ export default {
             emailService.getEmailById(to)
                 .then(res => {
                     this.emailToDesplay = res
-                        // this.emailToDesplay.isRead = true;
                 })
         }
     }
