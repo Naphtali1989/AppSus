@@ -9,9 +9,9 @@ export default {
             <div class="email-display-header flex align-center space-between">
                <h1 class="email-display-title"> {{emailToDesplay.subject}}</h1>
                <div class="email-display-btns">
-                   <button class="email-display-reply-btn btn" @click="openReply"><i class="fas fa-reply"></i></button>
-                   <button class="email-display-save-btn btn" @click="saveToNote"><i class="far fa-save"></i></button>
-                   <button class="email-display-delete-btn btn" @click="deleteEmail"><i class="fas fa-trash"></i></button>
+                   <button class="email-display-reply-btn btn" @click="openReply" title="Reply"><i class="fas fa-reply"></i></button>
+                   <button class="email-display-save-btn btn" @click="saveToNote" title="Save as a Note"><i class="far fa-save"></i></button>
+                   <button class="email-display-delete-btn btn" @click="deleteEmail" title="Delete"><i class="fas fa-trash"></i></button>
                </div>
             </div>
             <div class="email-display-name flex align-center">from: {{emailToDesplay.composer}} <p class="muted-txt"><{{emailToDesplay.composerEmail}}></p></div>
