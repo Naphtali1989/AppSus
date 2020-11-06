@@ -29,14 +29,16 @@ export default {
     methods: {
         deleteEmail() {
             emailService.deleteEmail(this.email.id)
-                .then(ans => { 
+                .then(ans => {
                     eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' });
-                    this.$emit('emailDeleted') });
+                    this.$emit('emailDeleted')
+                });
         },
         prioritizeEmail() {
             emailService.toggleEmailMark(this.email.id)
-                .then(ans => { 
-                    this.$emit('emailDeleted') });
+                .then(ans => {
+                    this.$emit('emailDeleted')
+                });
             // .then(ans => { this.$emit('emailPrioritized') })
         },
         markEmail() {

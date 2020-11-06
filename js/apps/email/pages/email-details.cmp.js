@@ -42,7 +42,9 @@ export default {
             eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
         },
         saveToNote() {
-            console.log('not yet in')
+            const { composer, subject, body } = this.emailToDesplay;
+            const noteEmail = { composer, subject, body };
+            this.$router.push('/note/' + JSON.stringify(noteEmail))
         }
 
     },
@@ -53,13 +55,13 @@ export default {
                 this.emailToDesplay = res
             })
     },
-    watch: {
-        '$route.params.emailId' (to, from) {
-            // console.log('the to is:', to, 'The from is:', from)
-            emailService.getEmailById(to)
-                .then(res => {
-                    this.emailToDesplay = res
-                })
-        }
-    }
+    // watch: {
+    // '$route.params.emailId' (to, from) {
+    //     // console.log('the to is:', to, 'The from is:', from)
+    //     emailService.getEmailById(to)
+    //         .then(res => {
+    //             this.emailToDesplay = res
+    //         })
+    // }
+    // }
 }

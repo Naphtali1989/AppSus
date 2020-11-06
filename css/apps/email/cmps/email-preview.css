@@ -29,6 +29,10 @@
     z-index: 5;
 }
 
+body.show-nav .preview-btns {
+    right: 270px;
+}
+
 .email-preview:hover .preview-btns {
     background-color: inherit;
     display: flex;
@@ -85,6 +89,6 @@
         width: 35%;
     }
     body.show-nav .email-preview-time {
-        margin-inline-end:250px ;
+        margin-inline-end: 250px;
     }
 }
