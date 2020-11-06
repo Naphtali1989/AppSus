@@ -1,5 +1,5 @@
 import notePalette from './note-palette.cmp.js';
-import { eventBus } from '../../../services/event-bus-service.js'
+import { eventBus, SENT_REPLY_EMAIL } from '../../../services/event-bus-service.js'
 
 
 export default {
@@ -10,6 +10,7 @@ export default {
          <i :class="noteTypeIcon" class="noteIcon"></i>
          <div class="btns-section">
              <!-- <span class="btn" @mouseover.stop="hover = true" @mouseleave ="hover = false"><i class="fas fa-palette"></i></span> -->
+                         <span class="btn" @click="sendAsMail"><i class="fas fa-paper-plane"></i></span>
                          <span class="btn" @click="emitCopyNote" title="Copy"><i class="fas fa-clone"></i></span>
                          <span class="btn" @click="show= !show"><i class="fas fa-palette"></i></span>
                          <span class="btn" @click="emitPinNote"><i class="fas fa-thumbtack"></i></span>
@@ -28,6 +29,29 @@ export default {
         }
     },
     methods: {
+        sendAsMail() {
+            let replyDetail;
+            if (this.note.type === 'noteTodo') {
+                replyDetail = {
+                    composer: 'Ninja coder',
+                    subject: this.note.info.label,
+                    body: JSON.stringify(this.note.info.todos),
+                    sentAt: new Date(this.note.createdAt).toLocaleString()
+                }
+            } else {
+                replyDetail = {
+                    composer: 'Ninja coder',
+                    subject: this.note.info.title,
+                    body: this.note.info.val,
+                    sentAt: new Date(this.note.createdAt).toLocaleString()
+                }
+
+            }
+            console.log('reply detail is:', replyDetail)
+            this.$router.push('/email/board/' + JSON.stringify(replyDetail));
+            eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
+
+        },
         emitDeleteNote() {
             this.$emit('deleteNote', this.note.id)
         },
@@ -58,6 +82,9 @@ export default {
     },
     components: {
         notePalette
+    },
+    created() {
+        console.log('note information:', this.note)
     }
 
 }
