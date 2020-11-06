@@ -44,7 +44,11 @@ export default {
 
     },
     created() {
-        this.$router.push('/email/board');
+        if (Object.keys(this.$route.query).length === 0) {
+            this.$router.push('/email/board');
+        } else {
+            console.log('Idan, lets do this!!!!!', this.$route.query)
+        }
         eventBus.$on(SENT_REPLY_EMAIL, detail => {
             this.toggleComposer(detail)
         })
