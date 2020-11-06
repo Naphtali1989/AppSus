@@ -45,11 +45,10 @@ export default {
                     body: this.note.info.val,
                     sentAt: new Date(this.note.createdAt).toLocaleString()
                 }
-
             }
             console.log('reply detail is:', replyDetail)
             this.$router.push('/email/board/' + JSON.stringify(replyDetail));
-            eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
+            // eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
 
         },
         emitDeleteNote() {
