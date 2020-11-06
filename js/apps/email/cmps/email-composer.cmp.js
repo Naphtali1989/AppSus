@@ -75,7 +75,7 @@ export default {
         if (details && details !== 'null') {
             const { sentAt, subject, composer, body } = JSON.parse(details);
             this.email.subject = 'Re: ' + subject;
-            this.email.body = `On ${sentAt} <${composer}> wrote:\n "${body}"`;
+            this.email.body = `On ${sentAt} <${composer}> wrote:\n ${body}`;
             this.email.toName = composer;
         }
     },
