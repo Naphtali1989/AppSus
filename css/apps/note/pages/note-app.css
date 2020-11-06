@@ -1,0 +1,36 @@
+@media (max-width: 540px) {
+    .note-add-container {
+        margin-block-end: 40px;
+        margin-block-start: 40px;
+    }
+    .note-filter input {
+        max-width: 80%;
+    }
+    .app-header {
+        min-height: 100%;
+    }
+    .input-container {
+        flex-direction: column;
+        padding: 3px;
+        width: 300px;
+    }
+    .input-container input {
+        text-align: center;
+        size: 50;
+    }
+    .confirm-list-btn {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-block-end: 10px;
+    }
+    /* .btns-container {
+    flex-direction: column;
+}
+
+*/
+}
+
+
+/*btns of container*/

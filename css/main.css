@@ -47,7 +47,8 @@
 
 /* PAGES */
 
-@import './apps/note/pages/dumby-file.css';
+@import './apps/note/pages/';
+@import './apps/note/pages/note-app.css';
 
 /* BOOK */
 

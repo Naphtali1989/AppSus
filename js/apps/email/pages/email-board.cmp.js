@@ -42,6 +42,7 @@ export default {
         },
     },
     created() {
+        console.log('Created board!!!', this.$router.params)
         this.getEmails();
         eventBus.$on('switchedNav', status => {
             this.$router.push('/email/board')
@@ -61,8 +62,6 @@ export default {
         eventBus.$on(SET_SEARCH, searchBy => {
             this.searchBy = searchBy;
         });
-        console.log('this is the route', this.$route.params)
-        if (this.$route.params.details !== undefined) eventBus.$emit(SENT_REPLY_EMAIL, this.$route.params.details)
     },
     components: {
         emailList,

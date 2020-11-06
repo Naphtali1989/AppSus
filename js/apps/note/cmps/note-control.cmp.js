@@ -10,12 +10,12 @@ export default {
          <i :class="noteTypeIcon" class="noteIcon"></i>
          <div class="btns-section">
              <!-- <span class="btn" @mouseover.stop="hover = true" @mouseleave ="hover = false"><i class="fas fa-palette"></i></span> -->
-                         <span class="btn" @click="sendAsMail"><i class="fas fa-paper-plane"></i></span>
-                         <span class="btn" @click="emitCopyNote" title="Copy"><i class="fas fa-clone"></i></span>
-                         <span class="btn" @click="show= !show"><i class="fas fa-palette"></i></span>
-                         <span class="btn" @click="emitPinNote"><i class="fas fa-thumbtack"></i></span>
-                         <span class="btn" @click="emitEdit"><i class="fas fa-edit"></i></span>
-                         <span class="btn" @click="emitDeleteNote"><i class="fas fa-trash"></i></span>
+                         <span class="btn" @click.stop="sendAsMail"><i class="fas fa-paper-plane"></i></span>
+                         <span class="btn" @click.stop="emitCopyNote" title="Copy"><i class="fas fa-clone"></i></span>
+                         <span class="btn" @click.stop="show= !show"><i class="fas fa-palette"></i></span>
+                         <span class="btn" @click.stop="emitPinNote"><i class="fas fa-thumbtack"></i></span>
+                         <span class="btn" @click.stop="emitEdit"><i class="fas fa-edit"></i></span>
+                         <span class="btn" @click.stop="emitDeleteNote"><i class="fas fa-trash"></i></span>
                         <note-palette  v-show="show" @changeColor="emitChangeColor" :note="note"/>
                      </div>
                       <!-- <span class="note-created">{{formatTime}}</span> -->
@@ -47,6 +47,7 @@ export default {
                 }
             }
             console.log('reply detail is:', replyDetail)
+
             this.$router.push('/email/board/' + JSON.stringify(replyDetail));
             // eventBus.$emit(SENT_REPLY_EMAIL, replyDetail)
 

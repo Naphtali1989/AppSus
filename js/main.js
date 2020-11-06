@@ -2,7 +2,6 @@ import { myRouter } from './routes.js';
 import userMsg from './apps/cmps/user-msg.cmp.js';
 import appHeader from './apps/cmps/app-header.cmp.js';
 
-
 //Custom directives
 Vue.directive('rainbow', {
     bind(el, binding, vnode) {
@@ -28,14 +27,16 @@ const options = {
             <app-header />
             <router-view class="router-view"/>
             <user-msg />
+            <draggable />
 
         </section>
     `,
     components: {
         // footCmp,
         // headCmp,
+        draggable: window['vuedraggable'],
         appHeader,
-        userMsg
+        userMsg,
     },
 }
 
