@@ -3,7 +3,7 @@ export default {
     name: 'note-todo-item',
     template: `
             <li class="todo-item-container" >
-                <span :class="markTodo" @click="todo.isDone = !todo.isDone" >{{todo.todoTxt}}</span>
+                <span :class="markTodo" @click="todo.isDone = !todo.isDone">{{todo.todoTxt}}</span>
                 <span @click="emitDeleteTodo" ><i class="far fa-times-circle"></i></span>
                
             </li>
@@ -13,6 +13,9 @@ export default {
     methods: {
         emitDeleteTodo() {
             this.$emit('deleteTodo', this.todo.id)
+        },
+        emitMarkTodo() {
+            this.$emit('save-mark', this.todo.id, this.todo.isDone);
         }
     },
     computed: {
