@@ -1,4 +1,9 @@
-// import bookApp from './apps/book/pages/book-app.cmp.js'
+import bookApp from './apps/book/pages/book-app.cmp.js';
+// import bookAdder from './apps/book/pages/book-adder.cmp.js';
+// import bookEdit from './apps/book/pages/book-edit.cmp.js';
+// import bookDetails from './apps/book/pages/book-details.cmp.js';
+
+
 import noteApp from './apps/note/pages/note-app.cmp.js';
 import emailApp from './apps/email/pages/email-app.cmp.js';
 import emailDetails from './apps/email/pages/email-details.cmp.js';
@@ -30,23 +35,23 @@ const myRoutes = [{
     //     component: aboutPage,
     //     children: []
     // },
-    // {
-    //     path: '/books',
-    //     component: bookApp,
-    //     children: [{
-    //             path: '/books/adder',
-    //             component: bookAdder
-    //         },
-    //         {
-    //             path: '/books/edit/:bookId',
-    //             component: bookEdit
-    //         },
-    //         {
-    //             path: '/books/:bookId',
-    //             component: bookDetails
-    //         },
-    //     ]
-    // },
+    {
+        path: '/book',
+        component: bookApp,
+        //     children: [{
+        //             path: '/book/adder',
+        //             component: bookAdder
+        //         },
+        //         {
+        //             path: '/book/edit/:bookId',
+        //             component: bookEdit
+        //         },
+        //         {
+        //             path: '/book/:bookId',
+        //             component: bookDetails
+        //         },
+        //     ]
+    },
 ]
 
 export const myRouter = new VueRouter({ routes: myRoutes })

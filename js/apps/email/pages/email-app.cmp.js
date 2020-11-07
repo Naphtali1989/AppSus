@@ -13,9 +13,9 @@ export default {
 
                 <div class="main-email-content flex column">
                     <email-nav @startCompose="toggleComposer" />
-                    <transition name="slide-right">
+                    <!-- <transition name="slide-right"> -->
                         <router-view />
-                    </transition >
+                    <!-- </transition > -->
                 </div>
                 <transition name="slide">
                     <email-composer v-if="showComposer" @stopCompose="toggleComposer"/>
