@@ -1,7 +1,8 @@
 import bookApp from './apps/book/pages/book-app.cmp.js';
-// import bookAdder from './apps/book/pages/book-adder.cmp.js';
-// import bookEdit from './apps/book/pages/book-edit.cmp.js';
-// import bookDetails from './apps/book/pages/book-details.cmp.js';
+import bookAdder from './apps/book/pages/book-adder.cmp.js';
+import bookEdit from './apps/book/pages/book-edit.cmp.js';
+import bookDetails from './apps/book/pages/book-details.cmp.js';
+import bookBoard from './apps/book/pages/book-board.cmp.js';
 
 
 import noteApp from './apps/note/pages/note-app.cmp.js';
@@ -38,19 +39,23 @@ const myRoutes = [{
     {
         path: '/book',
         component: bookApp,
-        //     children: [{
-        //             path: '/book/adder',
-        //             component: bookAdder
-        //         },
-        //         {
-        //             path: '/book/edit/:bookId',
-        //             component: bookEdit
-        //         },
-        //         {
-        //             path: '/book/:bookId',
-        //             component: bookDetails
-        //         },
-        //     ]
+        children: [{
+                path: '/book/board',
+                component: bookBoard
+            },
+            {
+                path: '/book/adder',
+                component: bookAdder
+            },
+            {
+                path: '/book/edit/:bookId',
+                component: bookEdit
+            },
+            {
+                path: '/book/:bookId',
+                component: bookDetails
+            },
+        ]
     },
 ]
 

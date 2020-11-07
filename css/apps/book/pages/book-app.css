@@ -1,0 +1,19 @@
+.book-app {
+    padding: 1rem;
+}
+
+.book-header-container {}
+
+.add-new-books-btn,
+.show-books-btn {
+    padding: 1rem;
+    color: rgb(80, 80, 80);
+    font-family: roboto, Arial, Helvetica, sans-serif;
+}
+
+@media (min-width:640px) {
+    .add-new-books-btn,
+    .show-books-btn {
+        padding: 2rem;
+    }
+}

@@ -77,7 +77,7 @@ export default {
             this.isReviewing = !this.isReviewing;
         },
         openBooks() {
-            this.$router.push('/books');
+            this.$router.push('/book/board');
         },
         showNoReviews() {
             console.log('no more reviews')
@@ -86,7 +86,7 @@ export default {
             const currId = this.book.id;
             bookService.getNextBookId(currId, diff)
                 .then(newId =>
-                    this.$router.push('/books/' + newId)
+                    this.$router.push('/book/' + newId)
                 )
         }
     },
