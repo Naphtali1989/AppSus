@@ -1,80 +1,87 @@
-    .note-preview {
-        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-        margin-block-start: 15px;
-        color: black;
-        width: 250px;
-        word-break: break-word;
-        border-radius: 8px;
-        /* font-family: alfa, sans-serif; */
-        font-family: roboto, sans-serif;
-    }
-    
-    .note-preview .note-img img {
-        width: 100%;
-        min-height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-    
-    .img-title {
-        padding: 5px;
-        margin: 0;
-    }
-    
-    .note-txt h3 {
-        padding: 10px;
-        font-size: 16px;
-        font-family: alfa, sans-serif;
-    }
-    /*note-video comp*/
-    
-    .video-frame {
-        border-radius: 5px;
-    }
-    /*control-section comp*/
-    
-    .control-section {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        position: relative;
-    }
-    
-    .control-section span {
-        margin-inline-start: 5px;
-        margin-inline-end: 5px;
-        transition: transform .3s ease;
-    }
-    
-    .control-section span i:hover {
-        transform: scale(1.1);
-    }
-    
-    .control-section .note-created {
-        padding: 5px;
-        font-size: 12px;
-        position: absolute;
-        left: -5px;
-        padding: 3px;
-        margin-block-start: 10px;
-    }
-    
-    .editable-title {
-        margin-block-end: 10px;
-        padding: 10px;
-        font-size: 20px;
-    }
-    
-    .btns-section {
-        position: relative;
-    }
-    /*Hover state*/
-    
-    .note-preview .btns-section {
-        visibility: hidden;
-    }
-    
-    .note-preview:hover .btns-section {
-        visibility: visible;
-    }
+.note-preview {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-block-start: 15px;
+    color: black;
+    width: 250px;
+    /* min-height: 250px; */
+    word-break: break-word;
+    border-radius: 8px;
+    /* font-family: alfa, sans-serif; */
+    font-family: roboto, sans-serif;
+}
+
+.note-preview .note-img img {
+    width: 100%;
+    min-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.img-title {
+    padding: 5px;
+    margin: 0;
+}
+
+.note-txt h3 {
+    padding: 10px;
+    font-size: 16px;
+    font-family: alfa, sans-serif;
+}
+
+
+/*note-video comp*/
+
+.video-frame {
+    border-radius: 5px;
+}
+
+
+/*control-section comp*/
+
+.control-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+}
+
+.control-section span {
+    margin-inline-start: 5px;
+    margin-inline-end: 5px;
+    transition: transform .3s ease;
+}
+
+.control-section span i:hover {
+    transform: scale(1.1);
+}
+
+.control-section .note-created {
+    padding: 5px;
+    font-size: 12px;
+    position: absolute;
+    left: -5px;
+    padding: 3px;
+    margin-block-start: 10px;
+}
+
+.editable-title {
+    margin-block-end: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.btns-section {
+    position: relative;
+}
+
+
+/*Hover state*/
+
+.note-preview .btns-section {
+    visibility: hidden;
+}
+
+.note-preview:hover .btns-section {
+    visibility: visible;
+}
