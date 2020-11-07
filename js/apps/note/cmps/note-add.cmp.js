@@ -87,7 +87,7 @@ export default {
             this.newNote.type = type
             if (type === 'noteTodo') {
                 this.newNote.info = {
-                    label: 'List Name(editable)',
+                    title: 'List Name(editable)',
                     todos: []
                 }
             } else {

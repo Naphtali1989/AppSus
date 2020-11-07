@@ -43,7 +43,7 @@ function getDefaultNotes() {
             type: 'noteTodo',
             id: '106',
             info: {
-                label: "List Name(editable)",
+                title: "List Name(editable)",
                 todos: [
                     { todoTxt: 'Learn vue', isDone: false, id: '0cSqrq9mBu9' },
                     { todoTxt: "Learn Node JS", isDone: false, id: 'qmUeHTYlzC3' },

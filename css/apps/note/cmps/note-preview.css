@@ -6,17 +6,15 @@ margin-inline-end: 15px; */
         margin-block-start: 15px;
         color: black;
         width: 250px;
-        min-height: 200px;
         word-break: break-word;
         border-radius: 8px;
         /* font-family: alfa, sans-serif; */
         font-family: roboto, sans-serif;
     }
     /*note-img*/
-    
-    .note-preview .note-txt {
+    /* .note-preview .note-txt {
         min-height: 150px;
-    }
+    } */
     /*note-img comp*/
     
     .note-preview .note-img img {
