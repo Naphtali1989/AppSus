@@ -6,8 +6,8 @@ export default {
     template: `
             <section class="note-txt">
                   <!-- <long-text :txt="note.info.val" /> -->
-                  <h3 contenteditable="true" class="editable-val"   @blur="emitChange">{{note.info.val}}</h3>
                   <p contenteditable="true" class="editable-title"   @blur="emitChange">{{note.info.title}}</p>
+                  <h3 contenteditable="true" class="editable-val"   @blur="emitChange">{{note.info.val}}</h3>
             </section>
 
 

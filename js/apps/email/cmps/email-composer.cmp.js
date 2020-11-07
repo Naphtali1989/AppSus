@@ -72,6 +72,7 @@ export default {
     created() {
         this.email = emailService.getEmptyEmail();
         var details = this.$route.params.details;
+        console.log('details in compser:', details)
         if (details && details !== 'null') {
             const { sentAt, subject, composer, body } = JSON.parse(details);
             this.email.subject = 'Re: ' + subject;

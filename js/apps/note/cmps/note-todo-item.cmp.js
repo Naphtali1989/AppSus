@@ -4,7 +4,7 @@ export default {
     template: `
             <li class="todo-item-container" >
                 <span :class="markTodo" @click="emitSaveMark">{{todo.todoTxt}}</span>
-                <span @click="emitDeleteTodo" class="delete-todo"><i class="far fa-times-circle"></i></span>
+                <span @click="emitDeleteTodo" class="delete-todo"><i class="fas fa-times"></i></span>
                
             </li>
     

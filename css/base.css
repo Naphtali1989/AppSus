@@ -13,6 +13,11 @@
         src: url('../fonts/SigmarOne-Regular.ttf');
     }
     
+    @font-face {
+        font-family: reg-roboto;
+        src: url('../fonts/Roboto-Regular.ttf');
+    }
+    
     * {
         box-sizing: border-box;
     }
