@@ -16,7 +16,7 @@ export default {
                     <section class="note-preview" :style="{backgroundColor: getBackgroundColor}">
                         <edit-note :note="note" v-if="editMode" @confirmEdit="onConfirmNoteEdit"/>
                             <component :is="note.type" :note="note" @update="onUpdate"   @deleteTodo="onDeleteTodo" @saveMarkTodo="onSaveMarkTodo" v-if="!editMode"/>
-                        <note-control 
+                            <note-control 
                             :note="note"
                             @deleteNote="onDeleteNote"
                             @copyNote="onCopyNote"
