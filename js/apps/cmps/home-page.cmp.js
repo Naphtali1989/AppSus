@@ -4,9 +4,9 @@ export default {
     name: 'homePage',
     template: `
                <section class="home-page">
-                   <div class="fork-me">
-                     <!-- <span><i class="fab fa-github"></i> Fork me on Github</span> -->
-                   </div>
+                   <!-- <div class="fork-me">
+                     <span><i class="fab fa-github"></i> Fork me on Github</span>
+                   </div> -->
                    <main class="main-content">
                        <img src="./assets/app/img/appsus.png" class="app-logo"/>
                        <h1 class="app-title">Welcome to AppSus</h1>
@@ -24,8 +24,8 @@ export default {
                        </div>
                     </main>
                     <footer class="app-footer">
-                        <h1 class="footer-title">#AppSus</h1>
-                        <small>Made with <i class="fab fa-vuejs fa-2x"></i> By Idan Atiya and Naphtali Rubin</small>
+                         <img src="./assets/app/img/appsus.png" class="appsus-logo-footer"/>
+                        <small>Created by Idan Atiya and Naphtali Rubin</small>
                     </footer>
                </section> 
             `,

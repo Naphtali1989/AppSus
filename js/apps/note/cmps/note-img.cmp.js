@@ -1,3 +1,5 @@
+import noteControl from './note-control.cmp.js'
+
 export default {
     props: ['note'],
     name: 'noteImg',
@@ -6,6 +8,7 @@ export default {
                 <img :src="note.info.val" alt=""/>
                 <!-- <editable :note="note" @update="emitChange"/> -->
                 <p contenteditable="true" class="editable-title" @blur="emitChange">{{note.info.title}}</p>
+                
             </section>
     `,
     methods: {
@@ -19,4 +22,7 @@ export default {
     created() {
         // console.log('note img:', this.note)
     },
+    components: {
+        noteControl
+    }
 }
