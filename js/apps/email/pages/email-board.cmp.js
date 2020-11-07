@@ -7,9 +7,9 @@ export default {
     name: `emailBoard`,
     template: `
             <section class="email-board flex column">
-            <transition name="bounce">
+           
                 <email-list v-if="currEmails" :emails="currMailsShowing"  @emailDeleted="refreshEmails"/>
-            </transition >
+
             </section>
             `,
     data() {
