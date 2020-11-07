@@ -22,3 +22,7 @@
     margin-inline-end: 3px;
     cursor: pointer;
 }
+
+.color-circle:hover {
+    border: 1px solid black;
+}

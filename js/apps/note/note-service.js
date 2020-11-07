@@ -59,7 +59,7 @@ function getDefaultNotes() {
             type: 'noteAudio',
             id: '107',
             info: {
-                title: 'Test audio',
+                title: 'Edit me',
                 val: 'https://www.computerhope.com/jargon/m/example.mp3'
             },
             style: { backgroundColor: '#ffff88' },

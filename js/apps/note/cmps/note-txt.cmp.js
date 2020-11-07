@@ -1,8 +1,11 @@
+import '../../cmps/long-text.cmp.js';
+
 export default {
     props: ['note'],
-    name: 'noteTxt',
+    name: 'note-txt',
     template: `
             <section class="note-txt">
+                  <!-- <long-text :txt="note.info.val" /> -->
                   <h3 contenteditable="true" class="editable-val"   @blur="emitChange">{{note.info.val}}</h3>
                   <p contenteditable="true" class="editable-title"   @blur="emitChange">{{note.info.title}}</p>
             </section>
@@ -17,8 +20,8 @@ export default {
             else this.note.info.title = ev.target.textContent;
             this.$emit('update', this.note.id)
         },
-        created() {
-            // console.log('note txt:', this.note)
-        }
+    },
+    components: {
+        // longText
     }
 }

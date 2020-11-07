@@ -12,9 +12,8 @@ export default {
     props: ['note'],
     name: 'note-preview',
     template: ` 
-                <transition name="puff">
                     <section class="note-preview" :style="{backgroundColor: getBackgroundColor}">
-                            <edit-note :note="note" v-if="editMode" @confirmEdit="onConfirmNoteEdit"/>
+                        <edit-note :note="note" v-if="editMode" @confirmEdit="onConfirmNoteEdit"/>
                             <component :is="note.type" :note="note" @update="onUpdate"   @deleteTodo="onDeleteTodo" @saveMarkTodo="onSaveMarkTodo" v-if="!editMode"/>
                         <note-control 
                             :note="note"
@@ -25,7 +24,6 @@ export default {
                             />
                         
                     </section>
-                </transition>
     
     `,
     data() {

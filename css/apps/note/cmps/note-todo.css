@@ -15,6 +15,8 @@
     width: 200px;
     align-items: center;
     font-size: 25px;
+    margin-block-start: 3px;
+    margin-block-end: 3px;
 }
 
 .todo-item-container .delete-todo {

@@ -1,10 +1,16 @@
+import appHeader from './app-header.cmp.js'
+
 export default {
     name: 'homePage',
     template: `
-               <section class="homepage">
-                   <h1>Welcome to AppSus</h1>
-                   
-                   
+               <section class="home-page">
+                   <app-header />
+                   <main class="main-content">
+                       <h1>Welcome to #AppSus</h1>
+                    </main>
                </section> 
-            `
+            `,
+    components: {
+        appHeader
+    }
 }
