@@ -25,7 +25,6 @@ export default {
     data() {
         return {
             isComposing: false,
-            menuOn: false
         }
     },
     computed: {
@@ -39,11 +38,6 @@ export default {
             eventBus.$emit('emailsRefreshed')
             this.$router.push('/email/board/' + JSON.stringify(detail))
         },
-        onToggleMenu() {
-            console.log('Work in Progress!')
-            this.menuOn = !this.menuOn
-        }
-
     },
     created() {
         if (Object.keys(this.$route.query).length === 0) {
