@@ -57,9 +57,12 @@
 /* CMPS */
 
 @import './apps/book/cmps/dumby-file.css';
+@import './apps/book/cmps/book-add-options.css';
+@import './apps/book/cmps/book-option.css';
 
 /* PAGES */
 
 @import './apps/book/pages/book-app.css';
 @import './apps/book/pages/book-adder.css';
+@import './apps/book/pages/book-board.css';
 @import './apps/book/pages/dumby-file.css';

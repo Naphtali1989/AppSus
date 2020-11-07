@@ -1,0 +1,35 @@
+.book-option {
+    font-family: reg-roboto, Arial, Helvetica, sans-serif;
+    padding: 0.4rem;
+    margin: 0 auto;
+}
+
+.book-option img {
+    height: 7rem;
+    width: 7rem;
+    padding: 0.2rem 2rem 0 0;
+}
+
+.book-option p {
+    margin: 0.2rem;
+    font-size: 0.9rem;
+    text-overflow: ellipsis;
+}
+
+.add-book-btn {
+    padding: 0.3rem;
+    background-color: rgb(75, 75, 75);
+    color: rgb(240, 240, 240);
+    border-radius: 2px;
+}
+
+@media(min-width:430px) {
+    .book-option-details {
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .book-option {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+}
