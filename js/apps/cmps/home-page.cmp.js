@@ -13,13 +13,13 @@ export default {
                        <p class="app-desc">AppSus is a simple app for managing emails,notes and books</p>
                        <nav class="app-btns clean-list">
                            <li>
-                               <router-link to="/" exact >Home</router-link>
-                           </li>
-                           <li>
                                <router-link to="/note" exact>Note App</router-link>
                            </li>
-                           <li>
+                            <li>
                                <router-link to="/email/board" exact>Email App</router-link>
+                           </li>
+                           <li>
+                               <router-link to="/book" exact>Book App</router-link>
                            </li>
                        </div>
                     </main>

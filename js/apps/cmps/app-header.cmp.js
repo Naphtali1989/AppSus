@@ -10,9 +10,9 @@ export default {
                                 <img src="../../../assets/app/img/appsus.png" class="appsus-logo" @click="goHomePage">
                         </div>
                         <nav class="main-nav clean-list" @click="toggleNav">
-                                <router-link to="/" exact >Home</router-link>
                                 <router-link to="/note" exact>Note App</router-link>
                                 <router-link to="/email/board" exact>Email App</router-link>
+                                <router-link to="/book" exact >Book App</router-link>
                         </nav>
                     </header>
                 </section>
