@@ -27,14 +27,9 @@ const options = {
             <app-header />
             <router-view class="router-view"/>
             <user-msg />
-            <draggable />
-
         </section>
     `,
     components: {
-        // footCmp,
-        // headCmp,
-        draggable: window['vuedraggable'],
         appHeader,
         userMsg,
     },

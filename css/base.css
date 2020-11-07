@@ -1,71 +1,81 @@
-@font-face {
-    font-family: roboto;
-    src: url('../fonts/Roboto-Black.ttf');
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-button {
-    cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    margin: 0;
-    font-family: roboto;
-}
-
-input {
-    outline: none;
-}
-
-.show-menu-btn {
-    padding: 1rem 1rem 1rem 0;
-    transition: all .33s;
-}
-
-.bar1,
-.bar2,
-.bar3 {
-    background-color: rgb(141, 141, 141);
-    position: relative;
-    width: 35px;
-    height: 5px;
-    margin: 6px 0;
-    transition: all 0.83s;
-    z-index: 3;
-}
-
-body.show-nav .bar1 {
-    background: linear-gradient(90deg, rgb(255, 0, 0) 30%, rgb(47, 179, 55) 75%);
-    transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-body.show-nav .bar2 {
-    opacity: 0;
-}
-
-body.show-nav .bar3 {
-    background: linear-gradient(90deg, #005fff 30%, #ffc000 75%);
-    transform: rotate(45deg) translate(-8px, -8px);
-}
-
-@media (min-width:640px) {
-    .show-menu-btn {
-        margin: 2rem 1rem;
-        padding: 0;
+    @font-face {
+        font-family: roboto;
+        src: url('../fonts/Roboto-Black.ttf');
     }
-}
+    
+    @font-face {
+        font-family: alfa, cursive;
+        src: url('../fonts/AlfaSlabOne-Regular.ttf');
+    }
+    
+    @font-face {
+        font-family: sigmar;
+        src: url('../fonts/SigmarOne-Regular.ttf');
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    button {
+        cursor: pointer;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin: 0;
+        font-family: roboto;
+    }
+    
+    input {
+        outline: none;
+    }
+    
+    .show-menu-btn {
+        padding: 1rem 1rem 1rem 0;
+        transition: all .33s;
+    }
+    
+    .bar1,
+    .bar2,
+    .bar3 {
+        background-color: rgb(141, 141, 141);
+        position: relative;
+        width: 35px;
+        height: 5px;
+        margin: 6px 0;
+        transition: all 0.83s;
+        z-index: 3;
+    }
+    
+    body.show-nav .bar1 {
+        background: linear-gradient(90deg, rgb(255, 0, 0) 33%, rgb(47, 179, 55) 77%);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    
+    body.show-nav .bar2 {
+        opacity: 0;
+    }
+    
+    body.show-nav .bar3 {
+        background: linear-gradient(90deg, #ffc000 30%, #005fff 75%);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+    
+    @media (min-width:640px) {
+        .show-menu-btn {
+            margin: 2rem 1rem;
+            padding: 0;
+        }
+    }

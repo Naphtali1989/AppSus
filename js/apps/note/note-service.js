@@ -55,6 +55,29 @@ function getDefaultNotes() {
             createdAt: Date.now(),
             isPinned: true
         },
+        {
+            type: 'noteAudio',
+            id: '107',
+            info: {
+                title: 'Test audio',
+                val: 'https://www.computerhope.com/jargon/m/example.mp3'
+            },
+            style: { backgroundColor: '#ffff88' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteImg',
+            id: '108',
+            info: {
+                title: 'Idan trying to work in css',
+                val: 'https://giffiles.alphacoders.com/129/12903.gif'
+            },
+            style: { backgroundColor: '#89b4c4' },
+            createdAt: Date.now(),
+            isPineed: false
+        }
+
 
 
     ]

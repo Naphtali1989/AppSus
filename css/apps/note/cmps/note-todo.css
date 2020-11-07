@@ -19,7 +19,7 @@
 
 .todo-item-container .delete-todo {
     font-size: 25px;
-    color: #c86b6b;
+    color: crimson;
     transition: .3s ease;
 }
 

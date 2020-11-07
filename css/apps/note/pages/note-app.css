@@ -1,4 +1,11 @@
 @media (max-width: 540px) {
+    .app-header {
+        min-height: 100%;
+    }
+    .note-filter {
+        margin-block-start: 10px;
+        min-width: 80%
+    }
     .note-add-container {
         margin-block-end: 40px;
         margin-block-start: 40px;
@@ -6,8 +13,14 @@
     .note-filter input {
         max-width: 80%;
     }
-    .app-header {
-        min-height: 100%;
+    .note-filter select[name='noteFilter'] {
+        position: absolute;
+        right: 14px;
+        top: 14px;
+        border: 0;
+        border-radius: 10px;
+        font-size: 18px;
+        outline: 0;
     }
     .input-container {
         flex-direction: column;
@@ -15,21 +28,29 @@
         width: 300px;
     }
     .input-container input {
+        min-width: 0;
         text-align: center;
-        size: 50;
+        width: 100%;
+        font-size: 22px;
     }
     .confirm-list-btn {
-        text-align: center;
         display: flex;
         justify-content: center;
-        align-items: center;
         margin-block-end: 10px;
+        width: 100%;
+        padding: 0.2rem;
     }
-    /* .btns-container {
-    flex-direction: column;
-}
-
-*/
+    .grid-container {
+        grid-template-columns: repeat(2, 130px);
+        justify-content: center;
+    }
+    .user-msg {
+        position: fixed;
+        bottom: 5px;
+        left: 5px;
+        width: 250px;
+        height: 50px;
+    }
 }
 
 

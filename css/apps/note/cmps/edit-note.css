@@ -23,7 +23,8 @@
     font-family: cursive, sans-serif;
 }
 
-.edit-note button {
+.confirm-todo-btn,
+.add-todo-btn {
     background: #fafafa;
     border-radius: 1rem;
     padding: 0.5rem 1rem;
@@ -31,8 +32,10 @@
     font-family: cursive, sans-serif;
     font-family: 25px;
     transition: transform .3s ease;
+    margin-block-start: 10px;
+    margin-inline-end: 10px;
 }
 
-.edit-note button:hover {
+.confirm-todo-btn:hover {
     transform: rotateZ(5deg) scale(1.1);
 }

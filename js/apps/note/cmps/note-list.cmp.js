@@ -8,9 +8,8 @@ export default {
     name: 'noteList',
     template: `
                 <section class="main-notes">
-                    <h3>{{listType}}</h3>
-                   
-                         <div class="notes-container">
+                    <h3 class="list-mode">{{listType}}</h3>
+                         <div class="grid-notes-container">
                               <note-preview 
                               v-for="note in notes"
                                :key="note.id" 
