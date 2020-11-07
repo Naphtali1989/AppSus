@@ -21,7 +21,7 @@ export default {
         `,
     data() {
         return {
-            filterBy: { txt: '', type: 'noteTxt' }
+            filterBy: { txt: '', type: 'all' }
         }
     },
     methods: {

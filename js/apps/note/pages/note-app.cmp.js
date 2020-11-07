@@ -12,6 +12,7 @@ export default {
                 <note-add @addNote="onAddNote"/>
                 <template v-if="notes">
                     <note-list :notes="pinnedNotes" :listType="'PINNED'" />
+                    <div class="seprator"></div>
                     <note-list :notes="unPinnedNotes" :listType="'OTHERS'" />
                 </template>
             </section>
@@ -66,25 +67,21 @@ export default {
     computed: {
         notesToShow() {
             if (!this.filterBy) return this.notes;
-            console.log('filterby:', this.filterBy);
             const { txt, type } = this.filterBy;
-            console.log('txt', txt, 'type', type);
-            // if (type === 'all') return this.notes
-            // if (type === 'all') return this.notes.filter(note => note.info.title.toLowerCase().includes(txt.toLowerCase()))
-            return this.notes.filter(note => {
-                console.log('title', note.info.title)
-                console.log('note:', note.info);
-                if (note.type === 'noteTodo') {
-                    console.log('note todo:'.note)
-                    return note.info.label.toLowerCase().includes(txt.toLowerCase()) && type === note.type
-                } else {
+            if (type === 'all' && txt) {
+                return this.notes.filter(note => {
+                    console.log('note title:', note.info.title)
+                    return note.info.title.toLowerCase().includes(txt.toLowerCase())
+                })
+            } else if (type === 'all' && !txt) return this.notes
+            else {
+                return this.notes.filter(note => {
                     console.log('note others:', note)
                     return note.info.title.toLowerCase().includes(txt.toLowerCase()) && type === note.type
-                }
-            })
+                })
+            }
         },
         pinnedNotes() {
-            // return this.notes.filter(note => note.isPinned)
             return this.notesToShow.filter(note => note.isPinned)
         },
         unPinnedNotes() {
@@ -128,3 +125,21 @@ export default {
 //             else return note.info.title.toLowerCase().includes(title)
 //         })
 //     },
+//  notesToShow() {
+//             if (!this.filterBy) return this.notes;
+//             const { txt, type } = this.filterBy;
+//             if (type === 'all' && txt) {
+//                 return this.notes.filter(note => {
+//                     console.log('note title:', note.info.title)
+//                     return note.info.title.toLowerCase().includes(txt.toLowerCase())
+//                 })
+//             } else if (type === 'all' && !txt) {
+//                 console.log('get into line 74')
+//                 return this.notes;
+//             } else {
+//                 return this.notes.filter(note => {
+//                     console.log('note others:', note)
+//                     return note.info.title.toLowerCase().includes(txt.toLowerCase()) && type === note.type
+//                 })
+//             }
+//         },

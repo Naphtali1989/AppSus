@@ -5,7 +5,7 @@ export default {
     name: 'note-todo',
     template: `
             <section class="note-todos-container">
-                <h1 class="todo-list-name" contenteditable="true"   @blur="emitChange" >{{note.info.label}}</h1>
+                <h1 class="todo-list-name" contenteditable="true"   @blur="emitChange" >{{note.info.title}}</h1>
                 <ul>
                     <note-todo-item 
                         v-for="todo in note.info.todos" 
@@ -31,7 +31,7 @@ export default {
             // console.log('event:', ev)
             // console.log('getting:', ev.target.textContent)
             //change list name header
-            this.note.info.label = ev.target.textContent;
+            this.note.info.title = ev.target.textContent;
             this.$emit('update', this.note.id)
         },
     },
