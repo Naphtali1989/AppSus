@@ -61,4 +61,5 @@
 /* PAGES */
 
 @import './apps/book/pages/book-app.css';
+@import './apps/book/pages/book-adder.css';
 @import './apps/book/pages/dumby-file.css';

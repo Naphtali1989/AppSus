@@ -4,8 +4,8 @@ import bookAddOptions from '../cmps/book-add-options.cmp.js';
 export default {
     name: 'book-adder',
     template: `
-         <section class="book-adder">
-             <h2 class="secondary-title">The book adder</h2>
+         <section class="book-adder flex container column">
+             <h2 class="secondary-title">Add books here</h2>
              <input ref="txtInput" type="text" placeholder="Search for books" class="book-adder-search-txt-input" v-model="term"/>
              <p>*requiered ^</p>
              <input type="text" placeholder="Search by author" class="book-adder-search-auth-input" v-model="author"/> 

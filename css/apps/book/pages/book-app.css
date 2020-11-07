@@ -2,16 +2,31 @@
     padding: 1rem;
 }
 
+.book-header-container {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(190, 190, 190);
+}
+
 .add-new-books-btn,
 .show-books-btn {
+    background-color: rgba(128, 128, 128, 0.15);
     padding: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
     color: rgb(80, 80, 80);
     font-family: roboto, Arial, Helvetica, sans-serif;
 }
 
+.add-new-books-btn {
+    border-radius: 1rem 0 0 1rem;
+}
+
+.show-books-btn {
+    border-radius: 0 1rem 1rem 0;
+}
+
 @media (min-width:380px) {
     .book-header-container {
-        justify-content: space-between;
         align-items: center;
     }
 }
