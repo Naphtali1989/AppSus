@@ -8,7 +8,7 @@ export default {
                     <section class="note-filter">
                             <i class="fas fa-search btn" @click="emitFilter"></i>  
                             <input type="search" v-model.trim="filterBy.txt" @input="emitFilter" placeholder="search.."/>
-                            <select v-model="filterBy.type" @change="emitFilter">
+                            <select v-model="filterBy.type" @change="emitFilter" name="noteFilter">
                                 <option value="all">All</option>
                                 <option value="noteTxt">Text</option>
                                 <option value="noteImg">Images</option>
@@ -27,7 +27,7 @@ export default {
             this.$emit('doFilter', this.filterBy);
         }
     },
-    components:{
+    components: {
         mainNavBtn
     }
 }

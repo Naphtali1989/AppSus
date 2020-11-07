@@ -14,11 +14,11 @@
 .input-container input {
     min-width: 420px;
     border: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0.6rem 1rem;
     font-weight: bold;
     outline: none;
-    font-family: roboto, sans-serif;
+    font-family: sigmar, sans-serif;
 }
 
 .input-container span {

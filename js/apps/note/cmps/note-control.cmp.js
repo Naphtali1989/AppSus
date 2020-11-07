@@ -63,9 +63,11 @@ export default {
     },
     computed: {
         noteTypeIcon() {
-            if (this.note.type === 'noteTxt') return 'fas fa-font fa-1x'
-            else if (this.note.type === 'noteImg') return 'far fa-image fa-1x'
-            else if (this.note.type === 'noteVideo') return 'fab fa-youtube fa-1x'
+            if (this.note.type === 'noteTxt') return 'fas fa-font'
+            else if (this.note.type === 'noteImg') return 'far fa-image'
+            else if (this.note.type === 'noteVideo') return 'fab fa-youtube'
+            else if (this.note.type === 'noteAudio') return 'fas fa-volume-up'
+            else if (this.note.type === 'noteTodo') return 'fas fa-list'
         },
         formatTime() {
             return new Date(this.note.createdAt).toLocaleDateString()

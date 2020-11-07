@@ -15,14 +15,14 @@ export default {
                                 v-if="note.type === 'noteTodo'"
                                 v-focus
                              />
-                        <button @click.prevent="onAddInput" class="add-todo" v-if="note.type === 'noteTodo'">Add Todo</button>
-                        <button class="btn" @click="emitNoteEdit">Confirm!</button>
+                        <button @click.prevent="onAddInput" class="add-todo-btn" v-if="note.type === 'noteTodo'">Add Todo</button>
+                        <button class="btn" class="confirm-todo-btn" @click="emitNoteEdit">Confirm!</button>
                     </form>
                 </section>
 
                 <form @submit.prevent="emitNoteEdit" v-if="note.type != 'noteTodo'">
                     <input v-if="note.type != 'noteTodo'" type="text" v-model="noteInfo" placeholder="Edit me!" />
-                    <button class="btn">Confirm!</button>
+                    <button class="confirm-todo-btn">Confirm!</button>
                 </form>
             </section>
     

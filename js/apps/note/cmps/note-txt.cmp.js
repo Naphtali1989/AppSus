@@ -3,7 +3,7 @@ export default {
     name: 'noteTxt',
     template: `
             <section class="note-txt">
-                  <h3>{{note.info.val}}</h3>
+                  <h3 contenteditable="true" class="editable-title"   @blur="emitChange">{{note.info.val}}</h3>
                   <p contenteditable="true" class="editable-title"   @blur="emitChange">{{note.info.title}}</p>
             </section>
 
@@ -13,6 +13,7 @@ export default {
         emitChange(ev) {
             // console.log('event:', ev)
             // console.log('getting:', ev.target.textContent)
+            this.note.info.val = ev.target.textContent;
             this.note.info.title = ev.target.textContent;
             this.$emit('update', this.note.id)
         },
