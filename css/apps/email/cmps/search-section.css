@@ -2,6 +2,8 @@
     padding: 1rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.5);
     width: 100%;
+    background: #eeeeee50;
+    box-shadow: 1px 6px 20px #00000054;
 }
 
 @media (min-width:680px) {

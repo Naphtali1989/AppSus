@@ -2,8 +2,26 @@
     margin: 0 auto;
 }
 
-.price-filter input {
+.book-filter input {
+    padding: 0.3rem;
+    outline: none;
+    border: none;
     text-align: center;
-    max-width: 5rem;
-    margin: 0 auto;
+    border-bottom: 1px solid grey;
+}
+
+.price-filter input {
+    max-width: 6rem;
+    margin: 1rem auto;
+}
+
+@media(min-width:430px) {
+    .book-filter {
+        max-width: 380px;
+    }
+    .book-filter input:hover,
+    .book-filter input:focus-within {
+        background-color: rgb(250, 250, 250);
+        box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.45);
+    }
 }

@@ -16,20 +16,20 @@
 .search-bar input {
     background-color: transparent;
     border: none;
-    padding: 1rem;
+    margin: 0 1rem 0 0;
+    padding: 0.5rem;
     font-size: 1.25rem;
     border-radius: 5px;
     max-width: 80%;
 }
 
 .search-bar i {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
 }
 
 @media (min-width:580px) {
     .search-bar {
         width: 380px;
-        padding-inline-end: 9.9rem;
     }
     .search-bar:hover {
         background-color: rgb(250, 250, 250);
@@ -42,10 +42,7 @@
     .search-bar i {
         padding: 2rem 0 2rem 1rem;
     }
-}
-
-@media (min-width:640px) {
-    .search-bar {
-        margin: 1rem 2rem;
+    .search-bar input {
+        max-width: 40%;
     }
 }
