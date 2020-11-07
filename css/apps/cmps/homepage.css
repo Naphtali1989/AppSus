@@ -48,6 +48,7 @@
     transition: transform .3s ease;
     margin-inline-start: 10px;
     margin-inline-end: 10px;
+    cursor: pointer;
 }
 
 .app-btns li a {
