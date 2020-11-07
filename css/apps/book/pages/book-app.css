@@ -2,13 +2,18 @@
     padding: 1rem;
 }
 
-.book-header-container {}
-
 .add-new-books-btn,
 .show-books-btn {
     padding: 1rem;
     color: rgb(80, 80, 80);
     font-family: roboto, Arial, Helvetica, sans-serif;
+}
+
+@media (min-width:380px) {
+    .book-header-container {
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 @media (min-width:640px) {
