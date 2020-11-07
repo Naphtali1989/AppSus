@@ -59,6 +59,9 @@
 @import './apps/book/cmps/dumby-file.css';
 @import './apps/book/cmps/book-add-options.css';
 @import './apps/book/cmps/book-option.css';
+@import './apps/book/cmps/book-filter.css';
+@import './apps/book/cmps/book-list.css';
+@import './apps/book/cmps/book-preview.css';
 
 /* PAGES */
 

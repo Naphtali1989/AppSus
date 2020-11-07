@@ -1,0 +1,9 @@
+.book-filter {
+    margin: 0 auto;
+}
+
+.price-filter input {
+    text-align: center;
+    max-width: 5rem;
+    margin: 0 auto;
+}
