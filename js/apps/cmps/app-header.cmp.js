@@ -7,18 +7,12 @@ export default {
                      </button> -->
                     <header class="app-header" v-if="isShowNav">
                         <div class="brand">
-                            <img src="../../../assets/app/img/appsus.png" class="appsus-logo">
+                                <img src="../../../assets/app/img/appsus.png" class="appsus-logo" @click="goHomePage">
                         </div>
                         <nav class="main-nav clean-list" @click="toggleNav">
-                            <li>
                                 <router-link to="/" exact >Home</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/note" exact >Note App</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/email/board" exact >Email App</router-link>
-                            </li> 
+                                <router-link to="/note" exact>Note App</router-link>
+                                <router-link to="/email/board" exact>Email App</router-link>
                         </nav>
                     </header>
                 </section>
@@ -31,6 +25,9 @@ export default {
     methods: {
         toggleNav() {
             document.body.classList.remove('show-nav')
+        },
+        goHomePage() {
+            this.$router.push('/')
         }
     }
 }

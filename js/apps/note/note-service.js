@@ -9,7 +9,7 @@ const STORAGE_KEY = 'notesDB';
 function getDefaultNotes() {
     return [{
             type: 'noteTxt',
-            id: '102',
+            id: utilService.makeId(),
             info: { val: 'I like vue js', title: 'hello' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
@@ -17,7 +17,7 @@ function getDefaultNotes() {
         },
         {
             type: 'noteImg',
-            id: '103',
+            id: utilService.makeId(),
             info: { val: 'https://downthetubes.net/wp-content/uploads/2020/01/dragon-ball-super-goku-ultra-instinct-mastered-01.jpg', title: 'Cool title here' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
@@ -25,7 +25,7 @@ function getDefaultNotes() {
         },
         {
             type: 'noteImg',
-            id: '104',
+            id: utilService.makeId(),
             info: { val: 'https://troll.link/bl-content/uploads/pages/dec2b671ff28d69d3ad97bc5c890ca35/Pikachu_trollface.png', title: 'I like to troll all' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
@@ -33,7 +33,7 @@ function getDefaultNotes() {
         },
         {
             type: 'noteVideo',
-            id: '105',
+            id: utilService.makeId(),
             info: { val: 'https://www.youtube.com/watch?v=j18d-hLdTD8', title: 'Good music!' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
@@ -41,7 +41,7 @@ function getDefaultNotes() {
         },
         {
             type: 'noteTodo',
-            id: '106',
+            id: utilService.makeId(),
             info: {
                 title: "List Name(Editable)",
                 todos: [
@@ -57,7 +57,7 @@ function getDefaultNotes() {
         },
         {
             type: 'noteAudio',
-            id: '107',
+            id: utilService.makeId(),
             info: {
                 title: 'Edit me',
                 val: 'https://www.computerhope.com/jargon/m/example.mp3'
@@ -68,14 +68,14 @@ function getDefaultNotes() {
         },
         {
             type: 'noteImg',
-            id: '108',
+            id: utilService.makeId(),
             info: {
                 title: 'Idan trying to work in css',
                 val: 'https://giffiles.alphacoders.com/129/12903.gif'
             },
             style: { backgroundColor: '#89b4c4' },
             createdAt: Date.now(),
-            isPineed: false
+            isPinned: false
         }
 
 
