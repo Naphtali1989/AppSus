@@ -3,7 +3,7 @@ export default {
     props: ['txt'],
     template: `
                 <section>
-                    <p class="book-desc">{{showCharacters}}</p>
+                    <p class="book-desc">{{txt}}</p>
                     <button @click="isShowMore = !isShowMore" class="show-txt-btn">{{btnTxt}}</button>
                 </section>
             `,
@@ -23,5 +23,8 @@ export default {
             if (this.isShowMore) return 'Show less'
             else return 'Show More...'
         },
+    },
+    created() {
+        console.log('text:', this.txt)
     }
 }

@@ -48,6 +48,7 @@
     transition: transform .3s ease;
     margin-inline-start: 10px;
     margin-inline-end: 10px;
+    cursor: pointer;
 }
 
 .app-btns li a {
@@ -57,6 +58,14 @@
 
 .app-btns li:hover {
     transform: scale(1.1);
+}
+
+.appsus-logo-footer {
+    width: 100px;
+}
+
+.app-footer small {
+    font-size: 18px;
 }
 
 
@@ -85,10 +94,6 @@
     justify-content: center;
     align-items: center;
     font-family: rubik, sans-serif;
-}
-
-.footer-title {
-    margin-block-end: 10px;
 }
 
 @media (max-width: 700px) {

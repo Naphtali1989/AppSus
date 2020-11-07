@@ -57,8 +57,14 @@ body {
     display: block;
     height: 100%;
     color: #eee;
+    transition: .3s ease;
 }
 
 .app-header .main-nav a:first-child {
     border-top: 2px solid rgba(200, 200, 200, 0.4);
+}
+
+.app-header .main-nav a:hover {
+    background: black;
+    color: white;
 }
