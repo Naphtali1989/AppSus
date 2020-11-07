@@ -1,9 +1,9 @@
 export default {
     props: ['txt'],
     template: `
-        <section >
+        <section class="long-text">
             <p class="book-desc">{{showDesc}}
-                <button class="toggle-words-btn" @click="toggleDesc">{{changeButtonTxt}}</button>
+                <button class="toggle-words-btn btn" @click="toggleDesc">{{changeButtonTxt}}</button>
             </p>
         </section>
     `,

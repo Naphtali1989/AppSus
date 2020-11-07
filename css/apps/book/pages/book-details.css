@@ -1,0 +1,86 @@
+.book-details {
+    margin: 0 auto;
+    color: rgb(80, 80, 80);
+}
+
+.book-details-navigation-btns {
+    width: 100%;
+    padding: 1rem;
+}
+
+.book-details-navigation-btns i {
+    color: rgb(80, 80, 80);
+}
+
+.book-details h4 {
+    text-align: center;
+}
+
+.book-details h5 {
+    padding-bottom: 1rem;
+}
+
+.book-details p {
+    margin: 0.3rem;
+    font-family: reg-roboto, Arial, Helvetica, sans-serif;
+}
+
+.authors-list {
+    text-align: center;
+}
+
+.book-details img {
+    max-width: 100%;
+}
+
+.toggle-words-btn {
+    background-color: rgba(212, 221, 255, 0.3);
+}
+
+.review-open-btn {
+    background-color: rgba(255, 222, 75, 0.5);
+    margin: 1rem auto;
+    padding: 0.5rem;
+    border-radius: 3px;
+}
+
+.img-container {
+    position: relative;
+}
+
+.sale-img {
+    position: absolute;
+    left: 0;
+    width: 130px;
+    transform: rotate(-45deg) translate(-20%, -40%);
+}
+
+@media (min-width:428px) {
+    .book-details {
+        max-width: 530px;
+    }
+    .long-text {
+        max-width: 430px;
+    }
+    .prev-book-btn,
+    .go-back-btn,
+    .next-book-btn {
+        padding: 1rem;
+    }
+    .prev-book-btn:hover,
+    .go-back-btn:hover,
+    .next-book-btn:hover {
+        background-color: rgba(230, 230, 250, 0.349);
+        transition: all .33s;
+        border-radius: 50%;
+    }
+    .review-open-btn:hover {
+        background-color: rgba(0, 0, 0, 0.385);
+        color: gold;
+        transition: all .83s;
+    }
+    .long-text .btn:hover {
+        transition: all .33s;
+        background-color: rgb(195, 195, 195);
+    }
+}

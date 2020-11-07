@@ -37,4 +37,11 @@
         box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.45);
         color: rgb(114, 103, 103);
     }
+    .preview-img {
+        cursor: pointer;
+        transition: all .33s;
+    }
+    .preview-img:hover {
+        transform: rotateX(12deg);
+    }
 }

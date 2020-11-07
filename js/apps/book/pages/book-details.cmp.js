@@ -6,24 +6,27 @@ import bookReviews from '../cmps/book-reviews.cmp.js';
 
 export default {
     template: `
-        <section v-if="book" class="book-details" >
-            <button class="go-back-btn" @click="openBooks"><img src="../img/icon/go-back-icon.png"></button>
+        <section v-if="book" class="book-details flex align-center column" >
+            <div class="book-details-navigation-btns space-around flex">
+                <button class="prev-book-btn btn" @click="loadBook(-1)"><i class="fas fa-angle-double-left"></i></i></button>
+                <button class="go-back-btn  btn" @click="openBooks"><i class="fas fa-backspace"></i></button>
+                <button class="next-book-btn btn" @click="loadBook(1)"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+
             <h4>Title: {{book.title}}, {{book.subtitle}}</h4>
-                <ul class="authors-list" > Author/s:
-                    <li v-for="author in book.authors"><h4> {{author}}</h4></li>
+                <ul class="authors-list clean-list" ><p> Author/s:</p>
+                    <li v-for="author in book.authors"><h4>{{author}}</h4></li>
                 </ul>
             <h5>Price: <span :class="priceTag">{{currency}}</span> </h5>
             <div class="img-container">
-                <button class="review-open-btn" @click="loadBook(-1)"><---</button>
-                    <img :src="imgUrl" />
-                    <img class="sale-img" v-if="isSale" src="./img/icon/sale-tag-removebg.png"/>
-                <button class="review-open-btn" @click="loadBook(1)">---></button>
+                <img :src="imgUrl" />
+                <img class="sale-img" v-if="isSale" src="./assets/book/img/sale-tag-removebg.png"/>
             </div>
             <p v-if="showRating">*Rating: {{ratingCalc}}*</p>
             <p class="book-pages">**{{pageCount}}**</p>
             <p class="book-date">***{{publishedDate}}***</p>
             <long-text :txt="book.description"/>
-            <button v-if="!isReviewing" class="review-open-btn" @click="toggleReview">Review this book!</button>
+            <button v-if="!isReviewing" class="review-open-btn btn" @click="toggleReview">Review this book!</button>
             <review-add v-if="book && isReviewing" :book="book" @submitted="toggleReview"/>
             
             <book-reviews v-if="book && !isReviewing" :reviews="book.reviews" :bookId="book.id" @outOfReviews="showNoReviews"/>
