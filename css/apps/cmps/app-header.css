@@ -20,9 +20,9 @@ body {
     transform: translateX(-100%);
 }
 
-.logo {
-    width: 50px;
-    height: 50px;
+.appsus-logo {
+    width: 150px;
+    height: 150px;
 }
 
 .brand {
@@ -43,6 +43,7 @@ body {
     font-size: 20px;
     border-bottom: 2px solid rgba(200, 200, 200, 0.4);
     transition: .3s ease;
+    font-family: roboto, sans-serif;
 }
 
 .app-header nav li:first-child {

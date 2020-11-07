@@ -2,7 +2,7 @@
     width: 150px;
     height: 150px;
     background: #fafafa;
-    border: 1px solid black;
+    border: 1px solid rgb(204, 204, 204);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -24,5 +24,5 @@
 }
 
 .color-circle:hover {
-    border: 1px solid black;
+    border: 1px solid rgb(204, 204, 204)
 }

@@ -2,6 +2,8 @@
     border-bottom: 1px solid rgb(204, 204, 204);
     margin-block-end: 20px;
     padding: 5px;
+    background: #eeeeee50;
+    box-shadow: 1px 6px 20px #00000054;
 }
 
 .note-filter {
@@ -20,11 +22,16 @@
 .note-filter select[name='noteFilter'] {
     position: absolute;
     right: 10px;
-    top: 13px;
+    top: 10px;
     border: 0;
     border-radius: 10px;
     font-size: 18px;
     outline: 0;
+    padding: 4px;
+}
+
+select[name='noteFilter'] option {
+    font-family: roboto, sans-serif;
 }
 
 .note-filter:focus-within {

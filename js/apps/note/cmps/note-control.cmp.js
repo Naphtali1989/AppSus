@@ -36,9 +36,9 @@ export default {
                 const todos = this.note.info.todos.map((todo, idx) => {
                     return `Task ${idx + 1}: ${todo.todoTxt} `
                 }).join('\n');
-                note = `?composer=Ninja Coder&subject=${this.note.info.label}&body=${todos}&sentAt=${formatTime}`
+                note = `?composer=NinjaCoder&subject=${this.note.info.label}&body=${todos}&sentAt=${formatTime}`
             } else {
-                note = `?composer=Ninja Coder&subject=${title}&body=${val}&sentAt=${formatTime}`
+                note = `?composer=NinjaCoder&subject=${title}&body=${val}&sentAt=${formatTime}`
             }
             this.$router.push('/email/board/' + note);
         },

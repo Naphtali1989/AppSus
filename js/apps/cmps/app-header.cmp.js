@@ -7,7 +7,7 @@ export default {
                      </button> -->
                     <header class="app-header" v-if="isShowNav">
                         <div class="brand">
-                            <img src="../../../assets/app/img/logo.png"> AppSus
+                            <img src="../../../assets/app/img/appsus.png" class="appsus-logo">
                         </div>
                         <nav class="main-nav clean-list" @click="toggleNav">
                             <li>

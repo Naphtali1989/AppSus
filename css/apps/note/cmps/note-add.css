@@ -18,7 +18,7 @@
     padding: 0.6rem 1rem;
     font-weight: bold;
     outline: none;
-    font-family: sigmar, sans-serif;
+    font-family: reg-roboto, sans-serif;
     border-bottom: 1px solid rgb(204, 204, 204);
     margin-inline-end: 10px;
 }
@@ -31,9 +31,12 @@
     cursor: pointer;
 }
 
-.input-container .btn-txt.focused,
-.input-container .btn-audio.focused {
+.input-container .btn-txt.focused {
     color: #282828;
+}
+
+.input-container .btn-audio.focused {
+    color: #1DB954;
 }
 
 .input-container .btn-img.focused {
@@ -45,7 +48,7 @@
 }
 
 .input-container .btn-list.focused {
-    color: darkolivegreen;
+    color: #fac92c
 }
 
 .confirm-list-btn {
