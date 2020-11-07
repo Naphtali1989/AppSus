@@ -13,7 +13,7 @@ export default {
 
                 <div class="main-email-content flex column">
                     <email-nav @startCompose="toggleComposer" />
-                    <transition name="slide-up">
+                    <transition name="slide-right">
                         <router-view />
                     </transition >
                 </div>
