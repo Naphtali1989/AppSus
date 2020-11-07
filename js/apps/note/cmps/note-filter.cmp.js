@@ -13,13 +13,15 @@ export default {
                                 <option value="noteTxt">Text</option>
                                 <option value="noteImg">Images</option>
                                 <option value="noteVideo">Videos</option>
+                                <option value="noteTodo">Todos</option>
+                                <option value="noteAudio">Audio</option>
                             </select>
                     </section>
                 </section>
         `,
     data() {
         return {
-            filterBy: { txt: '', type: 'all' }
+            filterBy: { txt: '', type: 'noteTxt' }
         }
     },
     methods: {

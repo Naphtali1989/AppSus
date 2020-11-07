@@ -66,11 +66,21 @@ export default {
     computed: {
         notesToShow() {
             if (!this.filterBy) return this.notes;
+            console.log('filterby:', this.filterBy);
             const { txt, type } = this.filterBy;
-            if (type === 'all') return this.notes
+            console.log('txt', txt, 'type', type);
+            // if (type === 'all') return this.notes
+            // if (type === 'all') return this.notes.filter(note => note.info.title.toLowerCase().includes(txt.toLowerCase()))
             return this.notes.filter(note => {
-                return note.info.title.toLowerCase().includes(txt.toLowerCase()) &&
-                    note.type === type
+                console.log('title', note.info.title)
+                console.log('note:', note.info);
+                if (note.type === 'noteTodo') {
+                    console.log('note todo:'.note)
+                    return note.info.label.toLowerCase().includes(txt.toLowerCase()) && type === note.type
+                } else {
+                    console.log('note others:', note)
+                    return note.info.title.toLowerCase().includes(txt.toLowerCase()) && type === note.type
+                }
             })
         },
         pinnedNotes() {

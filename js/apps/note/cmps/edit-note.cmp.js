@@ -16,7 +16,7 @@ export default {
                                 v-focus
                              />
                         <button @click.prevent="onAddInput" class="add-todo-btn" v-if="note.type === 'noteTodo'">Add Todo</button>
-                        <button class="btn" class="confirm-todo-btn" @click="emitNoteEdit">Confirm!</button>
+                        <button class="btn confirm-todo-btn" @click="emitNoteEdit">Confirm!</button>
                     </form>
                 </section>
 
