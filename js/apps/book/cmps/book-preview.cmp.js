@@ -1,10 +1,12 @@
 export default {
     props: ['book'],
     template: `
-        <section class="book-preview" >
+        <section class="book-preview flex column" >
             <img class="preview-img" :src="imgUrl" />
-            <button class="edit-btn" @click.stop="enterEditMode(book.id)">Edit</button>
-            <button class="delete-book-btn" @click.stop="emitDeleteBook()">Delete</button>
+            <div class="book-action-btns flex space-between">
+                <button class="book-edit-btn btn" @click.stop="enterEditMode(book.id)">Edit</button>
+                <button class="book-delete-btn btn" @click.stop="emitDeleteBook()">Delete</button>
+            </div>
             <h4 class="book-preview-title">Title: {{book.title}}</h4>
             <h5 class="book-preview-price">Price: {{currency}} </h5>
         </section>

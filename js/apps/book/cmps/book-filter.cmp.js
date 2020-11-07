@@ -2,7 +2,7 @@ export default {
     template: `
                 <section class="book-filter flex column">
                     <input type="search" v-model="filterBy.byName" placeholder="Search by name" @input="emitFilter" />
-                    or:
+
                     <div class="price-filter flex">
                         <input type="number" v-model="filterBy.fromPrice" placeholder="from price" @input="emitFilter" />
                         <input type="number" v-model="filterBy.toPrice" placeholder="to price" @input="emitFilter" />

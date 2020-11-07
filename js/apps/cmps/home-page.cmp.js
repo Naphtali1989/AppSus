@@ -8,7 +8,7 @@ export default {
                      <!-- <span><i class="fab fa-github"></i> Fork me on Github</span> -->
                    </div>
                    <main class="main-content">
-                       <img src="../../../assets/app/img/appsus.png" class="app-logo"/>
+                       <img src="./assets/app/img/appsus.png" class="app-logo"/>
                        <h1 class="app-title">Welcome to AppSus</h1>
                        <p class="app-desc">AppSus is a simple app for managing emails,notes and books</p>
                        <nav class="app-btns clean-list">

@@ -7,7 +7,7 @@ export default {
                      </button> -->
                     <header class="app-header" v-if="isShowNav">
                         <div class="brand">
-                                <img src="../../../assets/app/img/appsus.png" class="appsus-logo" @click="goHomePage">
+                                <img src="./assets/app/img/appsus.png" class="appsus-logo" @click="goHomePage">
                         </div>
                         <nav class="main-nav clean-list" @click="toggleNav">
                                 <router-link to="/note" exact>Note App</router-link>
