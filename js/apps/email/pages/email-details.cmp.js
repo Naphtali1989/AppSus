@@ -29,6 +29,7 @@ export default {
         },
         deleteEmail() {
             emailService.deleteEmail(this.emailToDesplay.id)
+            eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' });
             this.closeDetailMode();
         },
         openReply() {

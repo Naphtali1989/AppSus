@@ -3,7 +3,7 @@ export default {
     template: `
             <section class="filter-bar hide" title="Filter Emails">
                 <input class="hide" type="radio" id="All" value="all" v-model="filterTerm">
-                <label for="All" @click="emitFilterTerm('all')">All</label>
+                <label :class="" for="All" @click="emitFilterTerm('all')">All</label>
 
                 <input class="hide" type="radio" id="Read" value="read" v-model="filterTerm">
                 <label for="Read" @click="emitFilterTerm('read')">Read</label>
