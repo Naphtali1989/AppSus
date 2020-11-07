@@ -4,8 +4,8 @@ import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js
 export default {
     props: ['books'],
     template: `
-        <section class="container">
-            <ul class="book-list">
+        <section class="book-list">
+            <ul class="clean-list">
                 <li v-for="book in books" :key="book.id" >
                     <book-preview :book="book" @click.native="openDetails(book.id)" @deletedBook="emitDelete(book.id)"/>
                 </li>

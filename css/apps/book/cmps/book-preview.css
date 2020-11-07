@@ -1,0 +1,12 @@
+.book-preview {
+    text-align: center;
+}
+
+.preview-img {
+    max-width: 100%;
+}
+
+.book-preview-title,
+.book-preview-price {
+    margin: 0.5rem 0;
+}

@@ -5,12 +5,9 @@ import bookFilter from '../cmps/book-filter.cmp.js';
 
 export default {
     template: `
-         <section v-if="books" class="book-app">
-             <h2 class="secondary-title">Use the filter to find your books</h2>
+         <section v-if="books" class="book-board">
+             <h2 class="secondary-title">Find your books</h2>
              <book-filter  @filtered="setFilter"/>
-             <p>*Click on a book to show details<br>
-             or on the "Edit" button to edit</p>
-             <router-link class="add-new-books-btn btn" to="/book/adder">Add a new book here!</router-link>
              <book-list :books="booksToShow" @deleteBook="deleteBook"/>
          </section>
          `,
