@@ -11,21 +11,21 @@ import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js
 export default {
     props: ['note'],
     name: 'note-preview',
-    template: `
-                <section class="note-preview" :style="{backgroundColor: getBackgroundColor}">
-                    <edit-note :note="note" v-if="editMode" @confirmEdit="onConfirmNoteEdit"/>
-                         <transition name="slide">
-                             <component :is="note.type" :note="note" @update="onUpdate"   @deleteTodo="onDeleteTodo" @saveMarkTodo="onSaveMarkTodo" v-if="!editMode"/>
-                        </transition>
-                    <note-control 
-                        :note="note"
-                        @deleteNote="onDeleteNote"
-                        @copyNote="onCopyNote"
-                        @changeColor="onChangeColor"
-                        @editNote="onEditNote"
-                        />
-                     
-                </section>
+    template: ` 
+                <transition name="puff">
+                    <section class="note-preview" :style="{backgroundColor: getBackgroundColor}">
+                            <edit-note :note="note" v-if="editMode" @confirmEdit="onConfirmNoteEdit"/>
+                            <component :is="note.type" :note="note" @update="onUpdate"   @deleteTodo="onDeleteTodo" @saveMarkTodo="onSaveMarkTodo" v-if="!editMode"/>
+                        <note-control 
+                            :note="note"
+                            @deleteNote="onDeleteNote"
+                            @copyNote="onCopyNote"
+                            @changeColor="onChangeColor"
+                            @editNote="onEditNote"
+                            />
+                        
+                    </section>
+                </transition>
     
     `,
     data() {
@@ -82,6 +82,9 @@ export default {
     },
     created() {
         console.log('background', this.note.style.backgroundColor)
+    },
+    destroyed() {
+        console.log('componentr has been destoryed!')
     },
     components: {
         noteTxt,

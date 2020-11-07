@@ -1,8 +1,6 @@
     .note-preview {
         box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
         border-radius: 5px;
-        /* margin-inline-start: 15px;
-margin-inline-end: 15px; */
         margin-block-start: 15px;
         color: black;
         width: 250px;
@@ -11,15 +9,10 @@ margin-inline-end: 15px; */
         /* font-family: alfa, sans-serif; */
         font-family: roboto, sans-serif;
     }
-    /*note-img*/
-    /* .note-preview .note-txt {
-        min-height: 150px;
-    } */
-    /*note-img comp*/
     
     .note-preview .note-img img {
         width: 100%;
-        min-height: 200px;
+        /* min-height: 200px; */
         object-fit: cover;
         border-radius: 10px;
     }
@@ -30,7 +23,7 @@ margin-inline-end: 15px; */
     }
     
     .note-txt h3 {
-        padding: 15px;
+        padding: 10px;
         font-size: 25px;
         font-family: alfa, sans-serif;
     }
@@ -44,7 +37,7 @@ margin-inline-end: 15px; */
     .control-section {
         display: flex;
         justify-content: space-between;
-        padding: 15px;
+        padding: 10px;
         position: relative;
     }
     
@@ -69,7 +62,7 @@ margin-inline-end: 15px; */
     
     .editable-title {
         margin-block-end: 10px;
-        padding: 15px;
+        padding: 10px;
         font-size: 18px;
     }
     

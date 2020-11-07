@@ -23,7 +23,6 @@ export default {
     `,
     data() {
         return {
-            // hover: false,
             show: false
 
         }

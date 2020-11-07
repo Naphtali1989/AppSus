@@ -12,6 +12,7 @@ export default {
                 <note-add @addNote="onAddNote"/>
                 <template v-if="notes">
                     <note-list :notes="pinnedNotes" :listType="'PINNED'" />
+                    <div class="seprator"></div>
                     <note-list :notes="unPinnedNotes" :listType="'OTHERS'" />
                 </template>
             </section>
