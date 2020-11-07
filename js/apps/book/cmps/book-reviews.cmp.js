@@ -1,4 +1,4 @@
-import { bookService } from '../../book-service.js';
+import { bookService } from '../book-service.js';
 import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
 import bookReview from './book-review.cmp.js'
 

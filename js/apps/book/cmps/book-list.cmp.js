@@ -1,4 +1,5 @@
 import bookPreview from './book-preview.cmp.js';
+import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js'
 
 export default {
     props: ['books'],
@@ -13,10 +14,15 @@ export default {
     `,
     methods: {
         openDetails(bookId) {
-            this.$router.push('/books/' + bookId);
+            this.$router.push('/book/' + bookId);
         },
         emitDelete(bookId) {
             this.$emit('deleteBook', bookId)
+            const msg = {
+                txt: 'book deleted!',
+                type: 'success'
+            }
+            eventBus.$emit(EVENT_SHOW_MSG, msg);
         }
     },
     components: {

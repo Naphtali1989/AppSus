@@ -29,21 +29,21 @@ export default {
     methods: {
         deleteEmail() {
             emailService.deleteEmail(this.email.id)
-                .then(ans => {
+                .then(() => {
                     eventBus.$emit(EVENT_SHOW_MSG, { txt: 'Email has been deleted', type: 'success' });
                     this.$emit('emailDeleted')
                 });
         },
         prioritizeEmail() {
             emailService.toggleEmailMark(this.email.id)
-                .then(ans => {
+                .then(() => {
                     this.$emit('emailDeleted')
                 });
             // .then(ans => { this.$emit('emailPrioritized') })
         },
         markEmail() {
             emailService.toggleEmailRead(this.email.id)
-                .then(ans => { this.$emit('emailDeleted') });
+                .then(() => { this.$emit('emailDeleted') });
             // .then(ans => { this.$emit('emailMarked') })
         }
     },

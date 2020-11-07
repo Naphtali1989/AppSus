@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         enterEditMode(bookId) {
-            this.$router.push('/books/edit/' + bookId);
+            this.$router.push('/book/edit/' + bookId);
         },
         emitDeleteBook() {
             this.$emit('deletedBook');
