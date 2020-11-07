@@ -1,14 +1,10 @@
-.sort-bar {
-    padding: 1rem;
-}
-
 @media (min-width:640px) {
     .sort-bar {
         position: absolute;
         display: flex;
         border: none;
         outline: none;
-        top: 2.2rem;
+        top: 2.4rem;
         left: 19rem;
     }
     .sort-bar select {

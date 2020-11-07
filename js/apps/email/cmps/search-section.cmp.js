@@ -8,9 +8,11 @@ export default {
     template: `
             <section class="search-section flex">
                  <main-nav-btn />
+                 <!-- <div class="search-section"> -->
                 <search-bar  @setSearch="emitSetSearch"/>     
                 <sort-bar :term="'date'" @setSort="emitSetSort"/>
                 <filter-bar :term="'all'" @setFilter="emitSetFilter"/>
+            <!-- </div> -->
             </section>
             `,
     data() {
