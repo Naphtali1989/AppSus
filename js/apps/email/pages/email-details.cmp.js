@@ -15,7 +15,7 @@ export default {
                </div>
             </div>
             <div class="email-display-name flex align-center">from: {{emailToDesplay.composer}} <p class="muted-txt"><{{emailToDesplay.composerEmail}}></p></div>
-            <pre class="email-display-body">{{emailToDesplay.body}}</pre>
+            <p class="email-display-body">{{emailToDesplay.body}}</p>
         </section>
     `,
     data() {
