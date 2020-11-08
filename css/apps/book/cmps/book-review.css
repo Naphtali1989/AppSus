@@ -1,0 +1,10 @@
+.book-review h4,
+h5,
+p {
+    padding: 0.2rem;
+}
+
+.delete-review-btn {
+    padding: 1rem;
+    font-size: 1.2rem;
+}

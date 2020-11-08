@@ -3,7 +3,8 @@
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
     padding: 0;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    max-width: 1080px;
 }
 
 .book-list li {

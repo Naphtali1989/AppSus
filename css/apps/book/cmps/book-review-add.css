@@ -1,0 +1,49 @@
+.review-section {
+    width: 100%;
+}
+
+.review-section input {
+    outline: none;
+    padding: 0.3rem;
+}
+
+.review-section textarea {
+    width: 100%;
+    resize: none;
+    outline: none;
+}
+
+.ratings-section {
+    padding: 1rem;
+}
+
+.review-submit-btn {
+    background-color: rgb(73, 73, 73);
+    padding: 1rem;
+    border-radius: 3px;
+    color: rgba(255, 208, 0, 0.5);
+}
+
+.review-cancel-btn {
+    text-decoration: underline;
+    margin-inline-start: 1rem;
+}
+
+@media (min-width:780px) {
+    .ratings-section a {
+        cursor: pointer;
+    }
+    .ratings-section a:hover {
+        transition: all .33s;
+        color: gold;
+    }
+    .review-submit-btn:hover {
+        background-color: rgba(255, 208, 0, 0.5);
+        color: rgb(73, 73, 73);
+        transition: all .33s;
+    }
+    .review-cancel-btn:hover {
+        transition: all .33s;
+        background-color: #eee;
+    }
+}

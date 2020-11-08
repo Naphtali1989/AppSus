@@ -5,8 +5,8 @@ import bookReview from './book-review.cmp.js'
 export default {
     props: ['reviews', 'bookId'],
     template: `
-        <section class="container">
-            <ul class="book-reviews">
+        <section class="book-reviews">
+            <ul class=" clean-list">
                 <li v-for="review in reviews" :key="review.id" >
                     <book-review :review="review" @deleted="deleteReview"/>
                 </li>
@@ -19,7 +19,7 @@ export default {
                 .then(res => {
                     this.book = res
                     const msg = {
-                        txt: 'You have succesfully reviewed this book!',
+                        txt: 'You have succesfully deleted this review!',
                         type: 'success'
                     }
                     eventBus.$emit(EVENT_SHOW_MSG, msg);

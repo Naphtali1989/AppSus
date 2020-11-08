@@ -78,6 +78,10 @@
         transform: rotate(45deg) translate(-8px, -8px);
     }
     
+    .checked {
+        color: rgb(255, 183, 0);
+    }
+    
     @media (min-width:640px) {
         .show-menu-btn {
             margin: 2rem 1rem;

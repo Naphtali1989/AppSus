@@ -12,7 +12,7 @@ export default {
                 </h4>
                 <h5>Read at: {{review.readOn}}</h5>
                 <p>review: "{{review.review}}"</p>
-                <button class="delete-review-btn" @click="emitDeleteReview">X</button>
+                <button class="delete-review-btn btn" @click="emitDeleteReview"><i class="fas fa-trash"></i></button>
             </section>
             `,
     methods: {

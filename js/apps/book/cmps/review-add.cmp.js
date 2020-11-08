@@ -10,8 +10,8 @@ export default {
                     <input ref="theInput" type="text" placeholder="Enter your name please" v-model.trim="reviewerName" />
                     <p>Read at:</p>
                     <input type="date" v-model="readOn" />
-                    <p>Book name: {{book.title}}</p>
-                    <textarea type="text" maxLength="320" cols="70" rows="8" placeholder="Enter your review please" v-model.trim="currReview" ></textarea>
+                    <p>Would you like to tell us more?</p>
+                    <textarea type="text" maxLength="320" rows="5" placeholder="Enter your review please" v-model.trim="currReview" ></textarea>
                     
                     <section class="ratings-section" >
                         <a v-for="index in 5" 
@@ -20,9 +20,9 @@ export default {
                         @click="rateThis(index)"></a>
                     </section>
                     
-                    <div class="form-submit-btns">
-                        <button class="review-submit-btn" @click.prevent="saveReview">Submit review</button>
-                        <button class="review-cancel-btn" @click="closeReview">cancel</button>
+                    <div class="form-submit-btns flex">
+                        <button class="review-submit-btn btn" @click.prevent="saveReview">Submit review</button>
+                        <button class="review-cancel-btn btn" @click="closeReview">cancel</button>
                     </div>
                 </form>
             </section>
@@ -32,12 +32,9 @@ export default {
             reviewerName: 'Book reader',
             currReview: '',
             rating: 0,
-            readOn: null,
+            readOn: new Date().toISOString().substr(0, 10),
             isReviewing: false,
         }
-    },
-    computed: {
-
     },
     methods: {
         saveReview() {

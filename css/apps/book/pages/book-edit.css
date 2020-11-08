@@ -1,0 +1,64 @@
+.book-edit {
+    margin: 0 auto;
+    max-width: 1040px;
+}
+
+div>p {
+    /* padding: 0 0.25rem; */
+    margin: 0.25rem 0;
+    font-family: reg-roboto, Arial, Helvetica, sans-serif;
+}
+
+.edit-form input {
+    outline: none;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.edit-form-section1,
+.edit-form-section2,
+.edit-form-section3,
+.edit-form-section4 {
+    padding: 1rem;
+}
+
+.edit-form-section3 textarea {
+    width: 100%;
+    resize: none;
+}
+
+.save-btn,
+.discard-btn {
+    padding: 1rem;
+    background-color: rgb(163, 163, 163);
+    transition: all .33s;
+}
+
+.save-btn {
+    border-right: 1px solid grey;
+}
+
+.discard-btn {
+    border-left: 1px solid grey;
+}
+
+@media (min-width:610px) {
+    .edit-form {
+        flex-direction: row;
+    }
+    .edit-form-section2 {
+        border-left: 1px solid grey;
+    }
+    .save-btn,
+    .discard-btn {
+        border: none;
+    }
+    .save-btn:hover {
+        background-color: rgb(132, 255, 108);
+        color: rgb(130, 128, 163);
+    }
+    .discard-btn:hover {
+        background-color: rgb(255, 115, 115);
+        color: rgb(58, 58, 87);
+    }
+}
