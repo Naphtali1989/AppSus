@@ -18,11 +18,14 @@ export default {
                            <li>
                                <router-link to="/book/board" exact>Book App</router-link>
                            </li>
-</nav>
+                           <li>
+                               <router-link to="/about" exact>About us</router-link>
+                           </li>
+                       </nav>
                     </main>
                     <footer class="app-footer">
                          <img src="./assets/app/img/appsus.png" class="appsus-logo-footer"/>
-                        <small>Created by Idan Atiya and Naphtali Rubin</small>
+                        <small>Created by Idan Atiya and Naphtali Rubin &copy;</small>
                     </footer>
                </section> 
             `,
