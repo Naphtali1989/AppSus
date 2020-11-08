@@ -3,61 +3,59 @@ import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js
 
 export default {
     template: `
-        <section v-if="showEdit" class="book-edit">
-            <h1 class="book-edit-title">book Edit</h1>
+        <section v-if="showEdit" class="book-edit flex ">
             <form  @submit.prevent="saveChanges">
-                <div class="edit-form">        
-                    <div class="edit-form-section1">
+                <div class="edit-form flex column">        
+                    <div class="edit-form-section1 flex column">
                         <div>
-                            <p>Book name: {{book.title}}</p>
+                            <p>Book name:</p>
                             <input type="text" placeholder="Book Name" v-model="bookToEdit.title" />
                         </div>
                         <div>
-                            <p>Book price: {{book.listPrice.amount}}</p>
+                            <p>Book price:</p>
                             <input type="number" placeholder="Price" v-model.number="bookToEdit.listPrice.amount" />
                         </div>
                         <div>
-                            <p>Book subtitle: {{book.subtitle}}</p>
+                            <p>Book subtitle:</p>
                             <input type="text" placeholder="Book subtitle" v-model="bookToEdit.subtitle" />
                         </div>
                         <div>
-                            <p>Book authors: {{book.authors}}</p>
+                            <p>Book author: </p>
                             <input type="text" placeholder="array" v-model="bookToEdit.authors" />
                         </div>
                         <div>
-                            <p>Book publish year: {{book.publishedDate}}</p>
+                            <p>Book publish year:</p>
                             <input type="number" placeholder="Year" v-model.number="bookToEdit.publishedDate" />
                         </div>
                     </div>
-                    <hr>
-                    <div class="edit-form-section2">
+                    <div class="edit-form-section2 flex column">
                         <div>
-                            <p>Book page count: {{book.pageCount}}</p>
+                            <p>Book page count: </p>
                             <input type="number" placeholder="Page count" v-model.number="bookToEdit.pageCount" />
                         </div>
                         <div>
-                            <p>Book categories: {{book.categories}}</p>
+                            <p>Book categories:</p>
                             <input type="text" placeholder="array" v-model="bookToEdit.categories" />
                         </div>
                         <div>
-                            <p>Book thumbnail: {{book.thumbnail}}</p>
+                            <p>Book image:</p>
                             <input type="text" placeholder="thumbnail" v-model="bookToEdit.thumbnail" />
                         </div>
                         <div>
-                            <p>Book language: {{book.language}}</p>
+                            <p>Book language:</p>
                             <input type="text" placeholder="Language" v-model="bookToEdit.language" />
-                        </div>
-                        <div>
-                            <p>Is the book currently on sale?</p>
-                            <input type="checkbox" v-model="bookToEdit.listPrice.isOnSale" />
                         </div>
                     </div>
                 </div>
-                    <div class="edit-form-section3">
-                        <p>Book description: {{book.description}}</p>
-                        <textarea type="text" maxLength="320" cols="70" rows="8" placeholder="Description" v-model="bookToEdit.description" ></textarea>
+                <div class="edit-form-section3 flex column">
+                    <div>
+                        <p>Is the book currently on sale?</p>
+                        <input type="checkbox" v-model="bookToEdit.listPrice.isOnSale" />
                     </div>
-                <div class="edit-form-section4">
+                    <p>Book description:</p>
+                    <textarea type="text" maxLength="320" rows="8" placeholder="Description" v-model="bookToEdit.description" ></textarea>
+                </div>
+                <div class="edit-form-section4 flex space-between">
                     <button class="btn save-btn" @click="saveChanges">Save Changes</button>
                     <button class="btn discard-btn" @click="closeEditMode">Discard Changes</button>
                 </div>
