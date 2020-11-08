@@ -10,6 +10,7 @@ import emailApp from './apps/email/pages/email-app.cmp.js';
 import emailDetails from './apps/email/pages/email-details.cmp.js';
 import emailBoard from './apps/email/pages/email-board.cmp.js';
 import homePage from './apps/cmps/home-page.cmp.js';
+import aboutPage from './apps/cmps/about-page.cmp.js';
 
 const myRoutes = [{
         path: '/',
@@ -31,11 +32,11 @@ const myRoutes = [{
             component: emailDetails,
         }]
     },
-    // {
-    //     path: '/about',
-    //     component: aboutPage,
-    //     children: []
-    // },
+    {
+        path: '/about',
+        component: aboutPage,
+        children: []
+    },
     {
         path: '/book',
         component: bookApp,

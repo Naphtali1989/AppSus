@@ -3,17 +3,16 @@
 @import './animate.css';
 @import './helpers.css';
 @import './base.css';
-@import './apps/cmps/dumby-file.css';
 @import './apps/cmps/app-header.css';
 @import './apps/cmps/user-msg.css';
 @import './apps/cmps/homepage.css';
+@import './apps/cmps/about-page.css';
 
 /* EMAIL */
 
 
 /* CMPS */
 
-@import './apps/email/cmps/dumby-file.css';
 @import './apps/email/cmps/search-section.css';
 @import './apps/email/cmps/search-bar.css';
 @import './apps/email/cmps/filter-bar.css';
@@ -26,7 +25,6 @@
 
 /* PAGES */
 
-@import './apps/email/pages/dumby-file.css';
 @import './apps/email/pages/email-details.css';
 @import './apps/email/pages/email-board.css';
 @import './apps/email/pages/email-app.css';
@@ -72,4 +70,3 @@
 @import './apps/book/pages/book-board.css';
 @import './apps/book/pages/book-details.css';
 @import './apps/book/pages/book-edit.css';
-@import './apps/book/pages/dumby-file.css';
