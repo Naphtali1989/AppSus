@@ -13,6 +13,7 @@ export default {
                                 <router-link to="/note" exact>Note App</router-link>
                                 <router-link to="/email/board" exact>Email App</router-link>
                                 <router-link to="/book/board" exact >Book App</router-link>
+                                <router-link to="/about" exact >About us</router-link>
                         </nav>
                     </header>
                 </section>

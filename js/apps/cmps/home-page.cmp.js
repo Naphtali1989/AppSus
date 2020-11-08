@@ -21,7 +21,7 @@ export default {
                            <li>
                                <router-link to="/book" exact>Book App</router-link>
                            </li>
-                       </div>
+                       </nav>
                     </main>
                     <footer class="app-footer">
                          <img src="./assets/app/img/appsus.png" class="appsus-logo-footer"/>
