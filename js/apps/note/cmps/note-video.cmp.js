@@ -4,7 +4,7 @@ export default {
     name: 'note-video',
     template: `
             <section class="note-video">
-                 <iframe width="250" height="250" :src="convertedUrl" class="video-frame" frameBorder="0"></iframe>
+                 <iframe width="270" height="270" :src="convertedUrl" class="video-frame" frameBorder="0" allowfullscreen></iframe>
                   <p contenteditable="true" class="editable-title"  @blur="emitChange">{{note.info.title}}</p>
             </section>
     `,

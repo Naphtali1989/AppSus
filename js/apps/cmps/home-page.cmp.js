@@ -4,9 +4,6 @@ export default {
     name: 'homePage',
     template: `
                <section class="home-page">
-                   <!-- <div class="fork-me">
-                     <span><i class="fab fa-github"></i> Fork me on Github</span>
-                   </div> -->
                    <main class="main-content">
                        <img src="./assets/app/img/appsus.png" class="app-logo"/>
                        <h1 class="app-title">Welcome to AppSus</h1>

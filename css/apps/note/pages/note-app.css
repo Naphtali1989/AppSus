@@ -1,4 +1,26 @@
+@media(max-width:1300px) {
+    .grid-notes-container {
+        column-count: 4;
+    }
+}
+
+@media(max-width:1040px) {
+    .grid-notes-container {
+        column-count: 3;
+    }
+}
+
+@media(max-width:840px) {
+    .grid-notes-container {
+        column-count: 2;
+    }
+}
+
 @media (max-width: 700px) {
+    .note-preview {
+        width: 95%;
+        margin: 20px auto;
+    }
     .app-header {
         min-height: 100%;
     }
@@ -57,6 +79,9 @@
     }
     .btns-container {
         margin-block-start: 5px;
+    }
+    .grid-notes-container {
+        column-count: 1;
     }
 }
 

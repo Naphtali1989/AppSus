@@ -13,7 +13,9 @@ export default {
     name: 'note-preview',
     template: ` 
                     <!-- <transition name="slide"> -->
-                    <section class="note-preview" :style="{backgroundColor: getBackgroundColor}">
+                    <transition name="puff">
+                    <section class="note-preview" :style="{backgroundColor: getBackgroundColor}" :class="this.note.type + '-grid'">
+                        <span class="pin-icon"><i class="fas fa-thumbtack" v-show="this.note.isPinned"></i></span>
                         <edit-note :note="note" v-if="editMode" @confirmEdit="onConfirmNoteEdit"/>
                             <component :is="note.type" :note="note" @update="onUpdate"   @deleteTodo="onDeleteTodo" @saveMarkTodo="onSaveMarkTodo" v-if="!editMode"/>
                             <note-control 
@@ -25,6 +27,7 @@ export default {
                             />
                         
                     </section>
+                    </transition>
                     <!-- </transition>
      -->
     `,
@@ -78,7 +81,7 @@ export default {
     computed: {
         getBackgroundColor() {
             return this.note.style.backgroundColor
-        }
+        },
     },
     created() {
         console.log('background', this.note.style.backgroundColor)
