@@ -1,5 +1,10 @@
 .book-preview {
+    background-color: rgba(168, 168, 168, 0.575);
+    padding: 1rem;
+    margin: 0.25rem;
     text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .preview-img {
@@ -38,7 +43,6 @@
         color: rgb(114, 103, 103);
     }
     .preview-img {
-        cursor: pointer;
         transition: all .33s;
     }
     .preview-img:hover {
