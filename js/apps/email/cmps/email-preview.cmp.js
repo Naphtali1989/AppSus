@@ -15,7 +15,7 @@ export default {
                 <div class="email-preview-body hide"><long-txt :txt="email.body" :size="60" /></div>
                 <div class="email-preview-time">{{emailTime}}</div>
                 
-                <div class="preview-btns flex hide"> 
+                <div class="preview-btns flex"> 
                     <button class="email-delete-btn btn" @click.stop="deleteEmail" title="Delete">
                         <i class="fas fa-trash"></i>
                     </button>
