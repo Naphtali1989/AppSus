@@ -64,22 +64,6 @@
     width: 100px;
 }
 
-
-/* .fork-me {
-    width: 207px;
-    height: 42px;
-    background: black;
-    color: white;
-    transform: rotate(45deg);
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    border-radius: 11px;
-    text-align: center;
-    line-height: 41px;
-    top: 66px;
-} */
-
 .app-footer {
     width: 100%;
     background: #222;
