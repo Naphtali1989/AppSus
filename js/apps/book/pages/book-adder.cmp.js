@@ -1,5 +1,6 @@
 import { bookService } from '../book-service.js';
 import bookAddOptions from '../cmps/book-add-options.cmp.js';
+import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js';
 
 export default {
     name: 'book-adder',
@@ -33,7 +34,14 @@ export default {
     },
     methods: {
         activateGoogleSearch() {
-            if (!this.term) return console.log('no term stated!')
+            if (!this.term) {
+                const msg = {
+                    txt: 'You have not entered a search parameter!',
+                    type: 'error'
+                }
+                eventBus.$emit(EVENT_SHOW_MSG, msg);
+                return null
+            }
             bookService.queryGoogleBooks(this.term, this.author)
                 .then(res => this.results = res)
         }

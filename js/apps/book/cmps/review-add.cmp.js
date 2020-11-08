@@ -57,7 +57,6 @@ export default {
                     }
                     eventBus.$emit(EVENT_SHOW_MSG, msg);
                 })
-                // .catch(err , console.log('There has been an Error: ', err));
         },
         closeReview() {
             this.$emit('submitted');

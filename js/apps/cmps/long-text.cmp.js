@@ -19,12 +19,8 @@ export default {
             else return this.txt;
         },
         btnTxt() {
-            console.log(this.isShowMore)
             if (this.isShowMore) return 'Show less'
             else return 'Show More...'
         },
     },
-    created() {
-        console.log('text:', this.txt)
-    }
 }

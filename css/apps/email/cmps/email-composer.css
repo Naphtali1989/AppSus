@@ -23,11 +23,21 @@
 
 .email-composer.minimized {
     height: 50px;
-    width: 18rem;
+    width: 16rem;
 }
 
 .composer-close-btn {
     font-size: 1.15rem;
+}
+
+.email-composer.maximized .composer-head {
+    border-radius: 0%;
+}
+
+.email-composer.maximized {
+    right: 0;
+    height: 100%;
+    width: 100%;
 }
 
 @media (min-width:500px) {
@@ -36,7 +46,13 @@
     }
     .minimize-toggle-btn:hover,
     .maximize-toggle-btn:hover,
-    .composer-close-btn:hover{
-    background-color: #00000040;
-}
+    .composer-close-btn:hover {
+        background-color: #00000040;
+    }
+    .email-composer.maximized {
+        left: 20rem;
+        bottom: 2rem;
+        height: 85%;
+        max-width: 60% !important;
+    }
 }

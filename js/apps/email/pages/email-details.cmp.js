@@ -55,13 +55,5 @@ export default {
                 this.emailToDesplay = res
             })
     },
-    // watch: {
-    // '$route.params.emailId' (to, from) {
-    //     // console.log('the to is:', to, 'The from is:', from)
-    //     emailService.getEmailById(to)
-    //         .then(res => {
-    //             this.emailToDesplay = res
-    //         })
-    // }
-    // }
+
 }

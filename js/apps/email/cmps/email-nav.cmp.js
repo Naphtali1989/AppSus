@@ -38,10 +38,6 @@ export default {
         }
     },
     methods: {
-        updateUnreads() {
-            const unread = emailService.updateUnreads()
-            console.log(unread)
-        },
         emitCompose() {
             this.$emit('startCompose')
         },

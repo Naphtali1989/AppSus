@@ -4,7 +4,7 @@ import { eventBus, EVENT_SHOW_MSG } from '../../../services/event-bus-service.js
 
 export default {
     template: `
-                <section :class="calcMini" class="email-composer flex column">
+                <section :class="calcSize" class="email-composer flex column">
                     <div class="composer-head flex space-between btn" @click="toggleMinimize">
                         <h1 class="composer-title">New Message</h1>
 
@@ -35,16 +35,18 @@ export default {
         }
     },
     computed: {
-        calcMini() {
-            return { minimized: this.isMinimized };
+        calcSize() {
+            return { minimized: this.isMinimized, maximized: this.isMaximized };
         }
     },
     methods: {
         toggleMinimize() {
+            if (this.isMaximized) this.isMaximized = false;
             this.isMinimized = !this.isMinimized;
         },
         toggleMaximize() {
-            console.log('Not yet in!')
+            if (this.isMinimized) this.isMinimized = false;
+            this.isMaximized = !this.isMaximized;
         },
         saveToDrafts() {
             if (!this.email.subject) return this.emitStopCompose();
@@ -72,7 +74,6 @@ export default {
     created() {
         this.email = emailService.getEmptyEmail();
         var details = this.$route.params.details;
-        console.log('details in compser:', details)
         if (details && details !== 'null') {
             const { sentAt, subject, composer, body } = JSON.parse(details);
             this.email.subject = 'Re: ' + subject;

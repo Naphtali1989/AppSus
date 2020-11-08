@@ -15,7 +15,6 @@ export default {
     },
     methods: {
         onToggleMenu() {
-            console.log('Work in Progress!')
             this.menuOn = !this.menuOn;
             document.body.classList.toggle('show-nav');
         }

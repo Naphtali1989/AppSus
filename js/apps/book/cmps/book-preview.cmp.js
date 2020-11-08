@@ -1,7 +1,7 @@
 export default {
     props: ['book'],
     template: `
-        <section class="book-preview flex column" >
+        <section title="Click to see more" class="book-preview flex column" >
             <img class="preview-img" :src="imgUrl" />
             <div class="book-action-btns flex space-between">
                 <button class="book-edit-btn btn" @click.stop="enterEditMode(book.id)">Edit</button>
