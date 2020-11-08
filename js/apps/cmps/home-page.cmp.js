@@ -18,6 +18,9 @@ export default {
                            <li>
                                <router-link to="/book" exact>Book App</router-link>
                            </li>
+                           <li>
+                               <router-link to="/about" exact>About us</router-link>
+                           </li>
                        </nav>
                     </main>
                     <footer class="app-footer">
