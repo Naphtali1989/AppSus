@@ -10,7 +10,7 @@ function getDefaultNotes() {
     return [{
             type: 'noteTxt',
             id: utilService.makeId(),
-            info: { val: 'I like vue js', title: 'hello' },
+            info: { val: 'WE ARE NINJA CODERS', title: 'hello' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
@@ -18,7 +18,7 @@ function getDefaultNotes() {
         {
             type: 'noteImg',
             id: utilService.makeId(),
-            info: { val: 'https://downthetubes.net/wp-content/uploads/2020/01/dragon-ball-super-goku-ultra-instinct-mastered-01.jpg', title: 'Cool title here' },
+            info: { val: 'https://i.ibb.co/wJT60tV/meme-2020-11-08-T024236-391.png', title: 'Welcome Coding Instrctor :D' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: true
@@ -26,7 +26,7 @@ function getDefaultNotes() {
         {
             type: 'noteImg',
             id: utilService.makeId(),
-            info: { val: 'https://troll.link/bl-content/uploads/pages/dec2b671ff28d69d3ad97bc5c890ca35/Pikachu_trollface.png', title: 'I like to troll all' },
+            info: { val: 'https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif', title: `When People sees Napthali's code` },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
             isPinned: false
@@ -34,10 +34,10 @@ function getDefaultNotes() {
         {
             type: 'noteVideo',
             id: utilService.makeId(),
-            info: { val: 'https://www.youtube.com/watch?v=j18d-hLdTD8', title: 'Good music!' },
+            info: { val: 'https://www.youtube.com/watch?v=5LYrN_cAJoA', title: 'The net ninja is very good coding channel' },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
-            isPinned: true
+            isPinned: false
         },
         {
             type: 'noteTodo',
@@ -45,10 +45,10 @@ function getDefaultNotes() {
             info: {
                 title: "List Name(Editable)",
                 todos: [
-                    { todoTxt: 'Learn vue', isDone: false, id: '0cSqrq9mBu9' },
-                    { todoTxt: "Learn Node JS", isDone: false, id: 'qmUeHTYlzC3' },
-                    { todoTxt: "Learn To catch errors", isDone: false, id: 'jaPqbc92601' },
-                    { todoTxt: "Eat more food", isDone: false, id: 'hseW4Q4hCcb' },
+                    { todoTxt: 'EAT 🍕', isDone: false, id: '0cSqrq9mBu9' },
+                    { todoTxt: "SLEEP", isDone: false, id: 'qmUeHTYlzC3' },
+                    { todoTxt: "CODE", isDone: false, id: 'jaPqbc92601' },
+                    { todoTxt: "REPEAT", isDone: false, id: 'hseW4Q4hCcb' },
                 ]
             },
             style: { backgroundColor: '#ffff88' },
@@ -59,8 +59,8 @@ function getDefaultNotes() {
             type: 'noteAudio',
             id: utilService.makeId(),
             info: {
-                title: 'Edit me',
-                val: 'https://www.computerhope.com/jargon/m/example.mp3'
+                title: '🔊 Some Audio 🔊',
+                val: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3'
             },
             style: { backgroundColor: '#ffff88' },
             createdAt: Date.now(),
@@ -70,16 +70,134 @@ function getDefaultNotes() {
             type: 'noteImg',
             id: utilService.makeId(),
             info: {
-                title: 'Idan trying to work in css',
+                title: 'When Idan is doing css',
                 val: 'https://giffiles.alphacoders.com/129/12903.gif'
             },
             style: { backgroundColor: '#89b4c4' },
             createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteTxt',
+            id: utilService.makeId(),
+            info: { val: 'PLEASE CHANGE NOTE COLOR', title: 'Note color' },
+            style: { backgroundColor: '#ffffff' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteImg',
+            id: utilService.makeId(),
+            info: {
+                title: 'Me trying to understand dynamic components',
+                val: 'https://media.giphy.com/media/UrfLgfuQG41sQ/giphy.gif'
+            },
+            style: { backgroundColor: '#d8fca8' },
+            createdAt: Date.now(),
             isPinned: false
-        }
-
-
-
+        },
+        {
+            type: 'noteTodo',
+            id: utilService.makeId(),
+            info: {
+                title: "List Name(Editable)",
+                todos: [
+                    { todoTxt: 'learn vue js', isDone: false, id: '0cSqrq9mBu9' },
+                    { todoTxt: "learn node js", isDone: false, id: 'qmUeHTYlzC3' },
+                    { todoTxt: "learn many many things", isDone: false, id: 'jaPqbc92601' },
+                    { todoTxt: "ask Eyal for help", isDone: false, id: 'hseW4Q4hCcb' },
+                ]
+            },
+            style: { backgroundColor: '#ffff88' },
+            createdAt: Date.now(),
+            isPinned: false
+        },
+        {
+            type: 'noteTxt',
+            id: utilService.makeId(),
+            info: { val: 'Please unpin me!', title: 'unpin me' },
+            style: { backgroundColor: '#ffff88' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteImg',
+            id: utilService.makeId(),
+            info: {
+                title: 'Me at the end of the sprint',
+                val: 'https://media.giphy.com/media/AIZZAYU8WkenS/giphy.gif'
+            },
+            style: { backgroundColor: '#f0a8ff' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteImg',
+            id: utilService.makeId(),
+            info: { val: 'https://i.ibb.co/xXs2yWZ/logo-generator-featuring-an-evil-crow-with-red-eyes-1077d-el1-1.png', title: 'Appsus has been created by Idan Atiya and Napthali Rubin in Sprint #3' },
+            style: { backgroundColor: '#cccccc' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteTxt',
+            id: utilService.makeId(),
+            info: { val: '╭∩╮ (︶︿︶) ╭∩╮', title: 'Idan your app has been hacked' },
+            style: { backgroundColor: '#be968a' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteTxt',
+            id: utilService.makeId(),
+            info: { val: 'Please press the Copy icon', title: 'Copy icon!' },
+            style: { backgroundColor: '#d5f5ee' },
+            createdAt: Date.now(),
+            isPinned: false
+        },
+        {
+            type: 'noteTxt',
+            id: utilService.makeId(),
+            info: { val: 'I enjoyed to work with Napthali ', title: 'Good experience' },
+            style: { backgroundColor: '#ffc04c' },
+            createdAt: Date.now(),
+            isPinned: true,
+        },
+        {
+            type: 'noteImg',
+            id: utilService.makeId(),
+            info: { val: 'https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif', title: 'Me and Napthali at the beginning of the sprint' },
+            style: { backgroundColor: '#FF0000' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteTxt',
+            id: utilService.makeId(),
+            info: { val: 'Call 0546313431 for 🍫!', title: 'מאוד מאוד טעים' },
+            style: { backgroundColor: '#ffb6c1' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteTxt',
+            id: utilService.makeId(),
+            info: { val: '✨ Here Some sparkles ✨ ', title: 'Much wow!..' },
+            style: { backgroundColor: '#aa6288' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
+        {
+            type: 'noteVideo',
+            id: utilService.makeId(),
+            info: {
+                title: 'Learn to code with CA',
+                val: 'https://www.youtube.com/watch?v=VvU27gvAK40'
+            },
+            style: { backgroundColor: '#ffff88' },
+            createdAt: Date.now(),
+            isPinned: true
+        },
     ]
 }
 
