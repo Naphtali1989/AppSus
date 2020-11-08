@@ -83,6 +83,9 @@
     .grid-notes-container {
         column-count: 1;
     }
+    .note-preview .btns-section {
+        visibility: visible;
+    }
 }
 
 .seprator {
