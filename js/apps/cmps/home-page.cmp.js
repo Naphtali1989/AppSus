@@ -5,6 +5,9 @@ export default {
     template: `
                <section class="home-page">
                    <main class="main-content">
+                   <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+                        <source src="./livingbcg.mp4" type="video/mp4">
+                    </video>
                        <img src="./assets/app/img/appsus.png" class="app-logo"/>
                        <h1 class="app-title">Welcome to AppSus</h1>
                        <p class="app-desc">AppSus is a simple app for managing emails,notes and books</p>
